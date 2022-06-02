@@ -1,0 +1,44 @@
+.text {
+  align-self: center;
+}
+
+.section {
+  display: grid;
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+  text-align: left;
+}
+
+.section > * {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.blob {
+  z-index: -1;
+  transform: translateY(26px);
+  min-height: 32rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1rem;
+  max-width: 64ch;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill {
+  padding: 0.5rem 1.75rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  transition: transform 200ms ease-out;
+}
+
+@media screen and (min-width: 48rem) {
+  .skills {
+    justify-content: center;
+  }
+}

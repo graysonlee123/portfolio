@@ -1,0 +1,16 @@
+.blob {
+  height: auto;
+}
+
+.blob path {
+  fill: hsl(var(--clr-prism-light));
+  transition: fill var(--duration-prism) var(--ease-prism);
+}
+
+.blob path[opacity='0.25'] {
+  fill: hsl(var(--clr-prism-light-2));
+}
+
+.blob path[opacity='0.5'] {
+  fill: hsl(var(--clr-prism-light-3));
+}

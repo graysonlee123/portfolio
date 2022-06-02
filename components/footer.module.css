@@ -1,0 +1,32 @@
+.footer {
+}
+
+.wrapper {
+  padding-bottom: var(--spacing-md);
+  background-color: hsl(var(--clr-prism-light));
+  transition: background-color var(--duration-prism) var(--ease-prism);
+}
+
+.hasChildren {
+  margin-top: var(--spacing-xl);
+}
+
+.flex {
+  display: grid;
+  gap: var(--spacing-md);
+  padding-top: max(0rem, 4rem - 5vw);
+  text-align: center;
+}
+
+.flex > div {
+  justify-content: center;
+}
+
+@media screen and (min-width: 48rem) {
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+}

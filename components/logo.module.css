@@ -1,0 +1,8 @@
+.prism path {
+  fill: hsl(var(--clr-prism-dark));
+  transition: fill var(--duration-prism) var(--ease-prism);
+}
+
+.inline svg {
+  display: inline;
+}

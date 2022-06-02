@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  gap: 3rem 10%;
+}
+
+.img {
+  position: relative;
+  min-height: 32rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .grid {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .form {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .img {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+}

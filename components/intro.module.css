@@ -1,0 +1,49 @@
+.section {
+  margin-top: 7rem;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.photo1,
+.photo2 {
+  position: relative;
+}
+
+.photo1 {
+  display: none;
+}
+
+.photo2 {
+  min-height: 24rem;
+}
+
+@media screen and (min-width: 36rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .photo2 {
+    grid-area: 1 / 1 / 4 / 2;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+
+  .photo1 {
+    display: block;
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .photo2 {
+    display: block;
+    grid-area: 1 / 3 / 2 / 4;
+  }
+}
