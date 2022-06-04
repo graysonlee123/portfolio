@@ -23,8 +23,8 @@ export default function Contact() {
           )}
         >
           <Image
-            src="/images/placeholder.png"
-            alt="Placeholder"
+            src="/images/outside.jpg"
+            alt="Me on a patio working on my laptop"
             layout="fill"
             objectFit="cover"
             sizes="(min-width: 91.125rem) 46.5rem, (min-width: 48rem) calc(85vw - (85vw / 10) * (2 / 3)), 85vw"
