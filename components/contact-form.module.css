@@ -14,3 +14,13 @@
   color: hsl(var(--clr-prism-dark));
   transition: color var(--duration-prism) var(--ease-prism);
 }
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font: inherit;
+  background-color: hsl(var(--clr-prism-light));
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--duration-prism) var(--ease-prism);
+}

@@ -52,7 +52,7 @@ export default function ContactForm() {
         />
       </fieldset>
       <fieldset>
-        <button type="submit" disabled={state.submitting}>
+        <button className={styles.button} type="submit">
           Submit
         </button>
       </fieldset>
