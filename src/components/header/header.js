@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ConditionalLink } from '/src/components/conditional-link'
+import ConditionalLink from '@/components/conditional-link'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 

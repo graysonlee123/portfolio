@@ -5,7 +5,7 @@ export function ContactForm() {
   const [state, handleSubmit] = useForm('xnqwwwrq')
 
   if (state.succeeded) {
-    return <p>Thanks for reaching out! I'll be in touch soon.</p>
+    return <p>Thanks for reaching out! I&apos;ll be in touch soon.</p>
   }
 
   return (

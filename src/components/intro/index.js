@@ -1,3 +1,3 @@
 import { Intro } from './intro'
 
-export { Intro }
+export default Intro

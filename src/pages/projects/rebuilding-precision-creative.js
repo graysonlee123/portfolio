@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { Layout } from '/src/components/layout'
-import { Container } from '/src/components/container'
-import { Columns } from '/src/components/columns'
-import { Header } from '/src/components/header'
+import Layout from '@/components/layout'
+import Container from '@/components/container'
+import Columns from '@/components/columns'
+import Header from '@/components/header'
 import classNames from 'classnames'
-import utilStyles from '/src/styles/utils.module.scss'
+import utilStyles from '../../styles/utils.module.scss'
 
 export default function RebuildingPrecisionCreative() {
   const colImageSize =
@@ -57,12 +57,12 @@ export default function RebuildingPrecisionCreative() {
             reliable, open-source, and fast (if used correctly).
           </p>
           <p>
-            I created our own "block" system with pre-determined layouts that
-            the marketing team can add, remove, and customize on a per-page
-            basis. This means we (the developer team) still have full control
-            over the code that ends up being on the front-end. We're also using
-            an image optimization CDN so the marketing team does not need to
-            worry about image optimization.
+            I created our own &quot;block&quot; system with pre-determined
+            layouts that the marketing team can add, remove, and customize on a
+            per-page basis. This means we (the developer team) still have full
+            control over the code that ends up being on the front-end.
+            We&apos;re also using an image optimization CDN so the marketing
+            team does not need to worry about image optimization.
           </p>
         </Header>
         <Columns>
@@ -106,8 +106,8 @@ export default function RebuildingPrecisionCreative() {
             having code splitting. Our JavaScript is served globally, however
             splitting up the CSS is done manually by me using Sass components.
             Each page has its own stylesheet that pulls in what it needs, and no
-            more. This ensures unused CSS isn't sent to pages where it isn't
-            needed.
+            more. This ensures unused CSS isn&apos;t sent to pages where it
+            isn&apos;t needed.
           </p>
         </Header>
       </Container>

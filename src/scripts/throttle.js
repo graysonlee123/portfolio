@@ -4,13 +4,15 @@
  * @param {Int} wait The time, in milliseconds, to throttle by.
  * @returns {Function} The wrapper function responsible for the waits.
  */
-export function throttle(cb, wait = 100) {
+export default function throttle(cb, wait = 100) {
   let time = Date.now()
 
-  return function (...args) {
+  function throttler(...args) {
     if (time + wait - Date.now() < 0) {
       cb(...args)
       time = Date.now()
     }
   }
+
+  return throttler
 }

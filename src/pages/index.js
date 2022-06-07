@@ -1,9 +1,9 @@
-import { Layout } from '/src/components/layout'
-import { Intro } from '/src/components/intro'
-import { Skills } from '/src/components/skills'
-import { Projects } from '/src/components/projects'
-import { Project } from '/src/components/project'
-import { Contact } from '/src/components/contact'
+import Layout from '@/components/layout'
+import Intro from '@/components/intro'
+import Skills from '@/components/skills'
+import Projects from '@/components/projects'
+import Project from '@/components/project'
+import Contact from '@/components/contact'
 
 export default function Home() {
   return (

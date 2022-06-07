@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Header } from '/src/components/header'
-import { ArrowLink } from '/src/components/arrow-link'
+import Header from '@/components/header'
+import ArrowLink from '@/components/arrow-link'
 import classNames from 'classnames'
 import projectsList from '/src/data/projects'
-import { throttle } from '/src/scripts/throttle'
+import throttle from '/src/scripts/throttle'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 

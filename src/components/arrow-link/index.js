@@ -1,3 +1,3 @@
 import { ArrowLink } from './arrow-link'
 
-export { ArrowLink }
+export default ArrowLink

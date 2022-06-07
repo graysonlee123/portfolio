@@ -1,3 +1,3 @@
 import { Project } from './project'
 
-export { Project }
+export default Project

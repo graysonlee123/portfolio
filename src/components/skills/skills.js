@@ -1,6 +1,6 @@
-import { Header } from '/src/components/header'
+import Header from '@/components/header'
 import classNames from 'classnames'
-import { throttle } from '/src/scripts/throttle'
+import throttle from '/src/scripts/throttle'
 import style from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 

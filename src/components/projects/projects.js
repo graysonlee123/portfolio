@@ -1,4 +1,4 @@
-import { Header } from '/src/components/header'
+import Header from '@/components/header'
 import classNames from 'classnames'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
@@ -13,7 +13,7 @@ export function Projects({ children, header = 'More projects', home }) {
               In addition to my day job, I am almost always working on some kind
               of side project. That allows me to expand my knowledge about my
               field, and learn about things that I may not normally encounter.
-              Plus, it's fun!
+              Plus, it&apos;s fun!
             </p>
           ) : (
             <p style={{ maxWidth: '48ch' }}>

@@ -1,5 +1,5 @@
-import { Logo } from '/src/components/logo'
-import { Socials } from '/src/components/socials'
+import Logo from '@/components/logo'
+import Socials from '@/components/socials'
 import classNames from 'classnames'
 import projectList from '/src/data/projects'
 import styles from './index.module.css'

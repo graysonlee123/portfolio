@@ -1,3 +1,3 @@
 import { Columns } from './columns'
 
-export { Columns }
+export default Columns

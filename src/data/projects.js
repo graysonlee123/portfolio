@@ -1,6 +1,6 @@
 import utilStyles from '/src/styles/utils.module.scss'
 
-export default {
+const projects = {
   precision: {
     title: 'Rebuilding Precision Creative',
     href: '/projects/rebuilding-precision-creative',
@@ -18,9 +18,9 @@ export default {
           Precision Creative
         </a>
         , we have always focused on the quality of our websites. However,
-        recently we've put a microscope over site speed. Because Google is now
-        punishing the ranking of slower websites, we wanted to rebuild our own
-        site from scratch. That is exactly what I was tasked to do. Here are
+        recently we&apos;ve put a microscope over site speed. Because Google is
+        now punishing the ranking of slower websites, we wanted to rebuild our
+        own site from scratch. That is exactly what I was tasked to do. Here are
         some of the challenges I faced and steps I took to make it happen.
       </p>
     ),
@@ -72,3 +72,5 @@ export default {
     },
   },
 }
+
+export default projects

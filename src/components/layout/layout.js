@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Script from 'next/script'
-import { Hero } from '/src/components/hero'
-import { Projects } from '/src/components/projects'
-import { Project } from '/src/components/project'
-import { Footer } from '/src/components/footer'
+import Hero from '@/components/hero'
+import Projects from '@/components/projects'
+import Project from '@/components/project'
+import Footer from '@/components/footer'
 import projectList from '/src/data/projects'
 
 export function Layout({ children, project, projects }) {
@@ -17,7 +17,7 @@ export function Layout({ children, project, projects }) {
       <Hero project={project}>
         {!project ? (
           <>
-            <span>Hey, I'm Grayson.</span>{' '}
+            <span>Hey, I&apos;m Grayson.</span>{' '}
             <span>
               Front-End <em>Developer</em>,
             </span>{' '}

@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { Layout } from '/src/components/layout'
-import { Container } from '/src/components/container'
-import { Columns } from '/src/components/columns'
-import { Header } from '/src/components/header'
+import Layout from '@/components/layout'
+import Container from '@/components/container'
+import Columns from '@/components/columns'
+import Header from '@/components/header'
 import classNames from 'classnames'
-import utilStyles from '/src/styles/utils.module.scss'
+import utilStyles from '../../styles/utils.module.scss'
 
 export default function Articulate() {
   const colImageSize =
@@ -89,8 +89,9 @@ export default function Articulate() {
             structure and store all of the data. I decided to strip all of the
             HTML from the teaser of the article and save it as a simple string.
             I could have saved it as encoded HTML entities, but I actually ended
-            up preferring the look of the plain teaser. Additionally, it's more
-            future-proof in case one article has something wild in the teaser.
+            up preferring the look of the plain teaser. Additionally, it&apos;s
+            more future-proof in case one article has something wild in the
+            teaser.
           </p>
           <p>
             Another decision was to store comments in their own document in the

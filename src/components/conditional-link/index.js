@@ -1,3 +1,3 @@
 import { ConditionalLink } from './conditional-link'
 
-export { ConditionalLink }
+export default ConditionalLink
