@@ -16,7 +16,7 @@ const skills = [
     background: '#81C784',
   },
   {
-    name: 'React',
+    name: 'React / Next',
     color: '#4788C7',
     background: '#98CCFD',
   },

@@ -21,7 +21,7 @@ export function Layout({ children, project, projects }) {
             <span>
               Front-End <em>Developer</em>,
             </span>{' '}
-            <span>nature lover, amature traveler.</span>
+            <span>nature lover, amateur traveler.</span>
           </>
         ) : (
           projectList[project].title || 'Title not found'

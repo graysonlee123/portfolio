@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --no-cache",
-    "format": "prettier --write \"src/**/*.{js,css,scss}\""
+    "format": "prettier --write \"src/**/*.{js,css,scss}\"",
+    "spelling": "cspell --gitignore **/*.{js,md}"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.3",
@@ -17,6 +18,7 @@
     "sass": "^1.52.2"
   },
   "devDependencies": {
+    "cspell": "^6.1.1",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",

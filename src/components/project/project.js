@@ -30,7 +30,7 @@ export function Project({ slug }) {
   }
 
   /**
-   * Handles the mose events and calculating angles.
+   * Handles the mouse events and calculating angles.
    * @param {MouseEvent} e The event, either from `mouseenter` or `mousemove`
    */
   function handleMouseMove(e) {

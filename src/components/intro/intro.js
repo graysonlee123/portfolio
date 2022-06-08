@@ -42,8 +42,8 @@ export function Intro() {
         </div>
         <p>
           I&apos;m a motivated and enthusiastic 24-year-old who studied
-          full-stack web development at Georgia Tech&apos;s Web Development
-          Bootcamp.
+          full-stack web development at Georgia Tech&apos;s Web Development Boot
+          Camp.
         </p>
         <p>
           Throughout my journey as a developer, I enjoy learning techniques,
@@ -52,7 +52,7 @@ export function Intro() {
         </p>
         <p>
           I have created many bullet-proof projects for my career, during my
-          freetime, and in my studies. I&apos;ve wrote about a few of my
+          free time, and in my studies. I&apos;ve wrote about a few of my
           favorites, found below.
         </p>
       </div>

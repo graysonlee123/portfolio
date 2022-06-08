@@ -118,9 +118,9 @@ const projects = {
     intro: (
       <p>
         I had the opportunity to intern at a digital marketing and web design
-        agency called Precision Creative right after my Georgia Tech Coding
-        Bootcamp. A few months later, I was hired full-time. Throughout my time
-        at Precision, I have grown as a developer in many aspects. From working
+        agency called Precision Creative right after my Georgia Tech Coding Boot
+        Camp. A few months later, I was hired full-time. Throughout my time at
+        Precision, I have grown as a developer in many aspects. From working
         with a team to constantly improving code, I continue to work towards
         becoming the developer that I aspire to be.
       </p>
