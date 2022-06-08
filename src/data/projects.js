@@ -20,7 +20,7 @@ const projects = {
         since January of 2020. It started off as a start-up in 2016 with less
         than a few people, and has since grown to about a dozen employees.
         Because of that, our first website was not built by a web developer,
-        which left it heavy, inaccessible, unorganized, and unoptimized. I was
+        which left it heavy, inaccessible, unorganized, and un-optimized. I was
         tasked with fixing all of those things.
       </p>
     ),
@@ -70,6 +70,50 @@ const projects = {
       ],
       details: ['Sole developer'],
     },
+  },
+  embark: {
+    title: 'Embark',
+    href: '/projects/embark',
+    img: '/images/embark-website-mockup-01.jpg',
+    desc: 'Get to where you need to go. Embark is your bookmarks bar, re-imagined. Built with Next.js, TypeScript, and Docker.',
+    intro: (
+      <p>
+        The purpose of this project is to allow anyone to host a customized and
+        enhanced bookmarks page. It can be configured as the &quot;new tab&quot;
+        page in your browser.
+      </p>
+    ),
+    items: {
+      techStack: ['Next.js', 'Docker', 'TypeScript'],
+      links: [
+        {
+          title: 'View code',
+          url: 'https://github.com/graysonlee123/embark/',
+        },
+        {
+          title: 'Docker Hub',
+          url: 'https://hub.docker.com/r/ggantek/embark/',
+        },
+        {
+          title: 'Static demo',
+          url: 'https://ggantek-embark.vercel.app/',
+        },
+      ],
+      details: ['Sole developer'],
+    },
+  },
+  work: {
+    title: 'Working at Precision Creative',
+    href: '/projects/working-at-precision-creative',
+    img: '/images/precision-website-mockup-01.jpg',
+    desc: 'I love working at Precision Creative because I often run into new challenges that I get to work on. I primarily work on from-scratch WordPress themes built from the ground up.',
+    intro: (
+      <p>
+        The purpose of this project is to allow anyone to host a customized and
+        enhanced bookmarks page. It can be configured as the &quot;new tab&quot;
+        page in your browser.
+      </p>
+    ),
   },
 }
 
