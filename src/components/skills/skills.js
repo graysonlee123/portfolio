@@ -6,7 +6,7 @@ import utilStyles from '/src/styles/utils.module.scss'
 
 const skills = [
   {
-    name: 'Javascript',
+    name: 'JS / TS',
     color: '#101010',
     background: '#FFD600',
   },
@@ -21,7 +21,7 @@ const skills = [
     background: '#98CCFD',
   },
   {
-    name: 'Sass',
+    name: 'Sass / CSS',
     color: '#ffffff',
     background: '#F06292',
   },
@@ -36,19 +36,14 @@ const skills = [
     background: '#F4511E',
   },
   {
-    name: 'CSS',
-    color: '#ffffff',
-    background: '#039BE5',
+    name: 'Linux / CLI',
+    color: '#51C55D',
+    background: '#393E41',
   },
   {
     name: 'HTML',
     color: '#ffffff',
     background: '#FF5722',
-  },
-  {
-    name: 'Linux / CLI',
-    color: '#51C55D',
-    background: '#393E41',
   },
 ]
 

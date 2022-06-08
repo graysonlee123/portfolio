@@ -52,8 +52,8 @@ export default function RebuildingPrecisionCreative() {
               During phase 1, we determined that our website needs to be
               editable by our marketing team. That means we needed a CMS. Since
               the original site was in WordPress, we decided to stick with it,
-              since it is familiar, reliable, open-source, and developer
-              friendly.
+              since it is reliable, open-source, developer friendly, and
+              non-developer friendly.
             </p>
             <p>
               In phase 2, I created our own &quot;block&quot; system that the

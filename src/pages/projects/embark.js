@@ -54,10 +54,10 @@ export default function Articulate() {
           </div>
           <Header header="Tech stack" level="h2" maxWidth="80ch">
             <p>
-              I decided to use Next.js because it&apos;s familiar and
-              scale-able. I integrated it with TypeScript, ESLint, and Prettier
-              as well to enforce future updates and contributions. For
-              deployment, the project is available on{' '}
+              I decided to use Next.js because it&apos;s familiar and scaleable.
+              I integrated it with TypeScript, ESLint, and Prettier as well to
+              enforce future updates and contributions. For deployment, the
+              project is available on{' '}
               <a
                 className={utilStyles.textLink}
                 href="https://hub.docker.com/r/ggantek/embark/"
@@ -73,9 +73,6 @@ export default function Articulate() {
               One reason is complexity. In my opinion, a database structure is
               not needed in order to store URLs. I liked the idea of organizing
               your links in a JSON file, making it easily portable and editable.
-              This can make Embark more complex for some people, but the project
-              is intended for people who self-host a lot of applications and are
-              used to editing JSON files.
             </p>
           </Header>
         </Columns>
@@ -87,16 +84,16 @@ export default function Articulate() {
               with their own pros and cons. I chose Incremental Static
               Regeneration, which is a feature of Next.js. It allows me to
               update static pages after the site has been built. This way, the
-              data can be loaded statically without needing to rebuild the
-              entire site.
+              data can be delivered statically without needing to rebuild the
+              site.
             </p>
             <p>
               The reason I chose this route is because you get all the benefits
               of statically generated sites, while having it feel like a
-              server-side render. When a request is made to the Embark,
-              initially the cached page is shown, but Next.js is regenerating
-              the new page in the background. All the user has to do is refresh
-              to see the updated content.
+              server-side render. When a request is made to Embark, the cached
+              page is shown initially while Next.js is regenerating the new page
+              in the background. All the user has to do is refresh to see their
+              updated content.
             </p>
           </Header>
           <div className={classNames(utilStyles.imgMockup)}>

@@ -22,7 +22,7 @@ const projects = {
         since January of 2020. It started off as a start-up in 2016 with less
         than a few people, and has since grown to about a dozen employees.
         Because of that, our first website was not built by a web developer,
-        which left it heavy, inaccessible, unorganized, and un-optimized. I was
+        which left it heavy, inaccessible, unorganized, and unoptimized. I was
         tasked with fixing all of those things.
       </p>
     ),
@@ -81,12 +81,13 @@ const projects = {
     img: '/images/embark-website-mockup-01.jpg',
     width: 2560,
     height: 1453,
-    desc: 'Get to where you need to go. Embark is your bookmarks bar, re-imagined. Built with Next.js, TypeScript, and Docker.',
+    desc: 'A personal open-source project. Its goal is to allow anyone to host a customized and enhanced bookmarks page.',
     intro: (
       <p>
         The purpose of this project is to allow anyone to host a customized and
         enhanced bookmarks page. It can be configured as the &quot;new tab&quot;
-        page in your browser.
+        or home page in your browser. It features organizing links into groups,
+        quick searching, recents, and JSON data storage.
       </p>
     ),
     items: {
@@ -118,11 +119,11 @@ const projects = {
     intro: (
       <p>
         I had the opportunity to intern at a digital marketing and web design
-        agency called Precision Creative right after my Georgia Tech Coding Boot
-        Camp. A few months later, I was hired full-time. Throughout my time at
-        Precision, I have grown as a developer in many aspects. From working
-        with a team to constantly improving code, I continue to work towards
-        becoming the developer that I aspire to be.
+        agency right after my Georgia Tech Coding Boot Camp. A few months later,
+        I was hired full-time there. Throughout my time here, I have grown as a
+        developer in many aspects. From working with a team to constantly
+        improving code, I continue to work towards becoming the developer that I
+        aspire to be.
       </p>
     ),
   },

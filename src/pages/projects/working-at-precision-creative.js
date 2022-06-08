@@ -91,7 +91,7 @@ export default function RebuildingPrecisionCreative() {
             >
               Kyle Huffling
             </a>
-            , for teaching me so much about being a team player.
+            , for teaching me how to be a valuable member of a team.
           </p>
         </Header>
       </Container>
