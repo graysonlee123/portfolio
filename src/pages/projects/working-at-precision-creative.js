@@ -27,7 +27,7 @@ export default function RebuildingPrecisionCreative() {
         </div>
         <Header header="The goals" level="h2" maxWidth="80ch">
           <p>
-            After graduating from the bootcamp, I was immediately looking for
+            After graduating from the boot camp, I was immediately looking for
             jobs and opportunities I could be a part of. When I reached out to
             Precision, my main goal was to get real experience in the field.
             I&apos;ve now got a couple of years under my belt here, and I have
@@ -38,8 +38,8 @@ export default function RebuildingPrecisionCreative() {
             experience to find a traditional job. I pushed myself during that
             time to ask for promotions and rise through the ranks at the company
             instead of starting over at a new company. Luckily, the team loved
-            to have me around and now I work as a full-time eployee at Precision
-            Creative.
+            to have me around and now I work as a full-time employee at
+            Precision Creative.
           </p>
         </Header>
         <Columns>
@@ -55,7 +55,7 @@ export default function RebuildingPrecisionCreative() {
           </div>
           <Header header="Learning experiences" level="h2">
             <p>
-              These years have taught me alot about myself. I&apos;ve learned
+              These years have taught me a lot about myself. I&apos;ve learned
               that I have a real passion for development, and I have a clearer
               idea of the person that I aspire to be, in and out of my career.
             </p>
