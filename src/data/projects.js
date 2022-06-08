@@ -39,7 +39,7 @@ const projects = {
     title: 'Articulate',
     href: '/projects/articulate',
     img: '/images/articulate-website-mockup-01.jpg',
-    desc: 'Articulate is a scraping website where users can load, save, and comment on web development articles from Smashing Magazine.',
+    desc: 'Articulate is a website where users can load, save, and comment on web development articles from Smashing Magazine.',
     intro: (
       <p>
         The goal of this project is to provide a place to discuss articles from{' '}

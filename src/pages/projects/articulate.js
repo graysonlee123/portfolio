@@ -11,7 +11,7 @@ export default function Articulate() {
     '(min-width: 91.125rem) 34.75rem, (min-width: 48rem) calc(((85vw - (85vw / 10)) / 2) - 2px), calc(85vw - 2px)'
 
   return (
-    <Layout project="articulate" projects={['precision']}>
+    <Layout project="articulate" projects={['embark', 'precision']}>
       <Container className={classNames(utilStyles.articleGrid)}>
         <div className={classNames(utilStyles.imgMockup)}>
           <Image
@@ -25,6 +25,15 @@ export default function Articulate() {
             priority
           />
         </div>
+        <Header header="The idea" level="h2" maxWidth="80ch">
+          <p>
+            After making a request from the server to Smashing Magazine, I get
+            back the contents of the requested page, in HTML. Then I parse out
+            the data from the page that I need and store it in a database.
+            Lastly, I can display all of the archived content to the users that
+            come to visit Articulate.
+          </p>
+        </Header>
         <Columns>
           <div className={utilStyles.imgMockup}>
             <Image
@@ -37,41 +46,33 @@ export default function Articulate() {
               layout="responsive"
             />
           </div>
-          <Header header="The idea" level="h2">
+          <Header header="Tech stack" level="h2">
             <p>
-              Using Axios, I am able to make an HTTP request from the server to{' '}
-              Smashing Magazine and get back HTML. Then, I take the contents of
-              the webpage and parse it into usable objects using Cheerio.
-              Lastly, I can follow the front-end patterns Smashing Magazine uses
-              on their archive pages in order to parse the information for each
-              article.
+              There needed to be three core functionalities to make this project
+              work. A database, an HTML parser, and a HTTP request library. For
+              this, I selected MongoDB, Cheerio, and Axios, respectively.
+            </p>
+            <p>
+              The tech stack works very well with one another. Additionally, I
+              avoided using a front-end framework, which saved development time
+              and lowered the risk of over-complicating a simple project.
+              Sometimes, it's nice to work in plain HTML and CSS when that's all
+              you need.
             </p>
           </Header>
         </Columns>
-        <Header header="Tech stack" level="h2" maxWidth="64ch" center>
-          <p>
-            There needed to be three core functionalities to make this project
-            work. A database, an HTML parser, and a HTTP request library. For
-            this, I selected MongoDB, Cheerio, and Axios, respectively.
-          </p>
-          <p>
-            The tech stack works very well with one another. Additionally, I was
-            able to avoid using a large front-end framework, which saved
-            development time and lowered the risk of over-complicating a simple
-            project.
-          </p>
-        </Header>
         <Columns>
-          <div className={utilStyles.imgMockup}>
-            <Image
-              src="/images/articulate-website-mockup-04.png"
-              width="2650"
-              height="1490"
-              alt="Articulate screenshot"
-              sizes={colImageSize}
-              layout="responsive"
-            />
-          </div>
+          <Header header="Lessons learned" level="h2">
+            <p>
+              One of the trickiest parts about the project was figuring out how
+              to structure and store all of the data. I decided to strip all of
+              the HTML from the teaser of the article and save it as a simple
+              string. I could have saved it as encoded HTML entities, but I
+              actually ended up preferring the look of the plain teaser.
+              Additionally, it&apos;s more future-proof in case one article has
+              something unexpected or complicated in the teaser.
+            </p>
+          </Header>
           <div className={utilStyles.imgMockup}>
             <Image
               src="/images/articulate-website-mockup-03.png"
@@ -83,23 +84,6 @@ export default function Articulate() {
             />
           </div>
         </Columns>
-        <Header header="Lessons learned" level="h2" maxWidth="74ch" center>
-          <p>
-            One of the trickiest parts about the project was figuring out how to
-            structure and store all of the data. I decided to strip all of the
-            HTML from the teaser of the article and save it as a simple string.
-            I could have saved it as encoded HTML entities, but I actually ended
-            up preferring the look of the plain teaser. Additionally, it&apos;s
-            more future-proof in case one article has something wild in the
-            teaser.
-          </p>
-          <p>
-            Another decision was to store comments in their own document in the
-            database. The articles have a list of comments by ID attached to
-            them. This keeps each kind of data in its own place and is much more
-            reliable.
-          </p>
-        </Header>
       </Container>
     </Layout>
   )
