@@ -11,7 +11,7 @@ export default function RebuildingPrecisionCreative() {
     '(min-width: 91.125rem) 34.75rem, (min-width: 48rem) calc(((85vw - (85vw / 10)) / 2) - 2px), calc(85vw - 2px)'
 
   return (
-    <Layout project={'precision'} projects={['articulate']}>
+    <Layout project={'precision'} projects={['work', 'articulate']}>
       <Container className={classNames(utilStyles.articleGrid)}>
         <div className={classNames(utilStyles.imgMockup)}>
           <Image
@@ -36,33 +36,57 @@ export default function RebuildingPrecisionCreative() {
               layout="responsive"
             />
           </div>
-          <Header header="The goal" level="h2">
+          <Header header="The workflow" level="h2">
             <p>
-              Our overall goal with this project was to acheive higher site
-              speed scores in the eyes of Google, as well as clean up the
-              backend of our site.
-            </p>
-            <p>
-              We ended up acheiving this goal with very good Google Lighthouse
-              scores. Now, with scoring perfect performance, best practices, and
-              SEO scores, we have seen improved results with website traffic.
+              The project went through 3 internal phases. Phase 1 was deciding
+              what tech stack to use. In phase 2, I built our custom theme,
+              components, and structure for the site. And finally, in phase 3,
+              we got all of our content added and reviewed the entire site. We
+              then launched, and achieved these great Lighthouse scores.
             </p>
           </Header>
         </Columns>
-        <Header header="Tech stack challenges" level="h2" center>
+        <Columns>
+          <Header header="Tech stack" level="h2" maxWidth="80ch">
+            <p>
+              During phase 1, we determined that our website needs to be
+              editable by our marketing team. That means we needed a CMS. Since
+              the original site was in WordPress, we decided to stick with it,
+              since it is familiar, reliable, open-source, and developer
+              friendly.
+            </p>
+            <p>
+              In phase 2, I created our own &quot;block&quot; system that the
+              marketing team can use with pre-determined components. It's like a
+              custom website builder. This is done with PHP, Sass, and an
+              extendable WordPress plugin called Advanced Custom Fields. These
+              blocks can be added and edited on any page however they needed to
+              be. This means we (the developer team) still have full control
+              over the code that ends up being on the front-end. We&apos;re also
+              using an image optimization and sizing CDN, so our team does not
+              need to worry about images having an impact on the site's speed.
+            </p>
+          </Header>
+          <div className={classNames(utilStyles.imgMockup)}>
+            <Image
+              src="/images/precision-code-01.png"
+              width="2048"
+              height="2240"
+              alt="Precision Creative website code snippet"
+              sizes={colImageSize}
+              layout="responsive"
+            />
+          </div>
+        </Columns>
+        <Header header="Obstacles" level="h2" maxWidth="80ch">
           <p>
-            Our website needs to be editable by our marketing team. That means
-            we need a good CMS. Having built most of our client websites using
-            WordPress, we decided to stick with it since it is familiar,
-            reliable, open-source, and fast (if used correctly).
-          </p>
-          <p>
-            I created our own &quot;block&quot; system with pre-determined
-            layouts that the marketing team can add, remove, and customize on a
-            per-page basis. This means we (the developer team) still have full
-            control over the code that ends up being on the front-end.
-            We&apos;re also using an image optimization CDN so the marketing
-            team does not need to worry about image optimization.
+            There were a few obstacles faced when working on this project. One
+            of the most difficult things I faced was not having code splitting.
+            Our JavaScript is served globally since it is a pretty small file.
+            However, I decided that splitting up the CSS is to done manually by
+            a developer using Sass modules. Each page has its own Sass file that
+            pulls in the Sass that it needs, and no more. This ensures unused
+            CSS isn&apos;t sent to pages where it isn&apos;t needed.
           </p>
         </Header>
         <Columns>
@@ -99,15 +123,17 @@ export default function RebuildingPrecisionCreative() {
             </div>
           </div>
         </Columns>
-        <Header header="Overcoming obstacles" level="h2" maxWidth="74ch" center>
+        <Header header="Lessons learned" level="h2" maxWidth="80ch">
           <p>
-            There were a few obstacles faced when working through this project.
-            One of the most difficult things about working in WordPress is not
-            having code splitting. Our JavaScript is served globally, however
-            splitting up the CSS is done manually by me using Sass components.
-            Each page has its own stylesheet that pulls in what it needs, and no
-            more. This ensures unused CSS isn&apos;t sent to pages where it
-            isn&apos;t needed.
+            Besides the code splitting obstacle, there were more lessons to be
+            learned. The most important were making the back-end easy and usable
+            for the team, organizing the custom theme structure, optimization
+            techniques, and lessons about what to do and what not to do for
+            achieving good core web vital scores, including LCP (Largest
+            Contentful Paint), CLS (Cumulative Layout Shift), and FID (First
+            Input Delay). Preloading critical fonts in the head tag, following
+            accessability guidelines, proper image sizing and optimization, and
+            limited third-party scripts drastically help these scores.
           </p>
         </Header>
       </Container>

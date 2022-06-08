@@ -5,10 +5,10 @@ const projects = {
     title: 'Rebuilding Precision Creative',
     href: '/projects/rebuilding-precision-creative',
     img: '/images/precision-website-mockup-01.jpg',
-    desc: 'Read about my overall experience and challenges I faced while recreating our website for from scratch, with a focus on speed.',
+    desc: 'Read about my overall experience and challenges I faced while recreating our website for from scratch.',
     intro: (
       <p>
-        At{' '}
+        I have worked at{' '}
         <a
           className={utilStyles.textLink}
           href="https://precisioncreative.com/"
@@ -16,12 +16,12 @@ const projects = {
           rel="noopener noreferrer"
         >
           Precision Creative
-        </a>
-        , we have always focused on the quality of our websites. However,
-        recently we&apos;ve put a microscope over site speed. Because Google is
-        now punishing the ranking of slower websites, we wanted to rebuild our
-        own site from scratch. That is exactly what I was tasked to do. Here are
-        some of the challenges I faced and steps I took to make it happen.
+        </a>{' '}
+        since January of 2020. It started off as a start-up in 2016 with less
+        than a few people, and has since grown to about a dozen employees.
+        Because of that, our first website was not built by a web developer,
+        which left it heavy, inaccessible, unorganized, and unoptimized. I was
+        tasked with fixing all of those things.
       </p>
     ),
     items: {

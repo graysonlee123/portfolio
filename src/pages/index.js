@@ -11,6 +11,7 @@ export default function Home() {
       <Intro />
       <Skills />
       <Projects home>
+        <Project slug="embark" />
         <Project slug="precision" />
         <Project slug="articulate" />
       </Projects>
