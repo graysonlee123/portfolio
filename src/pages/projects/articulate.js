@@ -56,8 +56,8 @@ export default function Articulate() {
               The tech stack works very well with one another. Additionally, I
               avoided using a front-end framework, which saved development time
               and lowered the risk of over-complicating a simple project.
-              Sometimes, it's nice to work in plain HTML and CSS when that's all
-              you need.
+              Sometimes, it&apos;s nice to work in plain HTML and CSS when
+              that&apos;s all you need.
             </p>
           </Header>
         </Columns>

@@ -57,14 +57,15 @@ export default function RebuildingPrecisionCreative() {
             </p>
             <p>
               In phase 2, I created our own &quot;block&quot; system that the
-              marketing team can use with pre-determined components. It's like a
-              custom website builder. This is done with PHP, Sass, and an
+              marketing team can use with pre-determined components. It&apos;s
+              like a custom website builder. This is done with PHP, Sass, and an
               extendable WordPress plugin called Advanced Custom Fields. These
               blocks can be added and edited on any page however they needed to
               be. This means we (the developer team) still have full control
               over the code that ends up being on the front-end. We&apos;re also
               using an image optimization and sizing CDN, so our team does not
-              need to worry about images having an impact on the site's speed.
+              need to worry about images having an impact on the site&apos;s
+              speed.
             </p>
           </Header>
           <div className={classNames(utilStyles.imgMockup)}>

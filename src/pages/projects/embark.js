@@ -27,15 +27,15 @@ export default function Articulate() {
         </div>
         <Header header="The idea" level="h2" maxWidth="80ch">
           <p>
-            For a while, I've stored my bookmarks in my Chrome bookmarks bar. I
-            wanted more features, so I moved my bookmarks into Notion, which
-            ended up being a lot of extra steps to get to a link. After that, I
-            tried a bookmarks manager. None of them really left me satisfied, so
-            I thought, why not build my own home page?
+            For a while, I&apos;ve stored my bookmarks in my Chrome bookmarks
+            bar. I wanted more features, so I moved my bookmarks into Notion,
+            which ended up being a lot of extra steps to get to a link. After
+            that, I tried a bookmarks manager. None of them really left me
+            satisfied, so I thought, why not build my own home page?
           </p>
           <p>
             I still use a bookmarks manager for things like articles,
-            documentation, ideas, and tools that I want to save but I don't
+            documentation, ideas, and tools that I want to save but I don&apos;t
             visit often. Embark is not that. The idea behind Embark is to put
             links (and more) to where you go most often on your new tab or
             window.
@@ -54,10 +54,10 @@ export default function Articulate() {
           </div>
           <Header header="Tech stack" level="h2" maxWidth="80ch">
             <p>
-              I decided to use Next.js because it's familiar and scale-able. I
-              integrated it with TypeScript, ESLint, and Prettier as well to
-              enforce future updates and contributions. For deployment, the
-              project is available on{' '}
+              I decided to use Next.js because it&apos;s familiar and
+              scale-able. I integrated it with TypeScript, ESLint, and Prettier
+              as well to enforce future updates and contributions. For
+              deployment, the project is available on{' '}
               <a
                 className={utilStyles.textLink}
                 href="https://hub.docker.com/r/ggantek/embark/"
@@ -114,11 +114,11 @@ export default function Articulate() {
           <p>
             This is my first open-source TypeScript project. Working with
             TypeScript has been a challenge, but I clearly see the value of it.
-            Setting types to variables is something that I didn't realize had so
-            many benefits - it's great for contributing, safer production
-            environments, and faster writing with Intellisense, just to name a
-            few. Moving forward, I will consider using TypeScript for most
-            projects.
+            Setting types to variables is something that I didn&apos;t realize
+            had so many benefits - it&apos;s great for contributing, safer
+            production environments, and faster writing with Intellisense, just
+            to name a few. Moving forward, I will consider using TypeScript for
+            most projects.
           </p>
         </Header>
       </Container>

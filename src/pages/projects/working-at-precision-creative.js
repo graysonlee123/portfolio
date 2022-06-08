@@ -30,8 +30,8 @@ export default function RebuildingPrecisionCreative() {
             After graduating from the bootcamp, I was immediately looking for
             jobs and opportunities I could be a part of. When I reached out to
             Precision, my main goal was to get real experience in the field.
-            I've now got a couple of years under my belt here, and I have grown
-            both as a person and a developer.
+            I&apos;ve now got a couple of years under my belt here, and I have
+            grown both as a person and a developer.
           </p>
           <p>
             One of my specific goals with the internship was to use it to gain
@@ -55,22 +55,22 @@ export default function RebuildingPrecisionCreative() {
           </div>
           <Header header="Learning experiences" level="h2">
             <p>
-              These years have taught me alot about myself. I've learned that I
-              have a real passion for development, and I have a clearer idea of
-              the person that I aspire to be, in and out of my career.
+              These years have taught me alot about myself. I&apos;ve learned
+              that I have a real passion for development, and I have a clearer
+              idea of the person that I aspire to be, in and out of my career.
             </p>
             <p>
               I have learned a lot about WordPress, theme and plugin
               development, HubSpot, GitHub, and various other things. Most
               importantly, I now know how to add value to a team, and that
-              experience is something that can't be forgotten.
+              experience is something that can&apos;t be forgotten.
             </p>
           </Header>
         </Columns>
         <Header header="A thanks" level="h2" maxWidth="80ch">
           <p>
-            I'll always remember my time at Precision Creative. I love the
-            people I work with, and I love the work that I get to do. I've
+            I&apos;ll always remember my time at Precision Creative. I love the
+            people I work with, and I love the work that I get to do. I&apos;ve
             learned many valuable lessons and had an amazing start to my career.
             An extra thank you to{' '}
             <a
@@ -81,8 +81,8 @@ export default function RebuildingPrecisionCreative() {
             >
               Jordan Klekot
             </a>
-            , who hired me during a risky time period when we didn't know what
-            was going to happen due to the pandemic, and my direct boss,{' '}
+            , who hired me during a risky time period when we didn&apos;t know
+            what was going to happen due to the pandemic, and my direct boss,{' '}
             <a
               className={utilStyles.textLink}
               href="https://www.linkedin.com/in/kyle-huffling-619b9511a"
