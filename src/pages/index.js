@@ -14,6 +14,7 @@ export default function Home() {
         <Project slug="embark" />
         <Project slug="precision" />
         <Project slug="articulate" />
+        <Project slug="work" />
       </Projects>
       <Contact />
     </Layout>

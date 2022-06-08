@@ -14,7 +14,7 @@ export function Project({ slug }) {
     return null
   }
 
-  const { title, href, img, desc } = projectsList[slug]
+  const { title, href, img, width, height, desc } = projectsList[slug]
 
   /**
    * Calculates an angle based on one-dimension and current position.
@@ -108,8 +108,8 @@ export function Project({ slug }) {
           >
             <Image
               src={img}
-              width={526}
-              height={282}
+              width={width}
+              height={height}
               alt={title}
               sizes="(min-width: 91.125rem) 34.75rem, (min-width: 48rem) calc(((85vw - (85vw / 10)) / 2) - 2px), calc(85vw - 2px)"
               layout="responsive"
@@ -118,7 +118,7 @@ export function Project({ slug }) {
         </Link>
       </div>
       <header>
-        <Header header={title} level="h3" href={href}>
+        <Header header={title} level="h3" href={href} maxWidth="52ch">
           <p>{desc}</p>
         </Header>
       </header>
