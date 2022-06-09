@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import { useRouter } from 'next/router'
 import Hero from '@/components/hero'
 import Projects from '@/components/projects'
 import Project from '@/components/project'
@@ -7,6 +8,10 @@ import Footer from '@/components/footer'
 import projectList from '/src/data/projects'
 
 export function Layout({ children, project, projects }) {
+  const router = useRouter()
+  const is404 = router.route === '/404'
+  const isHome = router.route === '/'
+
   return (
     <>
       <Head>
@@ -15,7 +20,7 @@ export function Layout({ children, project, projects }) {
       </Head>
       <Script src="/js/main.js" strategy="lazyOnload" />
       <Hero project={project}>
-        {!project ? (
+        {(isHome && (
           <>
             <span>Hey, I&apos;m Grayson.</span>{' '}
             <span>
@@ -23,9 +28,13 @@ export function Layout({ children, project, projects }) {
             </span>{' '}
             <span>nature lover, amateur traveler.</span>
           </>
-        ) : (
-          projectList[project].title || 'Title not found'
-        )}
+        )) ||
+          (project && (projectList[project].title || 'Title not found')) ||
+          (is404 && (
+            <>
+              Page not found (<em>404</em>)
+            </>
+          ))}
       </Hero>
       <main>{children}</main>
       <Footer>
