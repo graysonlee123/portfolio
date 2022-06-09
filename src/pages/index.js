@@ -10,7 +10,7 @@ export default function Home() {
     <Layout>
       <Intro />
       <Skills />
-      <Projects home>
+      <Projects header="Projects" home>
         <Project slug="embark" />
         <Project slug="precision" />
         <Project slug="articulate" />

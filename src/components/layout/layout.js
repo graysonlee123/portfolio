@@ -45,7 +45,7 @@ export function Layout({ children, project, projects }) {
       <main>{children}</main>
       <Footer>
         {projects ? (
-          <Projects>
+          <Projects header="More projects">
             {projects.map((project) => (
               <Project slug={project} key={project} />
             ))}
