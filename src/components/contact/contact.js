@@ -7,13 +7,7 @@ import utilStyles from '/src/styles/utils.module.scss'
 
 export function Contact() {
   return (
-    <section
-      className={classNames(
-        utilStyles.containerLg,
-        utilStyles.my3Xl,
-        styles.section
-      )}
-    >
+    <section className={classNames(utilStyles.containerLg, styles.section)}>
       <div className={styles.grid}>
         <div
           className={classNames(
