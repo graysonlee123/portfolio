@@ -22,7 +22,7 @@ export function Projects({ children, header, home }) {
               <Link href="/contact">
                 <a className={utilStyles.textLink}>reach out to me</a>
               </Link>{' '}
-              if you'd like to talk.
+              if you&apos;d like to talk.
             </p>
           )}
         </Header>
