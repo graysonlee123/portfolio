@@ -15,7 +15,6 @@ export function Layout({ children, project, projects }) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
         <title>Grayson Gantek</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
