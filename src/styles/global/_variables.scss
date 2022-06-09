@@ -24,14 +24,14 @@
   --spacing-3xl: 15rem;
 }
 
-@media screen and (min-width: 36rem) {
+@media (min-width: 36rem) {
   :root {
     --fs-hdr-louder: 2.5rem;
     --fs-hdr-loud: 1.75rem;
   }
 }
 
-@media screen and (min-width: 62rem) {
+@media (min-width: 62rem) {
   :root {
     --fs-hdr-louder: 4rem;
     --fs-hdr-loud: 2rem;

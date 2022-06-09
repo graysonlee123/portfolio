@@ -47,7 +47,7 @@ $spacings: (
   margin-bottom: var(--spacing-xl);
 }
 
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .articleGrid {
     gap: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);

@@ -13,7 +13,7 @@
   min-height: 32rem;
 }
 
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .section {
     margin-top: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);

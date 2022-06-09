@@ -42,13 +42,13 @@
   letter-spacing: 0.02em;
 }
 
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .header span {
     display: block;
   }
 }
 
-@media screen and (min-width: 75rem) {
+@media (min-width: 75rem) {
   .wrapper {
     padding-left: 3rem;
   }

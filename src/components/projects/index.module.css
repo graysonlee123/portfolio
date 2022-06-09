@@ -8,7 +8,7 @@
   max-width: 64ch;
 }
 
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
