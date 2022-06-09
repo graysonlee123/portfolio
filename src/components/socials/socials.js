@@ -79,7 +79,7 @@ export function Socials() {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          title={`Visit me on ${link.title}`}
+          title={`Visit me on ${link.name}`}
           key={link.slug}
         >
           {link.icon}
