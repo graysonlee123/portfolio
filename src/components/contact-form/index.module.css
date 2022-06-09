@@ -19,6 +19,7 @@
   display: inline-block;
   padding: 0.5em 1em;
   font: inherit;
+  color: inherit;
   background-color: hsl(var(--clr-prism-light));
   border: none;
   cursor: pointer;

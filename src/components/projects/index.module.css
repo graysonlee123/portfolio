@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  gap: 8rem 10%;
-  margin-top: 4rem;
+  gap: var(--spacing-lg) 10%;
+  margin-top: var(--spacing-lg);
 }
 
 .paragraph {
@@ -11,6 +11,5 @@
 @media screen and (min-width: 48rem) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 6rem;
   }
 }

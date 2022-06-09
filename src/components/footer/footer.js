@@ -2,11 +2,11 @@ import Logo from '@/components/logo'
 import Socials from '@/components/socials'
 import classNames from 'classnames'
 import styles from './index.module.css'
-import utilStyles from '/src/styles/utils.module.scss'
+import utilStyles from '../../styles/utils.module.scss'
 
 const blob = (
   <svg
-    className={classNames(['blob', styles.blob])}
+    className={classNames(['blob', 'blob--top', styles.blob])}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
@@ -36,7 +36,7 @@ export function Footer({ children }) {
       {blob}
       <div className={styles.wrapper}>
         <div className={utilStyles.containerLg}>
-          {children}
+          {children && <div className={styles.child}>{children}</div>}
           <div
             className={classNames({
               [styles.flex]: true,

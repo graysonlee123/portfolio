@@ -1,4 +1,6 @@
 .blob {
+  position: relative;
+  z-index: -1;
   height: auto;
 }
 
@@ -13,4 +15,12 @@
 
 .blob path[opacity='0.5'] {
   fill: hsl(var(--clr-prism-light-3));
+}
+
+.blob--bottom {
+  transform: translateY(-1px);
+}
+
+.blob--top {
+  transform: translateY(1px);
 }

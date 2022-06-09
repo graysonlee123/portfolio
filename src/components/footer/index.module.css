@@ -22,7 +22,11 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 48rem) {
+.child {
+  padding-top: var(--spacing-md);
+}
+
+@media (min-width: 48rem) {
   .flex {
     display: flex;
     align-items: center;

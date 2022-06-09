@@ -7,7 +7,7 @@ import utilStyles from '/src/styles/utils.module.scss'
 
 const blob = (
   <svg
-    className={classNames(['blob'])}
+    className={classNames(['blob', 'blob--bottom'])}
     width="100%"
     height="110"
     viewBox="0 0 1200 110"

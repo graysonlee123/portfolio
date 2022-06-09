@@ -43,6 +43,13 @@ $spacings: (
 
 .articleGrid {
   display: grid;
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-3xl);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media screen and (min-width: 48rem) {
+  .articleGrid {
+    gap: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+  }
 }
