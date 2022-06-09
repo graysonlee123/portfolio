@@ -87,7 +87,7 @@ const projects = {
         The purpose of this project is to allow anyone to host a customized and
         enhanced bookmarks page. It can be configured as the &quot;new tab&quot;
         or home page in your browser. It features organizing links into groups,
-        quick searching, recents, and JSON data storage.
+        quick searching, recently used links, and JSON data storage.
       </p>
     ),
     items: {

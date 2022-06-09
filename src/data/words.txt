@@ -10,3 +10,4 @@ noopener
 noreferrer
 Nuxt
 xnqwwwrq
+unoptimized

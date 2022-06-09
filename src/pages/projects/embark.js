@@ -54,7 +54,7 @@ export default function Articulate() {
           </div>
           <Header header="Tech stack" level="h2" maxWidth="80ch">
             <p>
-              I decided to use Next.js because it&apos;s familiar and scaleable.
+              I decided to use Next.js because it&apos;s familiar and scalable.
               I integrated it with TypeScript, ESLint, and Prettier as well to
               enforce future updates and contributions. For deployment, the
               project is available on{' '}
