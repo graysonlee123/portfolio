@@ -19,6 +19,7 @@ export function Logo(prism, inline) {
           [styles.inline]: inline,
           [styles.prism]: prism,
         })}
+        aria-label="Go to home"
       >
         {logo}
       </a>
