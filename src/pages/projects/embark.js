@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '@/components/layout'
 import Container from '@/components/container'
@@ -12,6 +13,9 @@ export default function Articulate() {
 
   return (
     <Layout project="embark" projects={['articulate', 'precision']}>
+      <Head>
+        <title>Grayson Gantek | Embark</title>
+      </Head>
       <Container className={classNames(utilStyles.articleGrid)}>
         <div className={classNames(utilStyles.imgMockup)}>
           <Image

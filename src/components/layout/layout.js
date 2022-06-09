@@ -15,8 +15,15 @@ export function Layout({ children, project, projects }) {
   return (
     <>
       <Head>
+        <meta charset="utf-8" />
         <title>Grayson Gantek</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="You will find a little bit about me, some of my favorite projects, and a way to get in touch. You can also find me on LinkedIn, Twitter, and GitHub. I encourage you to contribute to one of my open-source projects!"
+        />
+        <meta name="author" content="Grayson Gantek" />
+        <meta name="rating" content="General" />
       </Head>
       <Script src="/js/main.js" strategy="lazyOnload" />
       <Hero project={project}>

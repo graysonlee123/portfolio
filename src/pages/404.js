@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/layout'
 import Container from '@/components/container'
@@ -8,6 +9,9 @@ import utilStyles from '../styles/utils.module.scss'
 export default function Custom404() {
   return (
     <Layout>
+      <Head>
+        <title>Grayson Gantek | 404</title>
+      </Head>
       <Container>
         <Header
           className={classNames(utilStyles.mt2Xl, utilStyles.mbLg)}
