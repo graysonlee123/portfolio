@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Header from '@/components/header'
 import classNames from 'classnames'
 import styles from './index.module.css'
@@ -15,9 +16,13 @@ export function Projects({ children, header, home }) {
               things that I may not normally encounter. Plus, it&apos;s fun!
             </p>
           ) : (
-            <p style={{ maxWidth: '48ch' }}>
+            <p style={{ maxWidth: '58ch' }}>
               If you enjoyed reading about this project, I encourage you to read
-              about some of my other work.
+              about some of my other work, or{' '}
+              <Link href="/contact">
+                <a className={utilStyles.textLink}>reach out to me</a>
+              </Link>{' '}
+              if you'd like to talk.
             </p>
           )}
         </Header>

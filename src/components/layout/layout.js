@@ -10,6 +10,7 @@ import projectList from '/src/data/projects'
 export function Layout({ children, project, projects }) {
   const router = useRouter()
   const is404 = router.route === '/404'
+  const isContact = router.route === '/contact'
   const isHome = router.route === '/'
 
   return (
@@ -35,6 +36,7 @@ export function Layout({ children, project, projects }) {
             <span>nature lover, amateur traveler.</span>
           </>
         )) ||
+          (isContact && <>Get in touch with me</>) ||
           (project && (projectList[project].title || 'Title not found')) ||
           (is404 && (
             <>
