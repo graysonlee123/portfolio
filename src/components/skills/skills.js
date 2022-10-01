@@ -175,9 +175,9 @@ export function Skills() {
       <div className={classNames(utilStyles.containerLg, style.text)}>
         <Header header="Skills" level="h2" center>
           <p>
-            Throughout my career path, I have learned that am emphasis on
-            fundamentals gives me the information I need in order to succeed at
-            things like frameworks, libraries, and larger concepts.
+            An emphasis on fundamentals gives me the skills I need in order to
+            succeed at more complex technologies, such as frameworks, libraries,
+            and larger concepts.
           </p>
         </Header>
         <div className={style.skills}>

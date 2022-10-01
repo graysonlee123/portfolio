@@ -46,14 +46,14 @@ export function Intro() {
           Camp.
         </p>
         <p>
-          Throughout my journey as a developer, I enjoy learning techniques,
-          best practices, and new ideas. That directly raises my standards for
-          my work.
+          As I journey through my career, I enjoy learning techniques, best
+          practices, and new ideas. That directly raises the standards I have
+          for my work.
         </p>
         <p>
           I have created many bullet-proof projects for my career, during my
           free time, and in my studies. I&apos;ve wrote about a few of my
-          favorites, found below.
+          favorites below.
         </p>
       </div>
     </section>
