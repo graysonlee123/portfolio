@@ -12,12 +12,12 @@ const skills = [
   },
   {
     name: 'Vue / Nuxt',
-    color: '#455A64',
+    color: '#303E45',
     background: '#81C784',
   },
   {
     name: 'React / Next',
-    color: '#4788C7',
+    color: '#1F4366',
     background: '#98CCFD',
   },
   {
@@ -27,7 +27,7 @@ const skills = [
   },
   {
     name: 'PHP',
-    color: '#484C89',
+    color: '#232543',
     background: '#777BB3',
   },
   {
