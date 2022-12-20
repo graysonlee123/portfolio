@@ -41,19 +41,18 @@ export function Intro() {
           />
         </div>
         <p>
-          I&apos;m a motivated and enthusiastic 24-year-old who studied
+          I&apos;m a motivated and enthusiastic web developer who studied
           full-stack web development at Georgia Tech&apos;s Web Development Boot
           Camp.
         </p>
         <p>
-          As I journey through my career, I enjoy learning techniques, best
-          practices, and new ideas. That directly raises the standards I have
-          for my work.
+          I enjoy learning techniques, methodologies, and best practices. That
+          directly raises the standards I have for my work.
         </p>
         <p>
-          I have created many bullet-proof projects for my career, during my
-          free time, and in my studies. I&apos;ve wrote about a few of my
-          favorites below.
+          I have created many projects throughout my career, during my free
+          time, and in my studies. I&apos;ve wrote about a few of my favorites
+          below.
         </p>
       </div>
     </section>
