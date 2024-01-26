@@ -11,9 +11,9 @@ export default function Home() {
       <Intro />
       <Skills />
       <Projects header="Projects" home>
+        <Project slug="phasmo" />
         <Project slug="embark" />
         <Project slug="precision" />
-        <Project slug="articulate" />
         <Project slug="work" />
       </Projects>
       <Contact />

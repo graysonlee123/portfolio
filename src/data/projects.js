@@ -37,6 +37,36 @@ const projects = {
       details: ['Sole developer'],
     },
   },
+  phasmo: {
+    title: 'Phasmophobia Helper',
+    href: '/projects/phasmophobia-helper',
+    img: '/images/phasmo.png',
+    width: 2732,
+    height: 1536,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nunc felis,venenatis ut dolor sit amet.',
+    intro: (
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nunc felis,
+        venenatis ut dolor sit amet, interdum fringilla dui. Nullam sed rutrum
+        lorem, nec mollis enim. Nunc id faucibus risus. Morbi arcu orci,
+        dignissim eget ipsum et, dignissim venenatis nisl.
+      </p>
+    ),
+    items: {
+      techStack: ['NextJS', 'TypeScript'],
+      links: [
+        {
+          title: 'Visit project',
+          url: 'https://phasmo.monster',
+        },
+        {
+          title: 'View code',
+          url: 'https://github.com/graysonlee123/phasmophobia-helper',
+        },
+      ],
+      details: ['Sole developer'],
+    },
+  },
   articulate: {
     title: 'Articulate',
     href: '/projects/articulate',
