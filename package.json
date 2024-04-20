@@ -4,26 +4,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --no-cache",
-    "format": "prettier --write \"src/**/*.{js,css,scss}\"",
+    "lint": "next lint",
     "spelling": "cspell --gitignore **/*.{js,md}"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.3",
     "@formspree/react": "^2.2.5",
     "classnames": "^2.3.1",
-    "next": "latest",
+    "next": "^12.3.4",
     "nextjs-google-analytics": "^2.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.52.2"
   },
   "devDependencies": {
-    "cspell": "^6.1.1",
-    "eslint": "8.17.0",
-    "eslint-config-next": "12.1.6",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2"
+    "cspell": "^6.1.1"
   }
 }
