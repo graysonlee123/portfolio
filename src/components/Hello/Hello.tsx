@@ -6,7 +6,7 @@ import utilStyles from '/src/styles/utils.module.scss'
 import laptopPic from 'public/images/laptop-01.jpg'
 import hikingPic from 'public/images/hiking.jpg'
 
-export default function Intro() {
+export default function Hello() {
   return (
     <section className={styles.section}>
       <div className={classNames(utilStyles.containerLg, styles.grid)}>

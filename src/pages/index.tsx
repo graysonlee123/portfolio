@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import Intro from '@/components/Intro'
+import Intro from '@/components/Hello'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Project from '@/components/Project'
