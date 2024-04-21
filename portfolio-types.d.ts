@@ -6,7 +6,7 @@ export type Project = {
   height: number
   desc: string
   intro: ReactNode
-  items?: ProjectItem[]
+  items?: ProjectItem
 }
 
 type ProjectItem = {

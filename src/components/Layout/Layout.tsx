@@ -1,14 +1,17 @@
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
+import Projects from '@/components/Projects'
+import projectsData from 'lib/data/projects'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { ReactNode } from 'react'
+import Project from '@/components/Project'
 
 type LayoutProps = {
   children?: ReactNode
-  project?: String
-  projects?: String[]
+  project?: keyof typeof projectsData
+  projects?: (keyof typeof projectsData)[]
 }
 
 export default function Layout({ children, project, projects }: LayoutProps) {
@@ -16,6 +19,8 @@ export default function Layout({ children, project, projects }: LayoutProps) {
   const is404 = router.route === '/404'
   const isContact = router.route === '/contact'
   const isHome = router.route === '/'
+
+  console.log(project)
 
   return (
     <>
@@ -41,7 +46,7 @@ export default function Layout({ children, project, projects }: LayoutProps) {
           </>
         )) ||
           (isContact && <>Get in touch with me</>) ||
-          // (project && (projectList[project].title || 'Title not found')) ||
+          (project && (projectsData[project].title || 'Title not found')) ||
           (is404 && (
             <>
               Page not found (<em>404</em>)
@@ -50,13 +55,13 @@ export default function Layout({ children, project, projects }: LayoutProps) {
       </Hero>
       <main>{children}</main>
       <Footer>
-        {/* {projects ? (
+        {projects ? (
           <Projects header="More projects" home={false}>
             {projects.map((project) => (
               <Project slug={project} key={project} />
             ))}
           </Projects>
-        ) : null} */}
+        ) : null}
       </Footer>
     </>
   )

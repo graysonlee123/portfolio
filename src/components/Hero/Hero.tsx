@@ -2,8 +2,10 @@ import Logo from '@/components/Logo'
 import Socials from '@/components/Socials'
 import classNames from 'classnames'
 import projectList from 'lib/data/projects'
+import { ReactNode } from 'react'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
+import { Project } from 'portfolio-types'
 
 const blob = (
   <svg
@@ -31,8 +33,13 @@ const blob = (
   </svg>
 )
 
-export default function Hero({ children, project }) {
-  const currentProject = projectList[project]
+type HeroProps = {
+  project?: keyof typeof projectList
+  children?: ReactNode
+}
+
+export default function Hero({ children, project }: HeroProps) {
+  const currentProject: Project = projectList[project]
   const showSocials = !project
 
   function renderItem(list) {
