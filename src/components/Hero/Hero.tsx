@@ -1,7 +1,7 @@
 import Logo from '@/components/Logo'
 import Socials from '@/components/Socials'
 import classNames from 'classnames'
-import projectList from 'src/data/projects'
+import projectList from 'lib/data/projects'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 
