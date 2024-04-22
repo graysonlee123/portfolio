@@ -7,13 +7,6 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { ReactNode } from 'react'
 import Project from '@/components/Project'
-import { Mulish } from 'next/font/google'
-
-const mulish = Mulish({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-})
 
 type LayoutProps = {
   children?: ReactNode
@@ -40,36 +33,34 @@ export default function Layout({ children, project, projects }: LayoutProps) {
         <meta name="rating" content="General" />
       </Head>
       <Script src="/js/main.js" strategy="lazyOnload" />
-      <div className={mulish.className}>
-        <Hero project={project}>
-          {(isHome && (
+      <Hero project={project}>
+        {(isHome && (
+          <>
+            <span>Hey, I&apos;m Grayson.</span>{' '}
+            <span>
+              Front-End <em>Developer</em>,
+            </span>{' '}
+            <span>nature lover, amateur traveler.</span>
+          </>
+        )) ||
+          (isContact && <>Get in touch with me</>) ||
+          (project && (projectsData[project].title || 'Title not found')) ||
+          (is404 && (
             <>
-              <span>Hey, I&apos;m Grayson.</span>{' '}
-              <span>
-                Front-End <em>Developer</em>,
-              </span>{' '}
-              <span>nature lover, amateur traveler.</span>
+              Page not found (<em>404</em>)
             </>
-          )) ||
-            (isContact && <>Get in touch with me</>) ||
-            (project && (projectsData[project].title || 'Title not found')) ||
-            (is404 && (
-              <>
-                Page not found (<em>404</em>)
-              </>
+          ))}
+      </Hero>
+      <main>{children}</main>
+      <Footer>
+        {projects ? (
+          <Projects header="More projects" home={false}>
+            {projects.map((project) => (
+              <Project slug={project} key={project} />
             ))}
-        </Hero>
-        <main>{children}</main>
-        <Footer>
-          {projects ? (
-            <Projects header="More projects" home={false}>
-              {projects.map((project) => (
-                <Project slug={project} key={project} />
-              ))}
-            </Projects>
-          ) : null}
-        </Footer>
-      </div>
+          </Projects>
+        ) : null}
+      </Footer>
     </>
   )
 }
