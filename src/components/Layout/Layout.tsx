@@ -20,8 +20,6 @@ export default function Layout({ children, project, projects }: LayoutProps) {
   const isContact = router.route === '/contact'
   const isHome = router.route === '/'
 
-  console.log(project)
-
   return (
     <>
       <Head>
