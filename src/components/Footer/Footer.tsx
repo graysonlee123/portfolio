@@ -1,9 +1,9 @@
 import Logo from '@/components/Logo'
 import Socials from '@/components/Socials'
 import classNames from 'classnames'
-import styles from './index.module.css'
-import utilStyles from '../../styles/utils.module.scss'
 import { ReactNode } from 'react'
+import Container from '../Container'
+import styles from './index.module.css'
 
 const blob = (
   <svg
@@ -40,7 +40,7 @@ export default function Footer({ children }: FooterProps) {
     <footer className={styles.footer}>
       {blob}
       <div className={styles.wrapper}>
-        <div className={utilStyles.containerLg}>
+        <Container size="lg">
           {children && <div className={styles.child}>{children}</div>}
           <div
             className={classNames({
@@ -51,7 +51,7 @@ export default function Footer({ children }: FooterProps) {
             <Logo prism inline />
             <Socials />
           </div>
-        </div>
+        </Container>
       </div>
     </footer>
   )

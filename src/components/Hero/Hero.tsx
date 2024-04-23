@@ -6,6 +6,7 @@ import { ReactNode } from 'react'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 import { Project } from 'portfolio-types'
+import Container from '../Container'
 
 const blob = (
   <svg
@@ -64,39 +65,41 @@ export default function Hero({ children, project }: HeroProps) {
   return (
     <header className={styles.section}>
       <div className={styles.stripe}>
-        <div className={utilStyles.containerLg}>
+        <Container size="lg">
           <Logo prism inline />
-        </div>
+        </Container>
       </div>
       {blob}
-      <div className={classNames(styles.wrapper, utilStyles.containerLg)}>
-        {showSocials ? <Socials /> : null}
-        <h1
-          className={classNames(styles.header, utilStyles.headerLouder, utilStyles.textDark)}
-          style={{ marginTop: showSocials ? '2rem' : null }}
-        >
-          {children}
-        </h1>
-        {currentProject ? <div className={styles.intro}>{currentProject.intro}</div> : null}
-        {currentProject?.items ? (
-          <div className={styles.table}>
-            <div>
-              <p className={classNames([utilStyles.textDark, styles.label])}>Tech stack</p>
-              {renderItem(currentProject.items.techStack)}
+      <Container>
+        <div className={classNames(styles.wrapper)}>
+          {showSocials ? <Socials /> : null}
+          <h1
+            className={classNames(styles.header, utilStyles.headerLouder, utilStyles.textDark)}
+            style={{ marginTop: showSocials ? '2rem' : null }}
+          >
+            {children}
+          </h1>
+          {currentProject ? <div className={styles.intro}>{currentProject.intro}</div> : null}
+          {currentProject?.items ? (
+            <div className={styles.table}>
+              <div>
+                <p className={classNames([utilStyles.textDark, styles.label])}>Tech stack</p>
+                {renderItem(currentProject.items.techStack)}
+              </div>
+              <div>
+                <p className={classNames([utilStyles.textDark, styles.label])}>Links</p>
+                {renderItem(currentProject.items.links)}
+              </div>
+              <div>
+                <p className={classNames([utilStyles.textDark, styles.label])}>Details</p>
+                {renderItem(currentProject.items.details)}
+              </div>
             </div>
-            <div>
-              <p className={classNames([utilStyles.textDark, styles.label])}>Links</p>
-              {renderItem(currentProject.items.links)}
-            </div>
-            <div>
-              <p className={classNames([utilStyles.textDark, styles.label])}>Details</p>
-              {renderItem(currentProject.items.details)}
-            </div>
-          </div>
-        ) : (
-          ''
-        )}
-      </div>
+          ) : (
+            ''
+          )}
+        </div>
+      </Container>
     </header>
   )
 }

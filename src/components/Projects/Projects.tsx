@@ -1,13 +1,14 @@
 import Header from '@/components/Header'
 import classNames from 'classnames'
 import Link from 'next/link'
+import Container from '../Container'
 import styles from './index.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 
 export default function Projects({ children, header, home }) {
   return (
     <section className={classNames(styles.section)}>
-      <div className={classNames(utilStyles.containerLg)}>
+      <Container size="lg">
         <Header header={header}>
           {home ? (
             <p>
@@ -27,7 +28,7 @@ export default function Projects({ children, header, home }) {
           )}
         </Header>
         {children ? <div className={styles.grid}>{children}</div> : ''}
-      </div>
+      </Container>
     </section>
   )
 }

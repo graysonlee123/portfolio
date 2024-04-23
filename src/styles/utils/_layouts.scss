@@ -35,12 +35,6 @@ $spacings: (
   }
 }
 
-.containerLg {
-  max-width: min(77.5rem, 85vw);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .articleGrid {
   display: grid;
   gap: var(--spacing-lg);

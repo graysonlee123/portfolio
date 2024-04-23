@@ -47,9 +47,3 @@
     display: block;
   }
 }
-
-@media (min-width: 75rem) {
-  .wrapper {
-    padding-left: 3rem;
-  }
-}
