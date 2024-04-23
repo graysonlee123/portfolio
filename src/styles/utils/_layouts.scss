@@ -34,16 +34,3 @@ $spacings: (
     padding-bottom: #{$value};
   }
 }
-
-.articleGrid {
-  display: grid;
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
-}
-
-@media (min-width: 48rem) {
-  .articleGrid {
-    gap: var(--spacing-3xl);
-    margin-bottom: var(--spacing-3xl);
-  }
-}

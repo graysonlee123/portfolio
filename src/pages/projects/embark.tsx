@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Layout from '@/components/Layout'
-import Container from '@/components/Container'
+import Article from '@/components/Article'
 import Columns from '@/components/Columns'
 import Header from '@/components/Header'
+import Layout from '@/components/Layout'
 import classNames from 'classnames'
+import Head from 'next/head'
+import Image from 'next/image'
 import utilStyles from '../../styles/utils.module.scss'
 
 export default function Articulate() {
@@ -16,7 +16,7 @@ export default function Articulate() {
       <Head>
         <title>Grayson Gantek | Embark</title>
       </Head>
-      <Container className={classNames(utilStyles.articleGrid)}>
+      <Article>
         <div className={classNames(utilStyles.imgMockup)}>
           <Image
             src="/images/embark-website-mockup-01.jpg"
@@ -114,7 +114,7 @@ export default function Articulate() {
             Moving forward, I will consider using TypeScript for most projects.
           </p>
         </Header>
-      </Container>
+      </Article>
     </Layout>
   )
 }

@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Layout from '@/components/Layout'
-import Container from '@/components/Container'
+import Article from '@/components/Article'
 import Columns from '@/components/Columns'
 import Header from '@/components/Header'
+import Layout from '@/components/Layout'
 import classNames from 'classnames'
+import Head from 'next/head'
+import Image from 'next/image'
 import utilStyles from '../../styles/utils.module.scss'
 
 export default function RebuildingPrecisionCreative() {
@@ -16,7 +16,7 @@ export default function RebuildingPrecisionCreative() {
       <Head>
         <title>Grayson Gantek | Working at Precision Creative</title>
       </Head>
-      <Container className={classNames(utilStyles.articleGrid)}>
+      <Article>
         <div className={classNames(utilStyles.imgMockup)}>
           <Image
             src="/images/work-photo-01.jpg"
@@ -93,7 +93,7 @@ export default function RebuildingPrecisionCreative() {
             , for teaching me how to be a valuable member of a team.
           </p>
         </Header>
-      </Container>
+      </Article>
     </Layout>
   )
 }
