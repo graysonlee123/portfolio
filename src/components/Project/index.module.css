@@ -1,6 +1,5 @@
-.imageWrap {
+.image {
   margin-bottom: 1.5rem;
-  perspective: 600px;
 }
 
 .footer {
@@ -10,10 +9,6 @@
 @media (hover: hover) {
   .article:hover .footer a svg {
     transform: translateX(8px);
-  }
-
-  .imageLink {
-    transition: transform 300ms ease;
   }
 
   .footer a svg {
