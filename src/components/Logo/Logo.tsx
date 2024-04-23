@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import classNames from 'classnames'
-import styles from './index.module.css'
+import styles from './Logo.module.css'
 
 const logo = (
   <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">

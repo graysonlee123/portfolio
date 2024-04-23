@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import classNames from 'classnames'
 import Link from 'next/link'
 import Container from '../Container'
-import styles from './index.module.css'
+import styles from './Projects.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 
 export default function Projects({ children, header, home }) {

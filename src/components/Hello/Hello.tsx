@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Container from '../Container'
-import styles from './index.module.css'
+import styles from './Hello.module.css'
 
 import hikingPic from 'public/images/hiking.jpg'
 import laptopPic from 'public/images/laptop-01.jpg'

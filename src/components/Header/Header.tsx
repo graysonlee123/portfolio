@@ -1,7 +1,7 @@
 import ConditionalLink from '@/components/ConditionalLink'
 import classNames from 'classnames'
 import { ReactNode } from 'react'
-import styles from './index.module.css'
+import styles from './Header.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 
 type HeaderProps = {

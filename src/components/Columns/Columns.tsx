@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import styles from './index.module.css'
+import styles from './Columns.module.css'
 
 export default function Columns({ children }) {
   if (!children) return

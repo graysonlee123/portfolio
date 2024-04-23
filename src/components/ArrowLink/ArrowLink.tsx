@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import classNames from 'classnames'
-import styles from './index.module.css'
+import styles from './ArrowLink.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 
 const arrow = (

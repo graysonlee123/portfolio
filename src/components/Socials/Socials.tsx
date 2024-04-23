@@ -1,5 +1,5 @@
 import { PROFILE_GITHUB_URL, PROFILE_LINKEDIN_URL } from 'lib/data/constants'
-import styles from './index.module.css'
+import styles from './Socials.module.css'
 
 const links = [
   {

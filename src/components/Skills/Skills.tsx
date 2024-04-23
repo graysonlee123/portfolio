@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import classNames from 'classnames'
 import throttle from 'lib/utils/throttle'
-import style from './index.module.css'
+import style from './Skills.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 import { MouseEventHandler } from 'react'
 

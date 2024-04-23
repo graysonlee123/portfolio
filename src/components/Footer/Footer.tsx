@@ -3,7 +3,7 @@ import Socials from '@/components/Socials'
 import classNames from 'classnames'
 import { ReactNode } from 'react'
 import Container from '../Container'
-import styles from './index.module.css'
+import styles from './Footer.module.css'
 
 const blob = (
   <svg

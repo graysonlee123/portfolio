@@ -2,7 +2,7 @@ import ArrowLink from '@/components/ArrowLink'
 import Header from '@/components/Header'
 import projectsList from 'lib/data/projects'
 import FloatingImage from '../FloatingImage/FloatingImage'
-import styles from './index.module.css'
+import styles from './Project.module.css'
 
 export default function Project({ slug }) {
   if (!projectsList[slug]) {

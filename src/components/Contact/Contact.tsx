@@ -2,7 +2,7 @@ import ContactForm from '@/components/ContactForm'
 import Header from '@/components/Header'
 import classNames from 'classnames'
 import Image from 'next/image'
-import styles from './index.module.css'
+import styles from './Contact.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 import Container from '../Container'
 
