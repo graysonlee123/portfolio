@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import Container from '../Container'
 import styles from './Hello.module.css'
+import FloatingImage from '../FloatingImage/FloatingImage'
 
 import hikingPic from 'public/images/hiking.jpg'
 import laptopPic from 'public/images/laptop-01.jpg'
-import FloatingImage from '../FloatingImage/FloatingImage'
 
-export default function Hello() {
+export default function Welcome() {
   return (
     <section className={styles.section}>
       <Container size="lg">
