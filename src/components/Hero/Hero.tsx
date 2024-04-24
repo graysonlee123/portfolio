@@ -1,12 +1,10 @@
-import Logo from '@/components/Logo'
 import Socials from '@/components/Socials'
 import classNames from 'classnames'
-import projectList from 'lib/data/projects'
 import { ReactNode } from 'react'
-import styles from './Hero.module.css'
-import utilStyles from '/src/styles/utils.module.scss'
-import { Project } from 'portfolio-types'
 import Container from '../Container'
+import styles from './Hero.module.css'
+import HeroNavigation from './HeroNavigation'
+import utilStyles from '/src/styles/utils.module.scss'
 
 const blob = (
   <svg
@@ -35,71 +33,35 @@ const blob = (
 )
 
 type HeroProps = {
-  project?: keyof typeof projectList
+  navigation?: ReactNode
+  socials?: ReactNode
+  header?: ReactNode
+  body?: ReactNode
+  meta?: ReactNode
   children?: ReactNode
 }
 
-export default function Hero({ children, project }: HeroProps) {
-  const currentProject: Project = projectList[project]
-  const showSocials = !project
-
-  function renderItem(list) {
-    return list.map((item) =>
-      typeof item === 'object' ? (
-        <p key={item.title}>
-          <a
-            className={classNames(utilStyles.textLink)}
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.title}
-          </a>
-        </p>
-      ) : (
-        <p key={item}>{item}</p>
-      )
-    )
-  }
-
+export default function Hero({ navigation, socials, header, body, children }: HeroProps) {
   return (
     <header className={styles.section}>
-      <div className={styles.stripe}>
-        <Container size="lg">
-          <Logo prism inline />
-        </Container>
-      </div>
+      {navigation && <div className={styles.stripe}>{navigation}</div>}
       {blob}
       <Container>
-        <div className={classNames(styles.wrapper)}>
-          {showSocials ? <Socials /> : null}
+        <div className={classNames({ [styles.negativeTopMargin]: !!navigation })}>
+          {socials}
           <h1
             className={classNames(styles.header, utilStyles.headerLouder, utilStyles.textDark)}
-            style={{ marginTop: showSocials ? '2rem' : null }}
+            style={{ marginTop: !!socials ? '2rem' : null }}
           >
-            {children}
+            {header}
           </h1>
-          {currentProject ? <div className={styles.intro}>{currentProject.intro}</div> : null}
-          {currentProject?.items ? (
-            <div className={styles.table}>
-              <div>
-                <p className={classNames([utilStyles.textDark, styles.label])}>Tech stack</p>
-                {renderItem(currentProject.items.techStack)}
-              </div>
-              <div>
-                <p className={classNames([utilStyles.textDark, styles.label])}>Links</p>
-                {renderItem(currentProject.items.links)}
-              </div>
-              <div>
-                <p className={classNames([utilStyles.textDark, styles.label])}>Details</p>
-                {renderItem(currentProject.items.details)}
-              </div>
-            </div>
-          ) : (
-            ''
-          )}
+          {body && <div className={styles.intro}>{body}</div>}
+          {children && <div className={styles.children}>{children}</div>}
         </div>
       </Container>
     </header>
   )
 }
+
+Hero.Navigation = HeroNavigation
+Hero.Socials = Socials

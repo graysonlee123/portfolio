@@ -1,25 +1,17 @@
 import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
+import Project from '@/components/Project'
 import Projects from '@/components/Projects'
 import projectsData from 'lib/data/projects'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { ReactNode } from 'react'
-import Project from '@/components/Project'
 
 type LayoutProps = {
   children?: ReactNode
-  project?: keyof typeof projectsData
   projects?: (keyof typeof projectsData)[]
 }
 
-export default function Layout({ children, project, projects }: LayoutProps) {
-  const router = useRouter()
-  const is404 = router.route === '/404'
-  const isContact = router.route === '/contact'
-  const isHome = router.route === '/'
-
+export default function Layout({ children, projects }: LayoutProps) {
   return (
     <>
       <Head>
@@ -33,24 +25,6 @@ export default function Layout({ children, project, projects }: LayoutProps) {
         <meta name="rating" content="General" />
       </Head>
       <Script src="/js/main.js" strategy="lazyOnload" />
-      <Hero project={project}>
-        {(isHome && (
-          <>
-            <span>Hey, I&apos;m Grayson.</span>{' '}
-            <span>
-              Front-End <em>Developer</em>,
-            </span>{' '}
-            <span>nature lover, amateur traveler.</span>
-          </>
-        )) ||
-          (isContact && <>Get in touch with me</>) ||
-          (project && (projectsData[project].title || 'Title not found')) ||
-          (is404 && (
-            <>
-              Page not found (<em>404</em>)
-            </>
-          ))}
-      </Hero>
       <main>{children}</main>
       <Footer>
         {projects ? (

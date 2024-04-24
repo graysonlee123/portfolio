@@ -1,0 +1,33 @@
+---
+title: "Rebuilding Precision Creative"
+intro: "I have worked at Precision Creative since January of 2020. It started off as a start-up in 2016 with less than a few people, and has since grown. Because of that, our first website was not built by a web developer, which left it heavy, inaccessible, unorganized, and unoptimized. I was tasked with fixing all of those things."
+details: 
+  techStack: ['WordPress', 'PHP', 'Gulp', 'Sass']
+  links: [ { title: 'Visit project', url: 'https://precisioncreative.com/' } ]
+  other: ['Sole developer']
+---
+
+import MdxLayout from '@/components/mdx-layout'
+import heroImage from '/public/images/embark-website-mockup-01.jpg'
+
+## Workflow
+
+The project went through 3 internal phases. Phase 1 was deciding what tech stack to use. In phase 2, I built our custom theme, components, and structure for the site. And finally, in phase 3, we got all of our content added and reviewed the entire site. We then launched, and achieved these great Lighthouse scores.
+
+## Tech stack
+
+During phase 1, we determined that our website needs to be editable by our marketing team. That means we needed a CMS. Since the original site was in WordPress, we decided to stick with it, since it is reliable, open-source, developer friendly, and non-developer friendly.
+
+In phase 2, I created our own "block" system that the marketing team can use with pre-determined components. It's like a custom website builder. This is done with PHP, Sass, and an extendable WordPress plugin called Advanced Custom Fields. These blocks can be added and edited on any page however they needed to be. This means we (the developer team) still have full control over the code that ends up being on the front-end. We're also using an image optimization and sizing CDN, so our team does not need to worry about images having an impact on the site's speed.
+
+## Obstacles
+
+There were a few obstacles faced when working on this project. One of the most difficult things I faced was not having code splitting. Our JavaScript is served globally since it is a pretty small file. However, I decided that splitting up the CSS is to done manually by a developer using Sass modules. Each page has its own Sass file that pulls in the Sass that it needs, and no more. This ensures unused CSS isn't sent to pages where it isn't needed.
+
+## Lessons learned
+
+Besides the code splitting obstacle, there were more lessons to be learned. The most important were making the back-end easy and usable for the team, organizing the custom theme structure, optimization techniques, and lessons about what to do and what not to do for achieving good core web vital scores, including LCP (Largest Contentful Paint), CLS (Cumulative Layout Shift), and FID (First Input Delay). Preloading critical fonts in the head tag, following accessability guidelines, proper image sizing and optimization, and limited third-party scripts drastically help these scores.
+
+export default function ({ children }) {
+  return <MdxLayout heroImage={{ src: heroImage, alt: 'A screenshot of the new website for Precision Creative' }} metadata={frontmatter}>{children}</MdxLayout>
+}

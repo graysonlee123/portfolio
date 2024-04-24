@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Container from '../Container'
-import styles from './Hello.module.css'
+import styles from './Welcome.module.css'
 import FloatingImage from '../FloatingImage/FloatingImage'
 
 import hikingPic from 'public/images/hiking.jpg'

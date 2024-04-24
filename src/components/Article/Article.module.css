@@ -1,12 +1,19 @@
 .article {
-  display: grid;
-  gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
+}
+
+.article h1:not(:first-child),
+.article h2:not(:first-child),
+.article h3:not(:first-child) {
+  margin-top: 6em;
+}
+
+.article p:not(:first-child) {
+  margin-top: 2em;
 }
 
 @media (min-width: 48rem) {
   .article {
-    gap: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);
   }
 }
