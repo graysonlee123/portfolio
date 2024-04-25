@@ -1,8 +1,8 @@
 import ContactForm from '@/components/ContactForm'
-import Header from '@/components/Header'
 import classNames from 'classnames'
 import Container from '../Container'
 import FloatingImage from '../FloatingImage/FloatingImage'
+import Text from '../Text'
 import styles from './Contact.module.css'
 
 import outsidePic from 'public/images/outside.jpg'
@@ -24,12 +24,13 @@ export default function Contact() {
             }}
           />
           <div className={styles.form}>
-            <Header header="Contact" element="h2">
+            <Text>
+              <h2>Contact</h2>
               <p>
                 Get in touch with me if you&apos;re looking for a developer, have a question, or
                 just want to connect.
               </p>
-            </Header>
+            </Text>
             <ContactForm />
           </div>
         </div>

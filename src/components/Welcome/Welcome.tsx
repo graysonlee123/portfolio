@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import Container from '../Container'
-import styles from './Welcome.module.css'
 import FloatingImage from '../FloatingImage/FloatingImage'
+import Text from '../Text'
+import styles from './Welcome.module.css'
 
 import hikingPic from 'public/images/hiking.jpg'
 import laptopPic from 'public/images/laptop-01.jpg'
@@ -35,18 +36,24 @@ export default function Welcome() {
               priority: true,
             }}
           />
-          <p>
-            I&apos;m a motivated and enthusiastic web developer who studied full-stack web
-            development at Georgia Tech&apos;s Web Development Boot Camp.
-          </p>
-          <p>
-            I enjoy learning techniques, methodologies, and best practices. That directly raises the
-            standards I have for my work.
-          </p>
-          <p>
-            I have created many projects throughout my career, during my free time, and in my
-            studies. I&apos;ve wrote about a few of my favorites below.
-          </p>
+          <Text>
+            <p>
+              I&apos;m a motivated and enthusiastic web developer who studied full-stack web
+              development at Georgia Tech&apos;s Web Development Boot Camp.
+            </p>
+          </Text>
+          <Text>
+            <p>
+              I enjoy learning techniques, methodologies, and best practices. That directly raises
+              the standards I have for my work.
+            </p>
+          </Text>
+          <Text>
+            <p>
+              I have created many projects throughout my career, during my free time, and in my
+              studies. I&apos;ve wrote about a few of my favorites below.
+            </p>
+          </Text>
         </div>
       </Container>
     </section>

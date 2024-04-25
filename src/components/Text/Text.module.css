@@ -1,2 +1,39 @@
-.text {
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6 {
+  color: hsl(var(--clr-dark));
+}
+
+.text h1 {
+  font-size: var(--fs-hdr-louder);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6 {
+  font-size: var(--fs-hdr-loud);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.text > p:not(:first-child) {
+  margin-top: 2em;
+}
+
+@media (min-width: 48rem) {
+  .center {
+    text-align: center;
+  }
+
+  /* Horizontally center certain elements that may have a max width set */
+  .center > p {
+    margin-inline: auto;
+  }
 }

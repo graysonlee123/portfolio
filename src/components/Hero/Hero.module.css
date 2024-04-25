@@ -19,10 +19,6 @@
   margin-top: calc(-1 * var(--spacing-3xl));
 }
 
-.socials {
-  margin-bottom: 4rem;
-}
-
 .intro {
   max-width: 80ch;
   margin-top: 2rem;

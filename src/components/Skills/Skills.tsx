@@ -1,9 +1,9 @@
-import Header from '@/components/Header'
 import classNames from 'classnames'
 import throttle from 'lib/utils/throttle'
-import style from './Skills.module.css'
-import utilStyles from '/src/styles/utils.module.scss'
 import { MouseEventHandler } from 'react'
+import Container from '../Container'
+import Text from '../Text'
+import style from './Skills.module.css'
 
 const skills = [
   {
@@ -171,13 +171,14 @@ export default function Skills() {
       onMouseLeave={throttle(handleMouseLeave)}
     >
       {blob}
-      <div className={classNames(utilStyles.containerLg, style.text)}>
-        <Header header="Skills" center>
-          <p>
+      <Container size="lg">
+        <Text center>
+          <h2>Skills</h2>
+          <p style={{ maxWidth: '64ch' }}>
             An emphasis on fundamentals gives me the skills I need in order to succeed at more
             complex technologies, such as frameworks, libraries, and larger concepts.
           </p>
-        </Header>
+        </Text>
         <div className={style.skills}>
           {skills.map(({ name, color, background }) => (
             <span
@@ -189,7 +190,7 @@ export default function Skills() {
             </span>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

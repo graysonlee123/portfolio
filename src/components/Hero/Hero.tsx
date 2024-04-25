@@ -2,9 +2,9 @@ import Socials from '@/components/Socials'
 import classNames from 'classnames'
 import { ReactNode } from 'react'
 import Container from '../Container'
+import Text from '../Text'
 import styles from './Hero.module.css'
 import HeroNavigation from './HeroNavigation'
-import utilStyles from '/src/styles/utils.module.scss'
 
 const blob = (
   <svg
@@ -49,13 +49,12 @@ export default function Hero({ navigation, socials, header, body, children }: He
       <Container>
         <div className={classNames({ [styles.negativeTopMargin]: !!navigation })}>
           {socials}
-          <h1
-            className={classNames(styles.header, utilStyles.headerLouder, utilStyles.textDark)}
-            style={{ marginTop: !!socials ? '2rem' : null }}
-          >
-            {header}
-          </h1>
-          {body && <div className={styles.intro}>{body}</div>}
+          <Text>
+            <h1 className={styles.header} style={{ marginTop: !!socials ? '2rem' : null }}>
+              {header}
+            </h1>
+            {body && <div className={styles.intro}>{body}</div>}
+          </Text>
           {children && <div className={styles.children}>{children}</div>}
         </div>
       </Container>
