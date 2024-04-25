@@ -163,8 +163,6 @@ export default function Skills() {
     })
   }
 
-  const mouseThrottler: MouseEventHandler<HTMLElement> = (e) => {}
-
   return (
     <section
       className={style.section}
