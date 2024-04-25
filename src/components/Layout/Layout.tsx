@@ -1,17 +1,13 @@
 import Footer from '@/components/Footer'
-import Project from '@/components/Project'
-import Projects from '@/components/Projects'
-import projectsData from 'lib/data/projects'
 import Head from 'next/head'
 import Script from 'next/script'
 import { ReactNode } from 'react'
 
 type LayoutProps = {
   children?: ReactNode
-  projects?: (keyof typeof projectsData)[]
 }
 
-export default function Layout({ children, projects }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Head>
@@ -26,15 +22,7 @@ export default function Layout({ children, projects }: LayoutProps) {
       </Head>
       <Script src="/js/main.js" strategy="lazyOnload" />
       <main>{children}</main>
-      <Footer>
-        {projects ? (
-          <Projects header="More projects" home={false}>
-            {projects.map((project) => (
-              <Project slug={project} key={project} />
-            ))}
-          </Projects>
-        ) : null}
-      </Footer>
+      <Footer />
     </>
   )
 }
