@@ -1,5 +1,6 @@
 ---
 title: "Rebuilding Precision Creative"
+summary: "Read about my overall experience and challenges I faced while recreating our website for from scratch."
 intro: "I have worked at Precision Creative since January of 2020. It started off as a start-up in 2016 with less than a few people, and has since grown. Because of that, our first website was not built by a web developer, which left it heavy, inaccessible, unorganized, and unoptimized. I was tasked with fixing all of those things."
 details: 
   techStack: ['WordPress', 'PHP', 'Gulp', 'Sass']
@@ -7,12 +8,12 @@ details:
   other: ['Sole developer']
 ---
 
-import MdxLayout from '@/components/mdx-layout'
+import ProjectLayout from '@/components/ProjectLayout'
 import heroImage from '/public/images/embark-website-mockup-01.jpg'
 
 ## Workflow
 
-The project went through 3 internal phases. Phase 1 was deciding what tech stack to use. In phase 2, I built our custom theme, components, and structure for the site. And finally, in phase 3, we got all of our content added and reviewed the entire site. We then launched, and achieved these great Lighthouse scores.
+<p style={{maxWidth: '70ch'}}>The project went through 3 internal phases. Phase 1 was deciding what tech stack to use. In phase 2, I built our custom theme, components, and structure for the site. And finally, in phase 3, we got all of our content added and reviewed the entire site. We then launched, and achieved these great Lighthouse scores.</p>
 
 ## Tech stack
 
@@ -29,5 +30,10 @@ There were a few obstacles faced when working on this project. One of the most d
 Besides the code splitting obstacle, there were more lessons to be learned. The most important were making the back-end easy and usable for the team, organizing the custom theme structure, optimization techniques, and lessons about what to do and what not to do for achieving good core web vital scores, including LCP (Largest Contentful Paint), CLS (Cumulative Layout Shift), and FID (First Input Delay). Preloading critical fonts in the head tag, following accessability guidelines, proper image sizing and optimization, and limited third-party scripts drastically help these scores.
 
 export default function ({ children }) {
-  return <MdxLayout heroImage={{ src: heroImage, alt: 'A screenshot of the new website for Precision Creative' }} metadata={frontmatter}>{children}</MdxLayout>
+  const image = {
+    src: heroImage,
+    alt: 'A screenshot of the new website for Precision Creative',
+  }
+
+  return <ProjectLayout data={{ frontmatter, image }}>{children}</ProjectLayout>
 }
