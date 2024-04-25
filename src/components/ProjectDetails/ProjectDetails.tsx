@@ -1,19 +1,23 @@
 import PrismLink from '../PrismLink'
+import { ProjectFrontmatterDetails } from '../ProjectLayout/ProjectLayout'
 import styles from './ProjectDetails.module.css'
 
-export type ProjectDetails = {
-  techStack?: string[]
-  links?: {
-    title: string
-    url: string
-  }[]
-  other?: string[]
-}
-
+/**
+ * The props for the ProjectDetails component.
+ */
 type ProjectDetailsProps = {
-  details?: ProjectDetails
+  /**
+   * The details about a project.
+   */
+  details: ProjectFrontmatterDetails
 }
 
+/**
+ * A component used to display details about a project, from its frontmatter.
+ *
+ * @param props - The props for the ProjectDetails component.
+ * @return A tree of elements that conditionally display the details provided.
+ */
 export default function ProjectDetails({ details }: ProjectDetailsProps) {
   if (typeof details !== 'object') return
 
