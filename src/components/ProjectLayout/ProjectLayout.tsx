@@ -116,6 +116,7 @@ export default function ProjectLayout({ data, children }: ProjectLayoutProps) {
               src: image.src,
               alt: image.alt,
               priority: true,
+              quality: 85,
             }}
           />
         </div>

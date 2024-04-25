@@ -1,0 +1,25 @@
+---
+title: "Phasmophobia Helper"
+summary: "An online application tailored for players of the popular ghost hunting game, Phasmophobia."
+intro: "An online application tailored for players of the popular ghost hunting game, Phasmophobia. Built using TypeScript, this tool aids players in identifying different ghost types, thereby improving strategic decision-making during gameplay."
+details: 
+  techStack: ['NextJS', 'TypeScript']
+  links: [ { title: 'Visit project', url: 'https://phasmo.monster' }, { title: 'View code', url: 'https://github.com/graysonlee123/phasmophobia-helper' } ]
+  other: ['Sole developer']
+---
+
+import ProjectLayout from '@/components/ProjectLayout'
+import heroImage from '/public/images/phasmo-screenshot-01.png'
+
+## The idea
+
+Lorem ipsum...
+
+export default function ({ children }) {
+  const image = {
+    src: heroImage,
+    alt: 'A screenshot of Phasmophobia Helper',
+  }
+
+  return <ProjectLayout data={{ frontmatter, image }}>{children}</ProjectLayout>
+}
