@@ -3,7 +3,7 @@ import throttle from 'lib/utils/throttle'
 import { MouseEventHandler } from 'react'
 import Container from '../Container'
 import Text from '../Text'
-import style from './Skills.module.css'
+import styles from './Skills.module.css'
 
 const skills = [
   {
@@ -50,7 +50,7 @@ const skills = [
 
 const blob = (
   <svg
-    className={classNames(['blob', style.blob])}
+    className={classNames(['blob', styles.blob])}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
@@ -165,32 +165,34 @@ export default function Skills() {
 
   return (
     <section
-      className={style.section}
+      className={styles.section}
       onMouseEnter={throttle(handleMouseMove)}
       onMouseMove={throttle(handleMouseMove)}
       onMouseLeave={throttle(handleMouseLeave)}
     >
       {blob}
-      <Container size="lg">
-        <Text center>
-          <h2>Skills</h2>
-          <p style={{ maxWidth: '64ch' }}>
-            An emphasis on fundamentals gives me the skills I need in order to succeed at more
-            complex technologies, such as frameworks, libraries, and larger concepts.
-          </p>
-        </Text>
-        <div className={style.skills}>
-          {skills.map(({ name, color, background }) => (
-            <span
-              className={classNames(style.skill, 'pill')}
-              style={{ color: color, backgroundColor: background }}
-              key={name}
-            >
-              {name}
-            </span>
-          ))}
-        </div>
-      </Container>
+      <div className={styles.wrapper}>
+        <Container size="lg">
+          <Text center>
+            <h2>Skills</h2>
+            <p style={{ maxWidth: '64ch' }}>
+              An emphasis on fundamentals gives me the skills I need in order to succeed at more
+              complex technologies, such as frameworks, libraries, and larger concepts.
+            </p>
+          </Text>
+          <div className={styles.skills}>
+            {skills.map(({ name, color, background }) => (
+              <span
+                className={classNames(styles.skill, 'pill')}
+                style={{ color: color, backgroundColor: background }}
+                key={name}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   )
 }

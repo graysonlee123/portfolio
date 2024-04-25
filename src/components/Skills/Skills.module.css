@@ -15,6 +15,10 @@
   min-height: 32rem;
 }
 
+.wrapper {
+  align-self: center;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
