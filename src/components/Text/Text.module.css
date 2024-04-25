@@ -23,6 +23,15 @@
   font-weight: 700;
 }
 
+.text > * + h1,
+.text > * + h2,
+.text > * + h3,
+.text > * + h4,
+.text > * + h5,
+.text > * + h6 {
+  margin-top: 6em;
+}
+
 .text > p:not(:first-child) {
   margin-top: 2em;
 }
