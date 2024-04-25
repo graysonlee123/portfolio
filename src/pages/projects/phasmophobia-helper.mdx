@@ -15,6 +15,44 @@ import heroImage from '/public/images/phasmo-screenshot-01.png'
 
 Lorem ipsum...
 
+```ts
+interface EmbarkData {
+  groups: EmbarkGroup[]
+}
+
+interface EmbarkGroup {
+  name: string
+  items: EmbarkLink[]
+  icon?: string
+}
+
+interface EmbarkLink {
+  label: string
+  url: string
+  blank?: boolean
+}
+
+interface EmbarkStorageLink extends EmbarkLink {
+  timestamp: number
+}
+```
+
+```ts
+export const getStaticProps: GetStaticProps = async () => {
+  const cwd = process.cwd()
+  const filePath = path.join(cwd, 'data/bookmarks.json')
+  const json = await fsPromises.readFile(filePath)
+  const data: unknown = await JSON.parse(json.toString())
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 10,
+  }
+}
+```
+
 export default function ({ children }) {
   const image = {
     src: heroImage,
