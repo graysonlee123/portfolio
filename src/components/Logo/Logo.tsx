@@ -20,7 +20,7 @@ type LogoProps = {
  * @param props The props for the Logo component.
  * @returns The logo with a link pointing to the homepage.
  */
-export default function Logo({ prism }: LogoProps) {
+export default function Logo({ prism = true }: LogoProps) {
   return (
     <Link
       className={classNames({
