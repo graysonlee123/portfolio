@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ReactNode } from 'react'
+import { HTMLAttributes } from 'react'
 import styles from './Text.module.css'
 
 /**
@@ -14,12 +14,7 @@ type TextProps = {
    * @default false
    */
   center?: boolean
-
-  /**
-   * The text elements or components to be wrapped by the Text component.
-   */
-  children?: ReactNode
-}
+} & HTMLAttributes<HTMLDivElement>
 
 /**
  * A component used to wrap text elements for styling or grouping purposes.
@@ -27,6 +22,6 @@ type TextProps = {
  * @param props - The props for the Text component.
  * @returns A div element with the specified children inside, styled according to the CSS module `Text.module.css`.
  */
-export default function Text({ center = false, children }: TextProps) {
-  return <div className={classNames([styles.text], { [styles.center]: center })}>{children}</div>
+export default function Text({ center = false, ...rest }: TextProps) {
+  return <div className={classNames([styles.text], { [styles.center]: center })} {...rest} />
 }

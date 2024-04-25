@@ -33,8 +33,16 @@ export default function MdxLayout({
         <ProjectDetails details={metadata.details} />
       </Hero>
       <Container size="lg">
-        <FloatingImage imageProps={{ src: heroImage.src, alt: heroImage.alt, priority: true }} />
-        <Text>{children}</Text>
+        <div style={{ marginBottom: 'var(--spacing-3xl)' }}>
+          <FloatingImage
+            imageProps={{
+              src: heroImage.src,
+              alt: heroImage.alt,
+              priority: true,
+            }}
+          />
+        </div>
+        <Text style={{ marginBottom: 'var(--spacing-3xl)' }}>{children}</Text>
       </Container>
     </Layout>
   )

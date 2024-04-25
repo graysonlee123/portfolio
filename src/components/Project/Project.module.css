@@ -2,10 +2,6 @@
   margin-bottom: 1.5rem;
 }
 
-.footer {
-  margin-top: 1rem;
-}
-
 @media (hover: hover) {
   .article:hover .footer a svg {
     transform: translateX(8px);

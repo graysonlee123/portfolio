@@ -30,7 +30,7 @@ export default function Project({ slug }) {
         }}
       />
       <header>
-        <Text>
+        <Text style={{ marginBottom: '1rem' }}>
           <h3>
             <PlainLink href={href}>{title}</PlainLink>
           </h3>
