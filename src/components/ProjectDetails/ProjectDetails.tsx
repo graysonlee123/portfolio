@@ -1,4 +1,4 @@
-import PrismLink from '../PrismLink'
+import Link from '../Link'
 import { ProjectFrontmatterDetails } from '../ProjectLayout/ProjectLayout'
 import styles from './ProjectDetails.module.css'
 
@@ -46,9 +46,9 @@ export default function ProjectDetails({ details }: ProjectDetailsProps) {
 
               return (
                 <div key={item.title}>
-                  <PrismLink href={item.url} target="_blank" rel="noopener">
+                  <Link href={item.url} target="_blank" rel="noopener noreferrer" prism>
                     {item.title}
-                  </PrismLink>
+                  </Link>
                 </div>
               )
             })}

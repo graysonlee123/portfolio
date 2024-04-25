@@ -1,7 +1,7 @@
 import ArrowLink from '@/components/ArrowLink'
 import projectsList from 'lib/data/projects'
 import FloatingImage from '../FloatingImage/FloatingImage'
-import PlainLink from '../PlainLink/PlainLink'
+import Link from '../Link'
 import Text from '../Text'
 import styles from './Project.module.css'
 
@@ -32,7 +32,7 @@ export default function Project({ slug }) {
       <header>
         <Text style={{ marginBottom: '1rem' }}>
           <h3>
-            <PlainLink href={href}>{title}</PlainLink>
+            <Link href={href}>{title}</Link>
           </h3>
           <p style={{ maxWidth: '52ch' }}>{desc}</p>
         </Text>
