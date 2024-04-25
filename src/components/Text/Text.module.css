@@ -10,7 +10,7 @@
 .text h1 {
   font-size: var(--fs-hdr-louder);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .text h2,
@@ -20,7 +20,7 @@
 .text h6 {
   font-size: var(--fs-hdr-loud);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .text > * + h1,
