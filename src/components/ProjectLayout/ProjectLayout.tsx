@@ -1,11 +1,11 @@
 import { StaticImageData } from 'next/image'
-import Container from './Container'
-import FloatingImage from './FloatingImage/FloatingImage'
-import Hero from './Hero'
-import Layout from './Layout'
-import ProjectDetails from './ProjectDetails'
-import { ProjectDetails as ProjectDetailsType } from './ProjectDetails/ProjectDetails'
-import Text from './Text'
+import Container from '../Container'
+import FloatingImage from '../FloatingImage/FloatingImage'
+import Hero from '../Hero'
+import Layout from '../Layout'
+import ProjectDetails from '../ProjectDetails'
+import { ProjectDetails as ProjectDetailsType } from '../ProjectDetails/ProjectDetails'
+import Text from '../Text'
 
 type Metadata = {
   title?: string
@@ -18,7 +18,7 @@ type HeroImage = {
   alt: string
 }
 
-export default function MdxLayout({
+export default function ProjectLayout({
   metadata,
   heroImage,
   children,
