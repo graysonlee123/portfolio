@@ -48,7 +48,7 @@ export default function Footer({ children }: FooterProps) {
               [styles.hasChildren]: children,
             })}
           >
-            <Logo prism inline />
+            <Logo />
             <Socials />
           </div>
         </Container>
