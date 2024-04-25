@@ -1,8 +1,7 @@
 import Container from '@/components/Container'
-import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Layout from '@/components/Layout'
-import classNames from 'classnames'
+import Text from '@/components/Text'
 import Head from 'next/head'
 import Link from 'next/link'
 import utilStyles from '../styles/utils.module.scss'
@@ -22,11 +21,8 @@ export default function Custom404() {
         navigation={<Hero.Navigation />}
       />
       <Container>
-        <Header
-          className={classNames(utilStyles.mt2Xl, utilStyles.mbLg)}
-          header="I could not find that page..."
-          element="h2"
-        >
+        <Text>
+          <h2>That page is missing</h2>
           <p>
             Sorry about that. Go{' '}
             <Link className={utilStyles.textLink} href="/">
@@ -34,7 +30,7 @@ export default function Custom404() {
             </Link>
             ?
           </p>
-        </Header>
+        </Text>
       </Container>
     </Layout>
   )
