@@ -7,6 +7,11 @@ import styles from './Contact.module.css'
 
 import outsidePic from 'public/images/outside.jpg'
 
+/**
+ * A component that renders the contact section of the website.
+ *
+ * @returns Rendered Contact component.
+ */
 export default function Contact() {
   return (
     <section className={classNames(styles.section)}>

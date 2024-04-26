@@ -4,7 +4,7 @@ import Logo from '../Logo'
 /**
  * A component that renders the navigation bar.
  *
- * @returns The rendered HeroNavigation component.
+ * @returns Rendered HeroNavigation component.
  */
 export default function HeroNavigation() {
   return (

@@ -7,6 +7,11 @@ import styles from './Welcome.module.css'
 import hikingPic from 'public/images/hiking.jpg'
 import laptopPic from 'public/images/laptop-01.jpg'
 
+/**
+ * A component that renders the Welcome section of the webstie.
+ *
+ * @returns Rendered Welcome component.
+ */
 export default function Welcome() {
   return (
     <section className={styles.section}>

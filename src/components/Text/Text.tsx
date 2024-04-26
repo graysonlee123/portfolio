@@ -17,10 +17,10 @@ type TextProps = {
 } & HTMLAttributes<HTMLDivElement>
 
 /**
- * A component used to wrap text elements for styling or grouping purposes.
+ * A component that renderes text elements in a wrapper, for styling or grouping purposes.
  *
- * @param props - The props for the Text component.
- * @returns A div element with the specified children inside, styled according to the CSS module `Text.module.css`.
+ * @param props Props for the Text component.
+ * @returns Rendered Text component.
  */
 export default function Text({ center = false, ...rest }: TextProps) {
   return <div className={classNames([styles.text], { [styles.center]: center })} {...rest} />

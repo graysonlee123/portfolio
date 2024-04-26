@@ -32,20 +32,20 @@ const blob = (
 )
 
 /**
- * The props for the Footer component.
+ * Props for the Footer component.
  */
 type FooterProps = {
   /**
-   * The content that appears above the Logo and Socials components.
+   * Content that appears above the Logo and Socials components.
    */
   children?: ReactNode
 }
 
 /**
- * A component that renders the footer for the website.
+ * A component that renders the footer section of the website.
  *
- * @param props The props for the Footer component.
- * @returns The rendered Footer component.
+ * @param props Props for the Footer component.
+ * @returns Rendered Footer component.
  */
 export default function Footer({ children }: FooterProps) {
   return (

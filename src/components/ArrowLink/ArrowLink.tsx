@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import classNames from 'classnames'
+import Link from 'next/link'
 import styles from './ArrowLink.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
 

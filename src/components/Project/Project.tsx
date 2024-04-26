@@ -7,11 +7,11 @@ import Text from '../Text'
 import styles from './Project.module.css'
 
 /**
- * The props for the Project component.
+ * Props for the Project component.
  */
 type ProjectProps = {
   /**
-   * The header/title for the project.
+   * Content displayed in the `h3` tag.
    */
   header: ReactNode
 
@@ -21,23 +21,21 @@ type ProjectProps = {
   href: string
 
   /**
-   * The imported image data for the project.
+   * Image data for the project.
    */
   image?: StaticImageData
 
   /**
-   * The summary for the project.
-   *
-   * Intended to be typography elements that end up in the Text component, such as p tags.
+   * Textual content displayed in the Text component.
    */
   summary?: ReactNode
 }
 
 /**
- * A component that renders images and elements linked to a project.
+ * A component that renders a preview of a project.
  *
- * @param props The props for the Project component.
- * @returns A group of elements including an image, header, summary, and button.
+ * @param props Props for the Project component.
+ * @returns Rendered Project component.
  */
 export default function Project({ header, href, image, summary }: ProjectProps) {
   return (

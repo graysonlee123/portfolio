@@ -33,7 +33,7 @@ const blob = (
 )
 
 /**
- * The props for the Hero component.
+ * Props for the Hero component.
  */
 type HeroProps = {
   /**
@@ -62,7 +62,7 @@ type HeroProps = {
   meta?: ReactNode
 
   /**
-   * Additional children rendered last.
+   * Additional content rendered last.
    */
   children?: ReactNode
 }
@@ -70,8 +70,8 @@ type HeroProps = {
 /**
  * A component that renders the hero section for most of the site's pages.
  *
- * @param props The props for the Hero component.
- * @returns The rendered Hero component.
+ * @param props Props for the Hero component.
+ * @returns Rendered Hero component.
  */
 export default function Hero({ navigation, socials, header, body, children }: HeroProps) {
   return (

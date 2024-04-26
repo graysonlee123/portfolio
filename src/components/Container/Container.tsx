@@ -3,11 +3,11 @@ import { HTMLProps } from 'react'
 import styles from './Container.module.css'
 
 /**
- * The props for the Container component.
+ * Props for the Container component.
  */
 type ContainerProps = {
   /**
-   * The maximum size of the container.
+   * Maximum size of the container.
    *
    * @default md
    */
@@ -15,9 +15,9 @@ type ContainerProps = {
 } & HTMLProps<HTMLDivElement>
 
 /**
- * A layout utility component, used for restraining the maximum width of itself and therefore its children.
+ * A component that renders its content in a restricted-width container.
  *
- * @param props The props for the Container component.
+ * @param props Props for the Container component.
  * @returns A div that has a restricted maximum width.
  */
 export default function Container({ maxWidth = 'md', className, ...rest }: ContainerProps) {

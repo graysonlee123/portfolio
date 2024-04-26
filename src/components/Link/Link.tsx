@@ -8,7 +8,7 @@ import styles from './Link.module.css'
  */
 type LinkProps = {
   /**
-   * Whether or not the link should change color with the user's mouse movement.
+   * Whether or not the link should change color with the site's Prism effect.
    *
    * @default false
    */
@@ -17,10 +17,10 @@ type LinkProps = {
   HTMLProps<HTMLAnchorElement>
 
 /**
- * A component used to strip links of their default styling. The links will inherit their color like any other text.
+ * A component that renders a plainly styled link.
  *
- * @param props The props for the Link component.
- * @return A Next Link component, stripped of default styles.
+ * @param props Props for the Link component.
+ * @return Rendered Link component.
  */
 export default function Link({ prism = false, href, className, ...props }: LinkProps) {
   return (

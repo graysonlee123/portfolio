@@ -38,6 +38,11 @@ const links = [
   },
 ]
 
+/**
+ * A component that renders my social media links.
+ *
+ * @returns Rendered Socials component.
+ */
 export default function Socials() {
   return (
     <div className={styles.flex}>

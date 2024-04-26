@@ -3,20 +3,22 @@ import { ProjectFrontmatterDetails } from '../ProjectLayout/ProjectLayout'
 import styles from './ProjectDetails.module.css'
 
 /**
- * The props for the ProjectDetails component.
+ * Props for the ProjectDetails component.
  */
 type ProjectDetailsProps = {
   /**
-   * The details about a project.
+   * Details about a project.
    */
   details: ProjectFrontmatterDetails
 }
 
 /**
- * A component used to display details about a project, from its frontmatter.
+ * A component that renders details about a project.
  *
- * @param props - The props for the ProjectDetails component.
- * @return A tree of elements that conditionally display the details provided.
+ * Details include the project's tech stack, relevant links, and other misc details.
+ *
+ * @param props Props for the ProjectDetails component.
+ * @return Rendered ProjectDetails component.
  */
 export default function ProjectDetails({ details }: ProjectDetailsProps) {
   if (typeof details !== 'object') return

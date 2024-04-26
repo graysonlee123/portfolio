@@ -3,11 +3,11 @@ import Link from '../Link'
 import styles from './Logo.module.css'
 
 /**
- * The props for the Logo component.
+ * Props for the Logo component.
  */
 type LogoProps = {
   /**
-   * Whether or not the logo should match the site's dynamic color.
+   * Whether or not the logo should match the site's Prism effect.
    *
    * @default true
    */
@@ -15,10 +15,10 @@ type LogoProps = {
 }
 
 /**
- * A component that renders my logo.
+ * A component that renders my logo, linked to the home page.
  *
- * @param props The props for the Logo component.
- * @returns The logo with a link pointing to the homepage.
+ * @param props Props for the Logo component.
+ * @returns Rendered Logo component.
  */
 export default function Logo({ prism = true }: LogoProps) {
   return (

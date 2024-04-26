@@ -8,7 +8,7 @@ import ProjectDetails from '../ProjectDetails'
 import Text from '../Text'
 
 /**
- * Links used in a project's frontmatter, under `details`.
+ * Links used in the details of a project's frontmatter.
  */
 type ProjectFrontmatterLinkDetail = {
   title: string
@@ -16,12 +16,12 @@ type ProjectFrontmatterLinkDetail = {
 }
 
 /**
- * The frontmatter's each individual detail about a project.
+ * Details section of a project's frontmatter.
  */
 type ProjectFrontmatterDetail = string[] | ProjectFrontmatterLinkDetail[]
 
 /**
- * Found in a project's frontmatter, under `details`.
+ * Details sections of a project's frontmatter.
  */
 export type ProjectFrontmatterDetails = {
   techStack?: ProjectFrontmatterDetail
@@ -34,26 +34,26 @@ export type ProjectFrontmatterDetails = {
  */
 type ProjectFrontmatter = {
   /**
-   * The title of the project.
+   * Title of the project.
    */
   title: string
 
   /**
-   * The summary of the project.
+   * Summary of the project.
    *
    * A project's summary should be a short sentence about the project.
    */
   summary: string
 
   /**
-   * The intro of the project.
+   * Intro of the project.
    *
    * A project's intro should be a short paragraph about the project.
    */
   intro: string
 
   /**
-   * The details about a project.
+   * Details about a project.
    *
    * Details include things like the tech stack used, relevant links, and more.
    */
@@ -71,7 +71,7 @@ type ProjectImage = {
 }
 
 /**
- * The data for a project.
+ * Data for a project.
  *
  * Assumes that frontmatter and image values are always present.
  */
@@ -81,25 +81,25 @@ type ProjectData = {
 }
 
 /**
- * The props for the ProjectLayout component.
+ * Props for the ProjectLayout component.
  */
 type ProjectLayoutProps = {
   /**
-   * The data for the project.
+   * Data for the project.
    */
   data: ProjectData
 
   /**
-   * The elements and components for the project's article.
+   * Elements and components for the project's article.
    */
   children?: ReactNode
 }
 
 /**
- * A component that displays the majority of the components and content for a project.
+ * A component that renders a project's layout.
  *
- * @param props - The props for the ProjectLayout component.
- * @returns The layout for the project, including the hero, details, hero image, and content itself.
+ * @param props Props for the ProjectLayout component.
+ * @returns Renderd ProjectLayout component.
  */
 export default function ProjectLayout({ data, children }: ProjectLayoutProps) {
   const { frontmatter, image } = data

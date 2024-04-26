@@ -75,15 +75,36 @@ const blob = (
   </svg>
 )
 
+/**
+ * Mouse position on the horizontal and vertical axis.
+ */
+type MousePosition = {
+  /**
+   * The horizontal position.
+   */
+  x: number
+
+  /**
+   * The vertical position.
+   */
+  y: number
+}
+
+/**
+ * A component tha renders the Skills section.
+ *
+ * @returns Rendered Skills component.
+ */
 export default function Skills() {
   /**
-   * Calculates pill center and sizes the element.
-   * @param {HTMLElement} el The pill to size.
-   * @param {Object} mousePos The position of the cursor.
-   * @param {Int} min The minimum distance.
-   * @param {Int} max The maximum distance.
+   * Calculates pill center and scales the element.
+   *
+   * @param el Pill element to scale.
+   * @param mousePos Position of the cursor.
+   * @param min Minimum distance.
+   * @param max Maximum distance.
    */
-  function sizePill(el, mousePos, min, max) {
+  function sizePill(el: HTMLSpanElement, mousePos: MousePosition, min: number, max: number) {
     const bounds = el.getBoundingClientRect()
     const width = el.offsetWidth
     const height = el.offsetHeight
@@ -103,26 +124,29 @@ export default function Skills() {
   }
 
   /**
-   * Grabs all pills and sizes them.
-   * @param {Object} pos The position of the cursor.
-   * @param {Int} min The minimum distance.
-   * @param {Int} max The maximum distance.
+   * Scales all of the pill elements.
+   *
+   * @param pos The position of the cursor.
+   * @param min The minimum distance.
+   * @param max The maximum distance.
    */
-  function sizePills(pos, min, max) {
-    const pills = document.querySelectorAll('.pill')
+  function sizePills(pos: MousePosition, min: number, max: number) {
+    const pills = document.querySelectorAll<HTMLSpanElement>('.pill')
+
     pills.forEach((pill) => {
       sizePill(pill, pos, min, max)
     })
   }
 
   /**
-   * Gets the value for sizing the pill.
-   * @param {Int} distance The distance the cursor is from the pill center.
-   * @param {Int} min The minimum distance.
-   * @param {Int} max The maximum distance.
-   * @returns {Float} The percentage calculated.
+   * Calculates a value for sizing a pill.
+   *
+   * @param distance Distance the cursor is from the pill's center.
+   * @param min Minimum distance.
+   * @param max Maximum distance.
+   * @returns Percentage calculated.
    */
-  function getScale(distance, min, max) {
+  function getScale(distance: number, min: number, max: number) {
     let percentage
 
     if (distance < min) {
@@ -137,8 +161,9 @@ export default function Skills() {
   }
 
   /**
-   * Handles mouse movement, including entering.
-   * @param {MouseEvent} e The mouse event.
+   * Handles mouse movement.
+   *
+   * @param e The mouse event.
    */
   const handleMouseMove: MouseEventHandler<HTMLElement> = (e) => {
     if (window.matchMedia('(hover: hover)').matches) {
@@ -147,7 +172,7 @@ export default function Skills() {
       const pos = {
         x: e.pageX,
         y: e.pageY,
-      }
+      } satisfies MousePosition
 
       sizePills(pos, min, max)
     }
@@ -155,9 +180,12 @@ export default function Skills() {
 
   /**
    * Handles the mouse leave event.
+   *
+   * @param e The mouse event.
    */
   const handleMouseLeave: MouseEventHandler<HTMLElement> = (e) => {
     const pills = document.querySelectorAll<HTMLElement>('.pill')
+
     pills.forEach((pill) => {
       pill.style.removeProperty('transform')
     })
