@@ -26,7 +26,7 @@ export default function Home() {
       />
       <Intro />
       <Skills />
-      <Projects header="Projects" home>
+      <Projects home>
         <Project
           header="Phasmophobia Helper"
           href="/projects/phasmophobia-helper"
