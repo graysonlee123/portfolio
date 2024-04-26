@@ -1,7 +1,7 @@
 import ArrowLink from '@/components/ArrowLink'
 import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
-import FloatingImage from '../FloatingImage/FloatingImage'
+import FloatingImage from '../FloatingImage'
 import Link from '../Link'
 import Text from '../Text'
 import styles from './Project.module.css'

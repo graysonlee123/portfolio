@@ -1,7 +1,7 @@
 import ContactForm from '@/components/ContactForm'
 import classNames from 'classnames'
 import Container from '../Container'
-import FloatingImage from '../FloatingImage/FloatingImage'
+import FloatingImage from '../FloatingImage'
 import Text from '../Text'
 import styles from './Contact.module.css'
 

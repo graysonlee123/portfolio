@@ -2,33 +2,57 @@ import classNames from 'classnames'
 import throttle from 'lib/utils/throttle'
 import Image, { ImageProps } from 'next/image'
 import Link, { LinkProps } from 'next/link'
-import { ReactNode } from 'react'
+import { MouseEvent, ReactNode } from 'react'
 import styles from './FloatingImage.module.css'
 
+/**
+ * The props for the ImageWrapper component.
+ */
 type ImageWrapperProps = {
+  /**
+   * The LinkProps.
+   *
+   * If falsey, no wrapper will be output.
+   */
   linkProps?: LinkProps
+
+  /**
+   * The children for the ImageWrapper component.
+   *
+   * Intended to be the FloatingImage component.
+   */
   children?: ReactNode
 }
 
+/**
+ * A component that is intented to wrap the FloatingImage component, if `linkProps` are truthy.
+ *
+ * Contains the code for the interactive hovering effect which applies to linked images.
+ *
+ * @param props The props for the ImageWrapper component.
+ * @returns The wrapper element if `linkProps` is truthy, otherwise just its children.
+ */
 function ImageWrapper({ linkProps, children }: ImageWrapperProps) {
   /**
    * Calculates an angle based on one-dimension and current position.
-   * @param {Int} minPos The minimum position.
-   * @param {Int} maxPos The maximum position.
-   * @param {Int} minAng The minimum angle in degrees.
-   * @param {Int} maxAng The maximum angle in degrees.
-   * @param {Int} pos The current position.
-   * @returns {Int} The calculated angle in degrees.
+   *
+   * @param minPos The minimum position.
+   * @param maxPos The maximum position.
+   * @param minAng The minimum angle in degrees.
+   * @param maxAng The maximum angle in degrees.
+   * @param pos The current position.
+   * @returns The calculated angle in degrees.
    */
-  function calcAngle(minPos, maxPos, minAng, maxAng, pos) {
+  function calcAngle(minPos: number, maxPos: number, minAng: number, maxAng: number, pos: number) {
     return ((minAng - maxAng) / (minPos - maxPos)) * (pos - minPos) + minAng
   }
 
   /**
    * Handles the mouse events and calculating angles.
-   * @param {MouseEvent} e The event, either from `mouseenter` or `mousemove`
+   *
+   * @param e The event, either from `mouseenter` or `mousemove`.
    */
-  function handleMouseMove(e) {
+  function handleMouseMove(e: MouseEvent<HTMLAnchorElement>) {
     if (window.matchMedia('(hover: hover)').matches) {
       const target = e.currentTarget
 
@@ -75,14 +99,18 @@ function ImageWrapper({ linkProps, children }: ImageWrapperProps) {
 
   /**
    * Handle the mouse leaving.
-   * @param {MouseEvent} e The mouse event.
+   *
+   * @param e The mouse event.
    */
-  function handleMouseLeave(e) {
+  function handleMouseLeave(e: MouseEvent<HTMLAnchorElement>) {
     const target = e.currentTarget
 
     target.style.removeProperty('transform')
   }
 
+  /**
+   * Render wrapper if `linkProps` is truthy.
+   */
   if (linkProps)
     return (
       <div className={styles.linkWrapper}>
@@ -98,17 +126,52 @@ function ImageWrapper({ linkProps, children }: ImageWrapperProps) {
       </div>
     )
 
+  /**
+   * Otherwise, just render its children.
+   */
   return children
 }
 
+/**
+ * The props for the FloatingImage component.
+ */
 type FloatingImageProps = {
+  /**
+   * The props to be given to the Image component.
+   */
   imageProps: ImageProps
+
+  /**
+   * The props to be given to the wrapper/link component.
+   */
   linkProps?: LinkProps
+
+  /**
+   * Additional classnames.
+   */
   className?: string
+
+  /**
+   * Whether or not the image should be rounded on the corners.
+   *
+   * @default true
+   */
   rounded?: boolean
+
+  /**
+   * Whether or not the image should have a shadow.
+   *
+   * @default true
+   */
   shadow?: boolean
 }
 
+/**
+ * A component that renders an image with default styling and, when passed a link, a hover effect.
+ *
+ * @param props The props for the FloatingImage component.
+ * @returns An image, optionally with a hover effect when a link is provided.
+ */
 export default function FloatingImage({
   imageProps,
   linkProps,

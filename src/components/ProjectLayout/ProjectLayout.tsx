@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
 import Container from '../Container'
-import FloatingImage from '../FloatingImage/FloatingImage'
+import FloatingImage from '../FloatingImage'
 import Hero from '../Hero'
 import Layout from '../Layout'
 import ProjectDetails from '../ProjectDetails'
