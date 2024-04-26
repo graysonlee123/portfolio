@@ -31,10 +31,22 @@ const blob = (
   </svg>
 )
 
+/**
+ * The props for the Footer component.
+ */
 type FooterProps = {
+  /**
+   * The content that appears above the Logo and Socials components.
+   */
   children?: ReactNode
 }
 
+/**
+ * A component that renders the footer for the website.
+ *
+ * @param props The props for the Footer component.
+ * @returns The rendered Footer component.
+ */
 export default function Footer({ children }: FooterProps) {
   return (
     <footer className={styles.footer}>
