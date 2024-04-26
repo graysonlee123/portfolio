@@ -4,8 +4,32 @@ import Container from '../Container'
 import Text from '../Text'
 import styles from './Projects.module.css'
 import utilStyles from '/src/styles/utils.module.scss'
+import { ReactNode } from 'react'
 
-export default function Projects({ children, header, home }) {
+/**
+ * Props for the Projects component.
+ */
+type ProjectsProps = {
+  /**
+   * Whether or not the projects are being viewed on the home page.
+   *
+   * @default false
+   */
+  home?: boolean
+
+  /**
+   * Intended for individual Project components.
+   */
+  children?: ReactNode
+}
+
+/**
+ * A component that renders a grid of projects.
+ *
+ * @param props Props for the Projects component.
+ * @returns Rendered Projects component.
+ */
+export default function Projects({ home = false, children }: ProjectsProps) {
   return (
     <section className={classNames(styles.section)}>
       <Container maxWidth="lg">
