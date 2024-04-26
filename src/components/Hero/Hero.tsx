@@ -32,15 +32,47 @@ const blob = (
   </svg>
 )
 
+/**
+ * The props for the Hero component.
+ */
 type HeroProps = {
+  /**
+   * Content displayed at the top of the Hero component.
+   */
   navigation?: ReactNode
+
+  /**
+   * The content rendered after the navigation.
+   */
   socials?: ReactNode
+
+  /**
+   * The header content displayed inside the `h1` tag.
+   */
   header?: ReactNode
+
+  /**
+   * The content that appears below the header, suitable for the Text component.
+   */
   body?: ReactNode
+
+  /**
+   * Additional information rendered before other children.
+   */
   meta?: ReactNode
+
+  /**
+   * Additional children rendered last.
+   */
   children?: ReactNode
 }
 
+/**
+ * A component that renders the hero section for most of the site's pages.
+ *
+ * @param props The props for the Hero component.
+ * @returns The rendered Hero component.
+ */
 export default function Hero({ navigation, socials, header, body, children }: HeroProps) {
   return (
     <header className={styles.section}>
