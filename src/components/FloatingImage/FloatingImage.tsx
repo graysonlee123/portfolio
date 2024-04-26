@@ -182,12 +182,14 @@ export default function FloatingImage({
   return (
     <ImageWrapper linkProps={linkProps}>
       <div
-        className={classNames({
-          [styles.fill]: imageProps.fill,
-          [styles.rounded]: rounded,
-          [styles.shadow]: shadow,
-          [className]: true,
-        })}
+        className={classNames([
+          {
+            [styles.fill]: imageProps.fill,
+            [styles.rounded]: rounded,
+            [styles.shadow]: shadow,
+          },
+          className,
+        ])}
       >
         <Image {...imageProps} />
       </div>
