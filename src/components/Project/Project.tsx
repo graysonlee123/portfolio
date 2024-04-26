@@ -64,7 +64,7 @@ export default function Project({ header, href, image, summary }: ProjectProps) 
         </Text>
       </header>
       <footer className={styles.footer}>
-        <ArrowLink href={href} label="View project" />
+        <ArrowLink href={href}>View project</ArrowLink>
       </footer>
     </article>
   )
