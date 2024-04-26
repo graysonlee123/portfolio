@@ -109,7 +109,7 @@ export default function ProjectLayout({ data, children }: ProjectLayoutProps) {
       <Hero header={frontmatter.title} body={frontmatter.intro} navigation={<Hero.Navigation />}>
         <ProjectDetails details={frontmatter.details} />
       </Hero>
-      <Container size="lg">
+      <Container maxWidth="lg">
         <div style={{ marginBottom: 'var(--spacing-3xl)' }}>
           <FloatingImage
             imageProps={{

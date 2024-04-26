@@ -8,7 +8,7 @@ import utilStyles from '/src/styles/utils.module.scss'
 export default function Projects({ children, header, home }) {
   return (
     <section className={classNames(styles.section)}>
-      <Container size="lg">
+      <Container maxWidth="lg">
         <Text>
           {home ? (
             <>

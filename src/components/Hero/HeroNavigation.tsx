@@ -3,7 +3,7 @@ import Logo from '../Logo'
 
 export default function HeroNavigation() {
   return (
-    <Container size="lg">
+    <Container maxWidth="lg">
       <Logo />
     </Container>
   )

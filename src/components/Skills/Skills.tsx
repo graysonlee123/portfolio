@@ -172,7 +172,7 @@ export default function Skills() {
     >
       {blob}
       <div className={styles.wrapper}>
-        <Container size="lg">
+        <Container maxWidth="lg">
           <Text center>
             <h2>Skills</h2>
             <p style={{ maxWidth: '64ch' }}>

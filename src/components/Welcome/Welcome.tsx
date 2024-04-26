@@ -10,7 +10,7 @@ import laptopPic from 'public/images/laptop-01.jpg'
 export default function Welcome() {
   return (
     <section className={styles.section}>
-      <Container size="lg">
+      <Container maxWidth="lg">
         <div className={classNames([styles.grid])}>
           <FloatingImage
             className={styles.imageOne}

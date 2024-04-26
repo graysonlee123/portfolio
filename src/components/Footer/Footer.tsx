@@ -40,7 +40,7 @@ export default function Footer({ children }: FooterProps) {
     <footer className={styles.footer}>
       {blob}
       <div className={styles.wrapper}>
-        <Container size="lg">
+        <Container maxWidth="lg">
           {children && <div className={styles.child}>{children}</div>}
           <div
             className={classNames({
