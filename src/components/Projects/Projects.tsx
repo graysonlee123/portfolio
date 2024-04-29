@@ -39,7 +39,7 @@ export default function Projects({ home = false, children }: ProjectsProps) {
               <p style={{ maxWidth: '64ch' }}>
                 I am almost always working on some kind of side project. That allows me to expand my
                 knowledge about my field, and learn about things that I may not normally encounter.
-                Plus, it&apos;s fun!
+                Plus, I enjoy it!
               </p>
             </>
           ) : (
