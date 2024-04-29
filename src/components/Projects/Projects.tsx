@@ -47,7 +47,10 @@ export default function Projects({ home = false, children }: ProjectsProps) {
               <h2>More projects</h2>
               <p style={{ maxWidth: '58ch' }}>
                 If you enjoyed reading about this project, I encourage you to read about some of my
-                other work, or <Link href="/contact">reach out to me</Link>
+                other work, or{' '}
+                <Link href="/contact" prism>
+                  reach out to me
+                </Link>
                 if you&apos;d like to talk.
               </p>
             </>

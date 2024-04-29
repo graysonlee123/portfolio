@@ -23,7 +23,11 @@ export default function Custom404() {
         <Text>
           <h2>That page is missing</h2>
           <p>
-            Sorry about that. Go <Link href="/">back to home</Link>?
+            Sorry about that. Go{' '}
+            <Link href="/" prism>
+              back to home
+            </Link>
+            ?
           </p>
         </Text>
       </Container>
