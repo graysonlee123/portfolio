@@ -1,8 +1,8 @@
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { AppProps } from 'next/app'
 import { Mulish } from 'next/font/google'
-import '/src/styles/global.scss'
 import 'node_modules/highlight.js/styles/github-dark-dimmed.min.css'
+import '/src/styles/global.css'
 
 const mulish = Mulish({
   weight: ['400', '500', '800'],
