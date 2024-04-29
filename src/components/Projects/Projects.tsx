@@ -1,10 +1,9 @@
 import classNames from 'classnames'
-import Link from 'next/link'
+import { ReactNode } from 'react'
 import Container from '../Container'
+import Link from '../Link'
 import Text from '../Text'
 import styles from './Projects.module.css'
-import utilStyles from '/src/styles/utils.module.scss'
-import { ReactNode } from 'react'
 
 /**
  * Props for the Projects component.
@@ -48,10 +47,7 @@ export default function Projects({ home = false, children }: ProjectsProps) {
               <h2>More projects</h2>
               <p style={{ maxWidth: '58ch' }}>
                 If you enjoyed reading about this project, I encourage you to read about some of my
-                other work, or{' '}
-                <Link className={utilStyles.textLink} href="/contact">
-                  reach out to me
-                </Link>{' '}
+                other work, or <Link href="/contact">reach out to me</Link>
                 if you&apos;d like to talk.
               </p>
             </>

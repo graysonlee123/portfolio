@@ -1,10 +1,9 @@
 import Container from '@/components/Container'
 import Hero from '@/components/Hero'
 import Layout from '@/components/Layout'
+import Link from '@/components/Link'
 import Text from '@/components/Text'
 import Head from 'next/head'
-import Link from 'next/link'
-import utilStyles from '../styles/utils.module.scss'
 
 export default function Custom404() {
   return (
@@ -24,11 +23,7 @@ export default function Custom404() {
         <Text>
           <h2>That page is missing</h2>
           <p>
-            Sorry about that. Go{' '}
-            <Link className={utilStyles.textLink} href="/">
-              back to home
-            </Link>
-            ?
+            Sorry about that. Go <Link href="/">back to home</Link>?
           </p>
         </Text>
       </Container>
