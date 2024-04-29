@@ -22,8 +22,7 @@ export default function Contact() {
             imageProps={{
               src: outsidePic,
               alt: 'Me on a patio working on my laptop',
-              sizes:
-                '(min-width: 91.125rem) 46.5rem, (min-width: 48rem) calc(85vw - (85vw / 10) * (2 / 3)), 85vw',
+              sizes: '(min-width: 1440px) 686px, (min-width: 780px) calc(45vw + 47px), 85vw',
               fill: true,
               placeholder: 'blur',
             }}
