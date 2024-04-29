@@ -12,8 +12,8 @@
 }
 
 .shadow {
-  box-shadow: 0 4px 4px hsla(var(--clr-body) / 20%), 0 8px 8px hsla(var(--clr-body) / 15%),
-    0 16px 16px hsla(var(--clr-body) / 10%);
+  box-shadow: 0 4px 4px hsla(var(--clr--body) / 20%), 0 8px 8px hsla(var(--clr--body) / 15%),
+    0 16px 16px hsla(var(--clr--body) / 10%);
 }
 
 .mockup {
@@ -21,8 +21,8 @@
   overflow: hidden;
   border: 1px solid lightgray;
   border-radius: 6px;
-  box-shadow: 0 4px 4px hsla(var(--clr-body) / 20%), 0 8px 8px hsla(var(--clr-body) / 15%),
-    0 16px 16px hsla(var(--clr-body) / 10%);
+  box-shadow: 0 4px 4px hsla(var(--clr--body) / 20%), 0 8px 8px hsla(var(--clr--body) / 15%),
+    0 16px 16px hsla(var(--clr--body) / 10%);
 }
 
 @media (hover: hover) {

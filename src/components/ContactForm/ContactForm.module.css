@@ -6,13 +6,13 @@
 }
 
 .error {
-  color: hsl(var(--clr-danger));
+  color: hsl(var(--clr--danger));
   font-size: var(--fs-sm);
 }
 
 .star {
-  color: hsl(var(--clr-prism-dark));
-  transition: color var(--duration-prism) var(--ease-prism);
+  color: hsl(var(--clr--prism--dark));
+  transition: color var(--duration--prism) var(--ease--prism);
 }
 
 .button {
@@ -20,8 +20,8 @@
   padding: 0.5em 1em;
   font: inherit;
   color: inherit;
-  background-color: hsl(var(--clr-prism-light));
+  background-color: hsl(var(--clr--prism--light));
   border: none;
   cursor: pointer;
-  transition: background-color var(--duration-prism) var(--ease-prism);
+  transition: background-color var(--duration--prism) var(--ease--prism);
 }

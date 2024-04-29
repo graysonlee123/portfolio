@@ -1,6 +1,6 @@
 .section {
-  margin-top: var(--spacing-2xl);
-  margin-bottom: var(--spacing-xl);
+  margin-top: var(--spacing--2xl);
+  margin-bottom: var(--spacing--xl);
 }
 
 .grid {
@@ -14,8 +14,8 @@
 
 @media (min-width: 48rem) {
   .section {
-    margin-top: var(--spacing-3xl);
-    margin-bottom: var(--spacing-3xl);
+    margin-top: var(--spacing--3xl);
+    margin-bottom: var(--spacing--3xl);
   }
 
   .grid {

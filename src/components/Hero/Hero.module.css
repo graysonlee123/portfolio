@@ -1,22 +1,22 @@
 .section {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing--lg);
 }
 
 .stripe {
-  padding-top: var(--spacing-md);
-  padding-bottom: var(--spacing-3xl);
-  background-color: hsl(var(--clr-prism-light));
-  transition: background-color var(--duration-prism) var(--ease-prism);
+  padding-top: var(--spacing--md);
+  padding-bottom: var(--spacing--3xl);
+  background-color: hsl(var(--clr--prism--light));
+  transition: background-color var(--duration--prism) var(--ease--prism);
 }
 
 .header em {
-  color: hsl(var(--clr-prism-dark));
+  color: hsl(var(--clr--prism--dark));
   font-style: inherit;
-  transition: color var(--duration-prism) var(--ease-prism);
+  transition: color var(--duration--prism) var(--ease--prism);
 }
 
 .negativeTopMargin {
-  margin-top: calc(-1 * var(--spacing-3xl));
+  margin-top: calc(-1 * var(--spacing--3xl));
 }
 
 .intro {

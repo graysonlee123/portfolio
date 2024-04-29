@@ -110,7 +110,7 @@ export default function ProjectLayout({ data, children }: ProjectLayoutProps) {
         <ProjectDetails details={frontmatter.details} />
       </Hero>
       <Container maxWidth="lg">
-        <div style={{ marginBottom: 'var(--spacing-3xl)' }}>
+        <div style={{ marginBottom: 'var(--spacing--3xl)' }}>
           <FloatingImage
             imageProps={{
               src: image.src,
@@ -120,7 +120,7 @@ export default function ProjectLayout({ data, children }: ProjectLayoutProps) {
             }}
           />
         </div>
-        <Text style={{ marginBottom: 'var(--spacing-3xl)' }}>{children}</Text>
+        <Text style={{ marginBottom: 'var(--spacing--3xl)' }}>{children}</Text>
       </Container>
     </Layout>
   )

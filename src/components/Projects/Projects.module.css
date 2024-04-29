@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  gap: var(--spacing-lg) 10%;
-  margin-top: var(--spacing-lg);
+  gap: var(--spacing--lg) 10%;
+  margin-top: var(--spacing--lg);
 }
 
 .paragraph {

@@ -1,8 +1,8 @@
 .prism path {
-  fill: hsl(var(--clr-prism-dark));
+  fill: hsl(var(--clr--prism--dark));
   transition-property: fill;
-  transition-duration: var(--duration-prism);
-  transition-timing-function: var(--ease-prism);
+  transition-duration: var(--duration--prism);
+  transition-timing-function: var(--ease--prism);
 }
 
 .svg {
