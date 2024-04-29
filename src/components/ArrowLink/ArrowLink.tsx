@@ -1,8 +1,8 @@
 import classNames from 'classnames'
-import Link, { LinkProps as NextLinkProps } from 'next/link'
-import styles from './ArrowLink.module.css'
-import utilStyles from '/src/styles/utils.module.scss'
 import { HTMLProps } from 'react'
+import Link from '../Link'
+import { LinkProps } from '../Link/Link'
+import styles from './ArrowLink.module.css'
 
 const arrow = (
   <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
@@ -16,7 +16,7 @@ const arrow = (
 /**
  * Props for the ArrowLink component.
  */
-type ArrowLinkProps = {} & NextLinkProps & HTMLProps<HTMLAnchorElement>
+type ArrowLinkProps = {} & LinkProps & HTMLProps<HTMLAnchorElement>
 
 /**
  * A component that renders a link with an arrow.
@@ -26,11 +26,7 @@ type ArrowLinkProps = {} & NextLinkProps & HTMLProps<HTMLAnchorElement>
  */
 export default function ArrowLink({ href, className, children, ...props }: ArrowLinkProps) {
   return (
-    <Link
-      href={href}
-      className={classNames([utilStyles.linkReset, utilStyles.textDark, styles.a, className])}
-      {...props}
-    >
+    <Link href={href} className={classNames([styles.link, className])} {...props}>
       {children}
       {arrow}
     </Link>

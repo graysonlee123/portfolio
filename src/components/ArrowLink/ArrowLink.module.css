@@ -1,8 +1,9 @@
-.a {
+.link {
   display: inline-flex;
   align-items: center;
   gap: 0.875rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.02em;
+  color: hsl(var(--clr-dark));
 }

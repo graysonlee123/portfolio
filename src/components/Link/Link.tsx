@@ -6,7 +6,7 @@ import styles from './Link.module.css'
 /**
  * Props for the Link component.
  */
-type LinkProps = {
+export type LinkProps = {
   /**
    * Whether or not the link should change color with the site's Prism effect.
    *
