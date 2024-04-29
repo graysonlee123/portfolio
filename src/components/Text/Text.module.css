@@ -1,23 +1,23 @@
-.text h1,
-.text h2,
-.text h3,
-.text h4,
-.text h5,
-.text h6 {
+.text > h1,
+.text > h2,
+.text > h3,
+.text > h4,
+.text > h5,
+.text > h6 {
   color: hsl(var(--clr--dark));
 }
 
-.text h1 {
+.text > h1 {
   font-size: var(--fs--2xl);
   line-height: 1.2;
   font-weight: 800;
 }
 
-.text h2,
-.text h3,
-.text h4,
-.text h5,
-.text h6 {
+.text > h2,
+.text > h3,
+.text > h4,
+.text > h5,
+.text > h6 {
   font-size: var(--fs--xl);
   line-height: 1.2;
   font-weight: 800;
@@ -29,24 +29,25 @@
 .text > * + h4,
 .text > * + h5,
 .text > * + h6 {
-  margin-top: 6em;
+  margin-top: var(--spacing--3xl);
 }
 
 .text > p:not(:first-child) {
   margin-top: 2em;
 }
 
-.text > pre {
-}
-
-.text > pre > code {
-  border-radius: 6px;
-  box-shadow: 0 4px 4px hsla(var(--clr--body) / 20%), 0 8px 8px hsla(var(--clr--body) / 15%),
-    0 16px 16px hsla(var(--clr--body) / 10%);
+.text > * + .columns {
+  margin-top: var(--spacing--3xl);
 }
 
 .text > * + pre {
   margin-top: 2em;
+}
+
+.text pre > code {
+  border-radius: 6px;
+  box-shadow: 0 4px 4px hsla(var(--clr--body) / 20%), 0 8px 8px hsla(var(--clr--body) / 15%),
+    0 16px 16px hsla(var(--clr--body) / 10%);
 }
 
 @media (min-width: 48rem) {
