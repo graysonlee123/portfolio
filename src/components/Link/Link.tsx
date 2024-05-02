@@ -19,13 +19,19 @@ export type LinkProps = {
 /**
  * A component that renders a plainly styled link.
  *
+ * The component will automatically add relevant "new tab" attributes if the link is determined to be external.
+ *
  * @param props Props for the Link component.
  * @return Rendered Link component.
  */
-export default function Link({ prism = false, href, className, ...props }: LinkProps) {
+export default function Link({ href, target, rel, className, prism = false, ...props }: LinkProps) {
+  const isExternal = href && href.startsWith('http')
+
   return (
     <NextLink
       href={href}
+      target={target || (isExternal ? '_blank' : undefined)}
+      rel={rel || (isExternal ? 'noopener noreferrer' : undefined)}
       className={classNames([styles.link, { [styles.prism]: prism }, className])}
       {...props}
     />

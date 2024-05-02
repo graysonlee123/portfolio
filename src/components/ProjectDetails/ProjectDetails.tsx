@@ -48,7 +48,7 @@ export default function ProjectDetails({ details }: ProjectDetailsProps) {
 
               return (
                 <div key={item.title}>
-                  <Link href={item.url} target="_blank" rel="noopener noreferrer" prism>
+                  <Link href={item.url} prism>
                     {item.title}
                   </Link>
                 </div>
