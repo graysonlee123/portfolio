@@ -39,13 +39,6 @@ type ProjectFrontmatter = {
   title: string
 
   /**
-   * Summary of the project.
-   *
-   * A project's summary should be a short sentence about the project.
-   */
-  summary: string
-
-  /**
    * Intro of the project.
    *
    * A project's intro should be a short paragraph about the project.

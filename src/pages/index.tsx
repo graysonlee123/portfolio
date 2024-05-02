@@ -33,8 +33,8 @@ export default function Home() {
           href="/projects/phasmophobia-helper"
           image={projectPicPhasmo}
           summary={
-            <p>
-              An online application tailored for players of the popular ghost hunting game,
+            <p style={{ maxWidth: '44ch' }}>
+              An online Next.js application tailored for players of the popular ghost hunting game,
               Phasmophobia.
             </p>
           }
@@ -44,7 +44,7 @@ export default function Home() {
           href="/projects/rebuilding-precision-creative"
           image={projectPicPrecision}
           summary={
-            <p>
+            <p style={{ maxWidth: '52ch' }}>
               My experiences, workflow, and challenges I faced while recreating Precision Creative's
               website for from scratch.
             </p>
