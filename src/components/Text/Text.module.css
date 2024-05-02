@@ -32,7 +32,9 @@
   margin-top: var(--spacing--3xl);
 }
 
-.text > p:not(:first-child) {
+.text > p:not(:first-child),
+.text > ul:not(:first-child),
+.text > ol:not(:first-child) {
   margin-top: 2em;
 }
 

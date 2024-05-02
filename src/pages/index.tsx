@@ -7,6 +7,7 @@ import Skills from '@/components/Skills'
 import Intro from '@/components/Welcome'
 
 import projectPicPhasmo from 'public/images/phasmo-screenshot-01.png'
+import projectPicPrecision from 'public/images/precision-screenshot-01.png'
 
 export default function Home() {
   return (
@@ -35,6 +36,17 @@ export default function Home() {
             <p>
               An online application tailored for players of the popular ghost hunting game,
               Phasmophobia.
+            </p>
+          }
+        />
+        <Project
+          header="Rebuilding Precision Creative"
+          href="/projects/rebuilding-precision-creative"
+          image={projectPicPrecision}
+          summary={
+            <p>
+              My experiences, workflow, and challenges I faced while recreating Precision Creative's
+              website for from scratch.
             </p>
           }
         />

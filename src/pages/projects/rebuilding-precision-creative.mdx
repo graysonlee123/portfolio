@@ -1,33 +1,82 @@
 ---
 title: "Rebuilding Precision Creative"
 summary: "Read about my overall experience and challenges I faced while recreating our website for from scratch."
-intro: "I have worked at Precision Creative since January of 2020. It started off as a start-up in 2016 with less than a few people, and has since grown. Because of that, our first website was not built by a web developer, which left it heavy, inaccessible, unorganized, and unoptimized. I was tasked with fixing all of those things."
+intro: "I rebuilt Precision Creative's initial website, originally built without web development expertise, into a lighter, more accessible, organized, and optimized platform."
 details: 
-  techStack: ['WordPress', 'PHP', 'Gulp', 'Sass']
+  techStack: ['WordPress', 'PHP', 'Gulp', 'Scss']
   links: [ { title: 'Visit project', url: 'https://precisioncreative.com/' } ]
   other: ['Sole developer']
 ---
 
 import ProjectLayout from '@/components/ProjectLayout'
-import heroImage from '/public/images/embark-website-mockup-01.jpg'
+import Columns from '@/components/Columns'
+import Text from '@/components/Text'
+import FloatingImage from '@/components/FloatingImage'
+import heroImage from '/public/images/precision-screenshot-01.png'
+import lighthouseImage from '/public/images/precision-lighthouse-01.png'
 
-## Workflow
+<Columns>
+  <Text>
+    ## Workflow
 
-<p style={{maxWidth: '70ch'}}>The project went through 3 internal phases. Phase 1 was deciding what tech stack to use. In phase 2, I built our custom theme, components, and structure for the site. And finally, in phase 3, we got all of our content added and reviewed the entire site. We then launched, and achieved these great Lighthouse scores.</p>
+    The workflow for the project had three main phases. 
 
-## Tech stack
+    <ol style={{ maxWidth: '80ch' }}>
+        <li><strong>Tech Stack Selection (Phase 1)</strong>: The need for a CMS editable by the marketing team led me to use WordPress for its reliability, openness, and flexibility.</li>
+        <li><strong>Custom Theme Development (Phase 2)</strong>: Created a "block" system using PHP, Sass, and Advanced Custom Fields plugin, empowering the marketing team with pre-defined front-end components for flexible page building.</li>
+        <li><strong>Content Addition and Optimization (Phase 3)</strong>: Ensured content addition and optimization, resulting in exceptional Lighthouse scores and improved SEO.</li>
+    </ol>
+  </Text>
+  <Text>
+    ```php
+    /**
+     * Check to see if the page has blocks.
+     */
+    if (have_rows('blocks')) {
 
-During phase 1, we determined that our website needs to be editable by our marketing team. That means we needed a CMS. Since the original site was in WordPress, we decided to stick with it, since it is reliable, open-source, developer friendly, and non-developer friendly.
+      /**
+       * Loop through each block.
+       */
+      while (have_rows('blocks')) {
+        the_row();
 
-In phase 2, I created our own "block" system that the marketing team can use with pre-determined components. It's like a custom website builder. This is done with PHP, Sass, and an extendable WordPress plugin called Advanced Custom Fields. These blocks can be added and edited on any page however they needed to be. This means we (the developer team) still have full control over the code that ends up being on the front-end. We're also using an image optimization and sizing CDN, so our team does not need to worry about images having an impact on the site's speed.
+        /**
+         * Render the blocks.
+         * 
+         * Each block will pull in data from the CMS, populate the data
+         * into the template, and display itself. 
+         */
+        if ('text' === get_row_layout()) {
+          echo get_template_part('blocks/text.php');
+        } elseif ('image' === get_row_layout()) {
+          echo get_template_part('blocks/image.php');
+        };
+      };
+    };
+    ```
+  </Text>
+</Columns>
 
-## Obstacles
+<Columns>
+  <Text>
+    <FloatingImage
+      imageProps={{
+        src: lighthouseImage,
+        alt: 'asdf'
+      }}
+    />
+  </Text>
+  <Text>
+    ## Obstacles
 
-There were a few obstacles faced when working on this project. One of the most difficult things I faced was not having code splitting. Our JavaScript is served globally since it is a pretty small file. However, I decided that splitting up the CSS is to done manually by a developer using Sass modules. Each page has its own Sass file that pulls in the Sass that it needs, and no more. This ensures unused CSS isn't sent to pages where it isn't needed.
+    The absence of code splitting posed a challenge, addressed by manually segmenting CSS using Sass modules and implementation of efficient caching resulted in efficient resource delivery tailored to each page's needs.
+  </Text>
+</Columns>
+
 
 ## Lessons learned
 
-Besides the code splitting obstacle, there were more lessons to be learned. The most important were making the back-end easy and usable for the team, organizing the custom theme structure, optimization techniques, and lessons about what to do and what not to do for achieving good core web vital scores, including LCP (Largest Contentful Paint), CLS (Cumulative Layout Shift), and FID (First Input Delay). Preloading critical fonts in the head tag, following accessability guidelines, proper image sizing and optimization, and limited third-party scripts drastically help these scores.
+<p style={{ maxWidth: '74ch' }}>Key takeaways included simplifying backend usability for the marketing team, structuring the custom theme effectively, and implementing optimization techniques to enhance core web vital scores like LCP, CLS, and FID. Strategies such as preloading critical fonts, adhering to accessibility guidelines, optimizing images, caching, and limiting third-party scripts significantly contributed to improved performance metrics.</p>
 
 export default function ({ children }) {
   const image = {

@@ -23,30 +23,32 @@ import heroImage from '/public/images/phasmo-screenshot-01.png'
     
     The application is built using Next.js and TypeScript. Instead of traditional Redux, Zustand, a lightweight state management library, is utilized for managing the application's store. Other notable features of the tech stack include local storage preferences, custom Google Analytics events, and a "limited evidence mode" useful for the game's harder game modes.
   </Text>
-  ```ts
-  export default function usePossibleGhosts() {
-    const ghosts = ghostData as Ghost[]
-    const checkedEvidences = useCheckedEvidences()
-    const disabledEvidences = useDisabledEvidences()
+  <Text>
+    ```ts
+    export default function usePossibleGhosts() {
+      const ghosts = ghostData as Ghost[]
+      const checkedEvidences = useCheckedEvidences()
+      const disabledEvidences = useDisabledEvidences()
 
-    return useMemo(() => {
-      return ghosts.filter((ghost) => {
-        let passed = true
-        const ghostEvidences = [...ghost.evidences, ...(ghost.falseEvidences ?? [])]
+      return useMemo(() => {
+        return ghosts.filter((ghost) => {
+          let passed = true
+          const ghostEvidences = [...ghost.evidences, ...(ghost.falseEvidences ?? [])]
 
-        checkedEvidences.forEach((evidence) => {
-          if (!arrayContains(evidence, ghostEvidences)) passed = false
+          checkedEvidences.forEach((evidence) => {
+            if (!arrayContains(evidence, ghostEvidences)) passed = false
+          })
+
+          disabledEvidences.forEach((evidence) => {
+            if (arrayContains(evidence, ghostEvidences)) passed = false
+          })
+
+          return passed
         })
-
-        disabledEvidences.forEach((evidence) => {
-          if (arrayContains(evidence, ghostEvidences)) passed = false
-        })
-
-        return passed
-      })
-    }, [ghosts, checkedEvidences, disabledEvidences])
-  }
-  ```
+      }, [ghosts, checkedEvidences, disabledEvidences])
+    }
+    ```
+  </Text>
 </Columns>
 
 <Columns>
