@@ -2,17 +2,18 @@
 title: "Rebuilding Precision Creative"
 intro: "I rebuilt Precision Creative's initial website, originally built without web development expertise, into a lighter, more accessible, organized, and optimized platform."
 details: 
-  techStack: ['WordPress', 'PHP', 'Gulp', 'Scss']
+  techStack: [ 'WordPress', 'PHP', 'Gulp', 'Scss' ]
   links: [ { title: 'Visit project', url: 'https://precisioncreative.com/' } ]
-  other: ['Sole developer']
+  other: [ 'Sole developer' ]
 ---
 
 import ProjectLayout from '@/components/ProjectLayout'
 import Columns from '@/components/Columns'
 import Text from '@/components/Text'
 import FloatingImage from '@/components/FloatingImage'
-import heroImage from '/public/images/precision-screenshot-01.png'
-import lighthouseImage from '/public/images/precision-lighthouse-01.png'
+
+import firstScreenshot from '/public/images/precision-screenshot-01.png'
+import secondScreenshot from '/public/images/precision-screenshot-01.png'
 
 <Columns>
   <Text>
@@ -60,7 +61,7 @@ import lighthouseImage from '/public/images/precision-lighthouse-01.png'
   <Text>
     <FloatingImage
       imageProps={{
-        src: lighthouseImage,
+        src: secondScreenshot,
         alt: 'asdf'
       }}
     />
@@ -79,8 +80,8 @@ import lighthouseImage from '/public/images/precision-lighthouse-01.png'
 
 export default function ({ children }) {
   const image = {
-    src: heroImage,
-    alt: 'A screenshot of the new website for Precision Creative',
+    src: firstScreenshot,
+    alt: 'A screenshot of the new front page for Precision Creative',
   }
 
   return <ProjectLayout data={{ frontmatter, image }}>{children}</ProjectLayout>

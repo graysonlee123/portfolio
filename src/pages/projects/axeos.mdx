@@ -1,0 +1,132 @@
+---
+title: "axeOS"
+intro: "Built for an Axe Throwing company, a full-stack application composed of a Next.js front-end and a custom Node back-end."
+details: 
+  techStack: [ 'NextJS', 'Web sockets', 'TypeScript', 'Zustand', 'NodeJS' ]
+  links: [ { title: 'Client code', url: 'https://github.com/graysonlee123/axeos-client' }, { title: 'Server code', url: 'https://github.com/graysonlee123/axeos-server' } ]
+  other: [ 'Sole developer' ]
+---
+
+import ProjectLayout from '@/components/ProjectLayout'
+import Columns from '@/components/Columns'
+import Text from '@/components/Text'
+import FloatingImage from '@/components/FloatingImage'
+
+import firstScreenshot from '/public/images/axeos-screenshot-01.png'
+import secondScreenshot from '/public/images/axeos-screenshot-02.png'
+
+## The idea
+
+<p style={{ maxWidth: '78ch' }}>"axeOS" is a comprehensive full-stack software solution developed for an axe throwing company that utilizes projectors to display targets and scores. Divided into server and client components, the software enhances the customer experience by providing lane selection, customizable game modes, personalized player profiles, staff management tools, and more.</p>
+
+<Columns>
+  <Text>
+    ## Tech stack
+
+    axeOS utilizes web sockets in order to quickly transmit information between the clients and the server. 
+
+    <ul>
+      <li><strong>Server</strong>: Runs with a custom Node server. The backend efficiently handles web socket requests and responses, ensuring seamless communication between components.</li>
+      <li><strong>Client</strong>: Built with Next.js, TypeScript, and Zustand, the frontend offers a responsive and intuitive user interface, facilitating easy navigation and interaction.</li>
+    </ul>
+  </Text>
+  <Text>
+    ```js
+    var express = require('express')
+    var path = require('path')
+    var cookieParser = require('cookie-parser')
+    var cors = require('cors')
+
+    require('./cleanup')()
+
+    var targetsRouter = require('./routes/targets')
+
+    var app = express()
+
+    app.use(cors())
+    app.use(express.json())
+    app.use(express.urlencoded({ extended: false }))
+    app.use(cookieParser())
+    app.use(express.static(path.join(__dirname, 'public')))
+
+    app.use('/targets', targetsRouter)
+
+    /** Error responder. */
+    app.use((error, req, res, next) => {
+      console.log(new Date(), `(${req.ip} ${req.url})`, '\x1b[31m', error)
+
+      res.status(error.status ?? 500).json({ message: error.message })
+    })
+
+    module.exports = app
+    ```
+  </Text>
+</Columns>
+
+## Features
+
+<ul style={{ maxWidth: '92ch' }}>
+  <li><strong>Lane Selection</strong>: Allows users to choose their desired axe throwing lane.</li>
+  <li><strong>Player Profiles</strong>: Provides users with the ability to create profiles for their session.</li>
+  <li><strong>Custom Targets</strong>: Enables users to define and select custom targets for a personalized experience.</li>
+  <li><strong>Staff Portal</strong>: Equips staff with tools for managing lanes, monitoring activity, and providing assistance.</li>
+  <li><strong>Timer</strong>: Incorporates a timer feature for regulating game sessions.</li>
+  <li><strong>Custom Game Modes</strong>: Offers flexibility with customizable game modes to suit different preferences.</li>
+  <li><strong>Custom Photo Upload</strong>: Enables users to upload their own photos to use as targets, enhancing personalization. Staff members need to approve the photos before they can be selected.</li>
+</ul>
+
+<Columns>
+  <Text>
+    ```ts
+    export function useSocketRequest() {
+      const socket = useSocket()
+
+      return async <T>(emitEventName: string, successEventName: string, payload: T) => {
+        return new Promise<T>((resolve, reject) => {
+          try {
+            if (null === socket) throw new Error('The socket has not been initialized.')
+            if (!socket.connected) throw new Error('There is no connection to the server.')
+
+            const handleResolve = (payload: T, timeout: NodeJS.Timeout) => {
+              resolve(payload)
+              clearTimeout(timeout)
+            }
+
+            const handleSuccessEvent = (payload: T) => handleResolve(payload, timeout)
+
+            const timeout = setTimeout(() => {
+              socket?.off(successEventName, handleSuccessEvent)
+              reject('Sorry, there was an issue making sure that request went through.')
+            }, 3000)
+
+            socket.once(successEventName, handleSuccessEvent)
+            socket.emit(emitEventName, payload)
+          } catch (error) {
+            reject('Sorry, there was an issue making sure that request went through. Please try again.')
+            console.error(error)
+          }
+        })
+      }
+    }
+    ```
+  </Text>
+  <Text>
+    ## Implementation
+
+    Designed to operate with one central server per location, axeOS synchronizes each axe throwing lane with its corresponding scoreboard and selected target, ensuring consistent and synchronized gameplay experiences across all lanes.
+  </Text>
+</Columns>
+
+
+## Obstacles
+
+<p style={{ maxWidth: '74ch' }}>The primary challenge encountered during development was managing the scale of the project. Balancing the addition of new features with the refinement of existing ones required effective communication and meticulous planning to ensure smooth implementation.</p>
+
+export default function ({ children }) {
+  const image = {
+    src: firstScreenshot,
+    alt: 'A screenshot of the axeOS client in action',
+  }
+
+  return <ProjectLayout data={{ frontmatter, image }}>{children}</ProjectLayout>
+}
