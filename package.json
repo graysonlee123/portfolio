@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "spelling": "cspell --gitignore **/*.{js,md}"
+    "spelling": "cspell --gitignore **/*.{js,jsx,ts,tsx,md,mdx}"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.3",

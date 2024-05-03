@@ -8,7 +8,7 @@ import hikingPic from 'public/images/hiking.jpg'
 import laptopPic from 'public/images/laptop-01.jpg'
 
 /**
- * A component that renders the Welcome section of the webstie.
+ * A component that renders the Welcome section of the website.
  *
  * @returns Rendered Welcome component.
  */

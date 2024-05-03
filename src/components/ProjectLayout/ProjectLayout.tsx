@@ -92,7 +92,7 @@ type ProjectLayoutProps = {
  * A component that renders a project's layout.
  *
  * @param props Props for the ProjectLayout component.
- * @returns Renderd ProjectLayout component.
+ * @returns Rendered ProjectLayout component.
  */
 export default function ProjectLayout({ data, children }: ProjectLayoutProps) {
   const { frontmatter, image } = data

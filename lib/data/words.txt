@@ -1,7 +1,13 @@
 # New Words
 apos
+axeos
+Bagmart
 didn
+ecommerce
+falsey
 formspree
+frontmatter
+gameplay
 Gantek
 Grayson
 Huffling
@@ -9,5 +15,8 @@ Klekot
 noopener
 noreferrer
 Nuxt
-xnqwwwrq
+Phasmo
+Phasmophobia
 unoptimized
+xnqwwwrq
+Zustand

@@ -17,7 +17,7 @@ type TextProps = {
 } & HTMLAttributes<HTMLDivElement>
 
 /**
- * A component that renderes text elements in a wrapper, for styling or grouping purposes.
+ * A component that renders text elements in a wrapper, for styling or grouping purposes.
  *
  * @param props Props for the Text component.
  * @returns Rendered Text component.
