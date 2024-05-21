@@ -7,10 +7,15 @@ import styles from './ContactForm.module.css'
  * @returns Rendered ContactForm component.
  */
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm('xnqwwwrq')
+  const [state, handleSubmit] = useForm('contact')
 
   if (state.succeeded) {
-    return <p>Thanks for reaching out! I&apos;ll be in touch soon.</p>
+    return (
+      <div className={styles.success}>
+        Thanks for reaching out! <br />
+        I&apos;ll be in touch soon.
+      </div>
+    )
   }
 
   return (
@@ -20,10 +25,8 @@ export default function ContactForm() {
       style={{ opacity: state.submitting ? 0.6 : null }}
     >
       <fieldset>
-        <label htmlFor="name">
-          Name <span className={styles.star}>*</span>
-        </label>
-        <input id="name" type="text" name="name" maxLength={100} required />
+        <label htmlFor="name">Name</label>
+        <input id="name" type="text" name="name" maxLength={100} />
         <ValidationError
           className={styles.error}
           prefix="Name"

@@ -1,4 +1,5 @@
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { FormspreeProvider } from '@formspree/react'
 import { AppProps } from 'next/app'
 import { Mulish } from 'next/font/google'
 import 'node_modules/highlight.js/styles/github-dark-dimmed.min.css'
@@ -14,7 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={mulish.className}>
       <GoogleAnalytics />
-      <Component {...pageProps} />
+      <FormspreeProvider project="2477105883054603283">
+        <Component {...pageProps} />
+      </FormspreeProvider>
     </div>
   )
 }

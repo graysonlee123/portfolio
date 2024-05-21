@@ -7,6 +7,7 @@
   --clr--body: 0 0% 40%;
   --clr--dark: 0 0% 10%;
   --clr--success: 126 50% 55%;
+  --clr--success--light: 126 50% 90%;
   --clr--danger: 10 70% 50%;
   --clr--prism--dark: var(--hue, 126) var(--saturation, 50%) 40%;
   --clr--prism--light: var(--hue, 126) var(--saturation, 50%) 90%;

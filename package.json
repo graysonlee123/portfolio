@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.3",
-    "@formspree/react": "^2.2.5",
+    "@formspree/react": "^2.5.1",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.2",
