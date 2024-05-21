@@ -1,0 +1,13 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Contact Form",
+      "fields": {
+        "name": { "type": "text", "maxlength": 50 },
+        "email": { "type": "email", "required": true },
+        "message": { "type": "text", "required": true, "maxlength": 500 }
+      },
+      "actions": [{ "type": "email", "to": "graysonleegantek@gmail.com" }]
+    }
+  }
+}

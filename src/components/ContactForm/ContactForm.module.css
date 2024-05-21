@@ -25,3 +25,15 @@
   cursor: pointer;
   transition: background-color var(--duration--prism) var(--ease--prism);
 }
+
+.success {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  color: hsl(var(--clr--success));
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: hsl(var(--clr--success--light));
+  border-width: 2px;
+  border-style: solid;
+  border-color: currentColor;
+}
