@@ -1,0 +1,33 @@
+---
+type Props = SEOProps
+
+const { title, description, noIndex } = Astro.props as Props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<title>{title}</title>
+
+{noIndex && (
+  <meta name="robots" content="noindex" />
+)}
+
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonical} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="Vacations with Character" />
+<meta property="og:locale" content="en_US" />
+<!-- TODO: Add image -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<!-- TODO: Add image -->

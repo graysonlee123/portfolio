@@ -1,1 +1,5 @@
-// Custom types declarations
+declare type SEOProps = {
+  title: string
+  description: string
+  noIndex?: boolean
+}
