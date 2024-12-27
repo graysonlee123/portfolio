@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'a'> {
+  prism?: boolean;
+}
+
+const { prism = false, class: className, ...rest } = Astro.props
+---
+
+<a class:list={[{prism}, className]} {...rest} >
+  <slot/>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .prism {
+    color: hsl(var(--hue, 250), 60%, 30%);
+    font-weight: 700;
+    transition-property: color;
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
+  }
+</style>
