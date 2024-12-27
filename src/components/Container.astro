@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'div'> & {
+  size?: 'sm' | 'md' | 'lg'
+}
+
+const { size = 'md', class: className, ...rest } = Astro.props as Props
+const sizeClass = 'container--' + size
+---
+
+<div class:list={['container', sizeClass, className]} {...rest}>
+  <slot/>
+</div>
+
+<style>
+  .container {
+    margin-inline: auto;
+  }
+
+  .container--sm {
+    max-width: min(65.5rem, 85vw);
+  }
+
+  .container--md {
+    max-width: min(71.5rem, 85vw);
+  }
+
+  .container--lg {
+    max-width: min(77.5rem, 85vw);
+  }
+</style>
