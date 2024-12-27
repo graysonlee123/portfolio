@@ -4,7 +4,7 @@
   "dictionaryDefinitions": [
     {
       "name": "words",
-      "path": "./lib/data/words.txt",
+      "path": "./src/lib/dictionary.txt",
       "addWords": true
     }
   ],
