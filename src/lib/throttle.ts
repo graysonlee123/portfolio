@@ -1,15 +1,12 @@
-/**
- * Limits how often a function can be called.
- */
-export default function throttle(cb: (...args: any[]) => void, wait = 100) {
+const throttle = (cb: () => void, wait: number = 100): (() => void) => {
   let time = Date.now()
 
-  function throttler(...args: any[]) {
+  return function (...args) {
     if (time + wait - Date.now() < 0) {
       cb(...args)
       time = Date.now()
     }
   }
-
-  return throttler
 }
+
+export default throttle
