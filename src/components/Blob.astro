@@ -35,12 +35,12 @@ const { flip } = Astro.props as Props
 
 <style>
   .blob {
-    --translate-y: 1px;
     --scale-x: 1;
+    --scale-y: 1;
 
     width: 100%;
     height: auto;
-    transform: scaleX(var(--scale-x)) translateY(var(--translate-y));
+    transform: scale(var(--scale-x), var(--scale-y)) translateY(1px);
   }
 
   .blob path:nth-child(1) {
@@ -59,7 +59,7 @@ const { flip } = Astro.props as Props
   }
 
   .blob[data-flip-y="true"] {
-    --scale-y: -1px;
+    --scale-y: -1;
   }
 
   .blob[data-flip-x="true"] {
