@@ -45,6 +45,33 @@
   }
 }
 
+/* Fonts */
+
+@font-face {
+  font-display: swap;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/mulish-v13-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/mulish-v13-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/mulish-v13-latin-800.woff2') format('woff2');
+}
+
+
 /* Resets */
 
 *,
@@ -60,6 +87,7 @@ body {
 }
 
 body {
+  font-family: 'Mulish', sans-serif;
   line-height: 1.6;
   color: hsl(var(--clr--body));
   -webkit-font-smoothing: antialiased;
@@ -143,33 +171,4 @@ label {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.02em;
-}
-
-/* Blobs */
-
-.blob {
-  position: relative;
-  z-index: -1;
-  height: auto;
-}
-
-.blob path {
-  fill: hsl(var(--clr--prism--light));
-  transition: fill var(--duration--prism) var(--ease--prism);
-}
-
-.blob path[opacity='0.25'] {
-  fill: hsl(var(--clr--prism--light-2));
-}
-
-.blob path[opacity='0.5'] {
-  fill: hsl(var(--clr--prism--light-3));
-}
-
-.blob--bottom {
-  transform: translateY(-1px);
-}
-
-.blob--top {
-  transform: translateY(1px);
 }
