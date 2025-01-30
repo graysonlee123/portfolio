@@ -18,8 +18,32 @@ const { seoProps: { title, description, noIndex } } = Astro.props as Props;
     <SEO title={title} description={description} noIndex={noIndex} />
   </head>
   <body>
-    <Header />
-    <slot />
-    <Footer />
+    <Header/>
+    <slot/>
+    <Footer/>
   </body>
 </html>
+
+<script>
+  import throttle from '../lib/throttle.ts';
+
+  const root = document.documentElement
+
+  /**
+   * Handles changing page's prism color based on a mouse event.
+   * 
+   * @param e Mouse event.
+   */
+  const handleMouseMove = ({pageX, pageY}: MouseEvent) => {
+    const {innerHeight, outerWidth, scrollY} = window
+    const hue = Math.floor((pageX / outerWidth) * 360)
+    const saturation = Math.floor(((pageY - scrollY) / innerHeight) * 100) * 0.6 + 20
+
+    root.style.setProperty('--hue', `${hue}`)
+    root.style.setProperty('--hue-offset-2', `${Math.abs(hue + 10) % 360}`)
+    root.style.setProperty('--hue-offset-3', `${Math.abs(hue + 20) % 360}`)
+    root.style.setProperty('--saturation', `${saturation}%`)
+  }
+
+  document.addEventListener('mousemove', throttle(handleMouseMove))
+</script>
