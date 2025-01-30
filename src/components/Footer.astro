@@ -1,3 +1,35 @@
-<footer>
-  Footer
+---
+import Blob from "@components/Blob.astro";
+import Container from "@components/Container.astro";
+import Logo from "@components/Logo.astro";
+import SocialMedia from "@components/SocialMedia.astro";
+---
+
+<Blob flip={{horizontal: true}}/>
+<footer class="footer">
+  <Container>
+    <div class="layout">
+      <span>
+        <Logo/>
+      </span>
+      <SocialMedia/>
+    </div>
+  </Container>
 </footer>
+
+<style>
+  .footer {
+    padding-bottom: var(--spacing--md);
+    background-color: hsl(var(--clr--prism--light));
+    transition-property: background-color;
+    transition-duration: var(--duration--prism);
+    transition-timing-function: var(--ease--prism);
+  }
+
+  .layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+  }
+</style>
