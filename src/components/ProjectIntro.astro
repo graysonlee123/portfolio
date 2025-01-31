@@ -1,14 +1,14 @@
 ---
 import Container from "@components/Container.astro";
 import Heading from "@components/Heading.astro";
-import type { TechStack, Links, Details } from "../content.config.ts";
+import type { Project } from "src/content.config";
 
 type Props = {
   title: string
   intro?: string
-  techStack: TechStack
-  links: Links
-  details: Details
+  techStack: Project['data']['techStack']
+  links: Project['data']['links']
+  details: Project['data']['details']
 }
 
 const {title, intro, techStack, links, details} = Astro.props

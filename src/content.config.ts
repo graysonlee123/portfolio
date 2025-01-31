@@ -1,27 +1,17 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z, type CollectionEntry, type InferEntrySchema } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-export const TechStackSchema = z.string().array().optional()
-export type TechStack = z.infer<typeof TechStackSchema>
-
-export const LinksSchema = z.object({
-  text: z.string(),
-  url: z.string().url(),
-}).array().optional()
-export type Links = z.infer<typeof LinksSchema>
-
-export const DetailsSchema = z.string().array().optional()
-export type Details = z.infer<typeof DetailsSchema>
-
-export const ProjectSchema = z.object({
+const ProjectSchema = z.object({
   title: z.string(),
   description: z.string(),
   intro: z.string().optional(),
-  techStack: TechStackSchema,
-  links: LinksSchema,
-  details: DetailsSchema,
+  techStack: z.string().array().optional(),
+  links: z.object({
+    text: z.string(),
+    url: z.string().url(),
+  }).array().optional(),
+  details: z.string().array().optional(),
 })
-export type Project = z.infer<typeof ProjectSchema>
 
 const projects = defineCollection({
   loader: glob({
@@ -30,5 +20,7 @@ const projects = defineCollection({
   }),
   schema: ProjectSchema,
 })
+
+export type Project = CollectionEntry<'projects'>
 
 export const collections = { projects }
