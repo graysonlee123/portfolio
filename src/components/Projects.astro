@@ -1,0 +1,29 @@
+---
+import Container from "@components/Container.astro";
+import Heading from "@components/Heading.astro";
+import { getCollection } from "astro:content";
+import Project from "@components/Project.astro";
+
+const projects = await getCollection('projects')
+---
+
+<Container>
+  <Heading element="h2">Projects</Heading>
+  <p class="description">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nulla rem ut voluptatum, sed perspiciatis ullam natus delectus eum ipsum? Similique expedita aperiam totam. Ut.
+  </p>
+  <ul>
+    {projects.map((project) => (
+      <li>
+        <Project project={project}/>
+      </li>
+    ))}
+  </ul>
+</Container>
+
+<style>
+  .description {
+    max-width: 60ch;
+    margin-top: 2em;
+  }
+</style>
