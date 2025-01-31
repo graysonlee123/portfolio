@@ -10,20 +10,27 @@ type Props = {
 const { project } = Astro.props
 ---
 
-<Heading element="h3">
-  <Link href={`/projects/${project.id}/`}>
-    {project.data.title}
-  </Link>
-</Heading>
-<p class="description">{project.data.description}</p>
-<div class="actions">
-  <Link href={`/projects/${project.id}/`}>
-    View <span class="sr-only">{project.data.title}</span> Project
-  </Link>
-</div>
+<article>
+  <Heading element="h3">
+    <Link href={`/projects/${project.id}/`}>
+      {project.data.title}
+    </Link>
+  </Heading>
+  <p class="description">{project.data.description}</p>
+  <div class="actions">
+    <Link href={`/projects/${project.id}/`}>
+      View <span class="sr-only">{project.data.title}</span> Project
+    </Link>
+  </div>
+</article>
 
 <style>
-  .actions {
+  .description {
     margin-top: var(--spacing--sm);
+    text-wrap: balance;
+  }
+
+  .actions {
+    margin-top: var(--spacing--xs);
   }
 </style>

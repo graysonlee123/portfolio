@@ -6,24 +6,44 @@ import Project from "@components/Project.astro";
 
 const projects = await getCollection('projects')
 ---
-
-<Container>
-  <Heading element="h2">Projects</Heading>
-  <p class="description">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nulla rem ut voluptatum, sed perspiciatis ullam natus delectus eum ipsum? Similique expedita aperiam totam. Ut.
-  </p>
-  <ul>
-    {projects.map((project) => (
-      <li>
-        <Project project={project}/>
-      </li>
-    ))}
-  </ul>
-</Container>
+<seciton class="section">
+  <Container>
+    <Heading element="h2">Projects</Heading>
+    <p class="description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nulla rem ut voluptatum, sed perspiciatis ullam natus delectus eum ipsum? Similique expedita aperiam totam. Ut.
+    </p>
+    <ul class="list">
+      {projects.map((project) => (
+        <li>
+          <Project project={project}/>
+        </li>
+      ))}
+    </ul>
+  </Container>
+</seciton>
 
 <style>
+  .section {
+    margin-block: var(--spacing--2xl);
+  }
+
   .description {
     max-width: 60ch;
-    margin-top: 2em;
+    margin-top: var(--spacing--sm);
+  }
+
+  .list {
+    display: grid;
+    grid-gap: var(--spacing--lg) 10%;
+    gap: var(--spacing--lg) 10%;
+    padding: 0;
+    margin-top: var(--spacing--lg);
+    list-style: none;
+  }
+
+  @media (width >= 48rem) {
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
