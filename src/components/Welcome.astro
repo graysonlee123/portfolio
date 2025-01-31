@@ -1,0 +1,24 @@
+---
+import Container from "@components/Container.astro"
+import PrismText from "@components/PrismText.astro"
+import Heading from '@components/Heading.astro'
+import SocialMedia from "@components/SocialMedia.astro"
+---
+
+<Container>
+  <div class="socials">
+    <SocialMedia/>
+  </div>
+  <Heading element="h1">
+    Hey, I'm Grayson.
+  </Heading>
+  <Heading element="h2" appearance="h1">
+    Front-End <PrismText>Developer</PrismText>,<br/>nature lover, amateur traveler.
+  </Heading>
+</Container>
+
+<style>
+  .socials {
+    margin-bottom: var(--spacing--md);
+  }
+</style>
