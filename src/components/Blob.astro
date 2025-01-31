@@ -38,6 +38,8 @@ const { flip } = Astro.props as Props
     --scale-x: 1;
     --scale-y: 1;
 
+    position: relative;
+    z-index: -1;
     width: 100%;
     height: auto;
     transform: scale(var(--scale-x), var(--scale-y)) translateY(1px);
