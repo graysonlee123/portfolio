@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'span'>
+
+const props = Astro.props
+---
+
+<span class="span" {...props}>
+  <slot/>
+</span>
+
+<style>
+  .span {
+    color: hsl(var(--clr--prism--dark));
+
+    transition-property: color;
+    transition-duration: var(--duration--prism);
+    transition-timing-function: var(--ease--prism);
+  }
+</style>

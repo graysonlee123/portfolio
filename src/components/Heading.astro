@@ -1,0 +1,34 @@
+---
+// Doing it this way until https://github.com/withastro/compiler/issues/927 is fixed
+type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type Props = {
+  element: HTMLHeadingTags
+  appearance?: HTMLHeadingTags
+}
+
+const { element: Element, appearance, ...props } = Astro.props;
+---
+
+<Element {...props} data-appearance={appearance ?? Element}>
+  <slot/>
+</Element>
+
+<style>
+  [data-appearance] {
+    color: hsl(var(--clr--dark));
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  [data-appearance="h1"] {
+    font-size: var(--fs--2xl);
+  }
+
+  [data-appearance="h2"],
+  [data-appearance="h3"],
+  [data-appearance="h4"],
+  [data-appearance="h5"],
+  [data-appearance="h6"] {
+    font-size: var(--fs--xl);
+  }
+</style>
