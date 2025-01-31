@@ -1,0 +1,38 @@
+---
+import Container from '@components/Container.astro';
+import ProjectIntro from '@components/ProjectIntro.astro';
+import GenericLayout from '@layouts/GenericLayout.astro';
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
+import { getCollection, render } from 'astro:content';
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('projects');
+
+  return projects.map((project) => ({
+    params: { project: project.id },
+    props: { project },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const {project} = Astro.props
+const {title, description, intro, techStack, links, details} = project.data
+const {Content} = await render(project)
+---
+
+<GenericLayout seoProps={{
+  title: project.data.title + ' | Grayson Gantek',
+  description: project.data.description,
+}}>
+  <ProjectIntro
+    title={title}
+    intro={intro ?? description}
+    techStack={techStack}
+    links={links}
+    details={details}
+  />
+  <Container>
+    <Content/>
+  </Container>
+</GenericLayout>

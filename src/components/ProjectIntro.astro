@@ -1,0 +1,97 @@
+---
+import Container from "@components/Container.astro";
+import Heading from "@components/Heading.astro";
+import type { TechStack, Links, Details } from "../content.config.ts";
+
+type Props = {
+  title: string
+  intro?: string
+  techStack: TechStack
+  links: Links
+  details: Details
+}
+
+const {title, intro, techStack, links, details} = Astro.props
+const shouldShowTechStack = Array.isArray(techStack) && techStack.length > 0
+const shouldShowLinks = Array.isArray(links) && links.length > 0
+const shouldShowDetails = Array.isArray(details) && details.length > 0
+const shouldShowMore = shouldShowTechStack || shouldShowLinks || shouldShowDetails
+---
+
+<div class="layout">
+  <Container>
+    <Heading element="h1">
+      {title}
+    </Heading>
+    {intro && <p class="intro">{intro}</p>}
+    {shouldShowMore && (
+      <dl class="list">
+        {shouldShowTechStack && (
+          <div>
+            <dt class="term">Tech Stack</dt>
+            <dd>
+              {techStack.map((tech) => (
+                <span class="item">{tech}</span>
+              ))}
+            </dd>
+          </div>
+        )}
+        {shouldShowLinks && (
+          <div>
+            <dt class="term">Links</dt>
+            <dd>
+              {links.map(({url, text}) => (
+                <span class="item">
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    {text}
+                  </a>
+                </span>
+              ))}
+            </dd>
+          </div>
+        )}
+        {shouldShowDetails && (
+          <div>
+            <dt class="term">Details</dt>
+            <dd>
+              {details.map((detail) => (
+                <span class="item">{detail}</span>
+              ))}
+            </dd>
+          </div>
+        )}
+      </dl>
+    )}
+  </Container>
+</div>
+
+<style>
+  .layout {
+    margin-bottom: var(--spacing--lg);
+  }
+
+  .intro {
+    max-width: 100ch;
+    margin-top: var(--spacing--md);
+    text-wrap: balance;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 5rem;
+    margin-top: var(--spacing--md);
+  }
+
+  .term {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: hsl(var(--clr--dark));
+  }
+
+  .item {
+    display: block;
+  }
+</style>
