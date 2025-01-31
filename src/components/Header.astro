@@ -1,8 +1,29 @@
 ---
+import Blob from "@components/Blob.astro"
 import Container from "@components/Container.astro"
 import Logo from "@components/Logo.astro"
 ---
 
-<Container>
-  <Logo />
-</Container>
+<header class="header">
+  <div class="content">
+    <Container>
+      <Logo />
+    </Container>
+  </div>
+  <Blob flip={{vertical: true, horizontal: true}} />
+</header>
+
+<style>
+  .header {
+    margin-bottom: calc(-1 * var(--spacing--3xl));
+  }
+
+  .content {
+    padding-top: var(--spacing--md);
+    padding-bottom: var(--spacing--3xl);
+    background-color: hsl(var(--clr--prism--light));
+    transition-property: background-color;
+    transition-duration: var(--duration--prism);
+    transition-timing-function: var(--ease--prism);
+  }
+</style>
