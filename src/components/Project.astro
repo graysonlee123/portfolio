@@ -1,0 +1,29 @@
+---
+import Heading from "@components/Heading.astro";
+import Link from "@components/Link.astro";
+import type { Project } from "src/content.config";
+
+type Props = {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+
+<Heading element="h3">
+  <Link href={`/projects/${project.id}/`}>
+    {project.data.title}
+  </Link>
+</Heading>
+<p class="description">{project.data.description}</p>
+<div class="actions">
+  <Link href={`/projects/${project.id}/`}>
+    View <span class="sr-only">{project.data.title}</span> Project
+  </Link>
+</div>
+
+<style>
+  .actions {
+    margin-top: var(--spacing--sm);
+  }
+</style>
