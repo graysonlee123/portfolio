@@ -23,7 +23,8 @@
   --fs--2xl: 1.75rem;
 
   /* Spacings */
-  --spacing--sm: 1rem;
+  --spacing--xs: 1rem;
+  --spacing--sm: 2rem;
   --spacing--md: 3rem;
   --spacing--lg: 7rem;
   --spacing--xl: 10rem;
