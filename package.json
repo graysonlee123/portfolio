@@ -7,7 +7,7 @@
     "spelling": "cspell --gitignore **/*.{astro,js,ts,md}"
   },
   "dependencies": {
-    "@formspree/react": "^2.5.1",
+    "@formspree/react": "^3.0.0",
     "astro": "^5.2.1"
   },
   "devDependencies": {
