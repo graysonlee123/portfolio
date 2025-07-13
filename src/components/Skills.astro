@@ -1,0 +1,139 @@
+---
+import Blob from "@components/Blob.astro";
+import Container from "@components/Container.astro";
+import Heading from "@components/Heading.astro";
+
+type Skill = {
+  title: string
+  color: string
+  backgroundColor: string
+}
+
+const skills: Skill[] = [
+  {
+    title: 'typescript',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(68, 118, 192)',
+  },
+  {
+    title: 'git',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(244, 81, 30)',
+  },
+  {
+    title: 'php',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(79, 91, 147)',
+  },
+  {
+    title: 'scss',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(240, 98, 146)',
+  },
+  {
+    title: 'sql',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(228, 150, 57)',
+  },
+  {
+    title: 'react',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(56, 124, 160)',
+  },
+  {
+    title: 'cli',
+    color: 'rgb(81, 197, 93)',
+    backgroundColor: 'rgb(57, 62, 65)',
+  },
+  {
+    title: 'astro',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(231, 66, 171)',
+  },
+  {
+    title: 'next.js',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(10, 10, 10)',
+  },
+  {
+    title: 'wordpress',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(63, 87, 224)',
+  },
+  {
+    title: 'wordpress',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(63, 87, 224)',
+  },
+]
+---
+
+<section class="section">
+  <Blob/>
+  <div class="background">
+    <Container size="xs">
+      <Heading element="h2">
+        Skills
+      </Heading>
+      <p class="text">
+        An emphasis on fundamentals gives me the skills I need in order to succeed at more complex technologies, such as frameworks, libraries, and larger concepts.
+      </p>
+      <div class="skills">
+        {skills.map(({title, color, backgroundColor}) => (
+          <span
+            class="skill"
+            style={{
+              color,
+              backgroundColor,
+            }}
+          >
+            {title}
+          </span>
+        ))}
+      </div>
+    </Container>
+  </div>
+  <Blob flip={{vertical: true, horizontal: true}} />
+</section>
+
+<style>
+  .background {
+    background-color: hsl(var(--clr--prism--light));
+    transition-property: background-color;
+    transition-duration: var(--duration--prism);
+    transition-timing-function: var(--ease--prism);
+  }
+
+  .text {
+    margin-top: var(--spacing--sm);
+    text-wrap: balance;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing--xs);
+    margin-top: var(--spacing--md);
+  }
+
+  .skill {
+    display: inline-block;
+    padding: 0.5rem 1.75rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    border-radius: 2rem;
+    transition-property: transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+  }
+
+  @media (width >= 48rem) {
+    .section {
+      text-align: center;
+    }
+
+    .skills {
+      justify-content: center;
+    }
+  }
+</style>

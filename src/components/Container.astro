@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'astro/types'
 
 type Props = HTMLAttributes<'div'> & {
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
 const { size = 'md', class: className, ...rest } = Astro.props as Props
@@ -16,6 +16,10 @@ const sizeClass = 'container--' + size
 <style>
   .container {
     margin-inline: auto;
+  }
+
+  .container--xs {
+    max-width: min(48rem, 85vw);
   }
 
   .container--sm {
