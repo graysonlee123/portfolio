@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
-    "astro": "^5.2.1"
+    "astro": "^5.11.0"
   },
   "devDependencies": {
     "cspell": "^9.1.5"
