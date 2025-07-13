@@ -1,0 +1,38 @@
+---
+import Link from "@components/Link.astro";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'a'>
+
+const { class: className, ...rest } = Astro.props
+---
+
+<Link class:list={['link', className]} {...rest}>
+  <span>
+    <slot/>
+  </span>
+  <span class="icon">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+      <path
+        d="M6 0 4.9425 1.0575 9.1275 5.25H0v1.5h9.1275l-4.185 4.1925L6 12l6-6-6-6Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
+</Link>
+
+<style>
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: hsl(var(--clr--dark));
+  }
+
+  .icon {
+    display: block;
+  }
+</style>
