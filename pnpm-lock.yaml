@@ -14,13 +14,13 @@ importers:
       astro:
         specifier: ^5.16.4
         version: 5.16.4(@types/node@24.10.2)(rollup@4.53.3)(typescript@5.4.5)(yaml@2.8.2)
+      sharp:
+        specifier: ^0.34.5
+        version: 0.34.5
     devDependencies:
       cspell:
         specifier: ^9.4.0
         version: 9.4.0
-      sharp:
-        specifier: ^0.34.5
-        version: 0.34.5
 
 packages:
 
