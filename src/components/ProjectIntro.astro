@@ -2,6 +2,7 @@
 import Container from "@components/Container.astro";
 import Heading from "@components/Heading.astro";
 import type { Project } from "src/content.config";
+import Link from "./Link.astro";
 
 type Props = {
   title: string
@@ -42,9 +43,14 @@ const shouldShowMore = shouldShowTechStack || shouldShowLinks || shouldShowDetai
             <dd>
               {links.map(({url, text}) => (
                 <span class="item">
-                  <a href={url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    prism
+                  >
                     {text}
-                  </a>
+                  </Link>
                 </span>
               ))}
             </dd>
@@ -71,8 +77,8 @@ const shouldShowMore = shouldShowTechStack || shouldShowLinks || shouldShowDetai
   }
 
   .intro {
-    max-width: 100ch;
-    margin-top: var(--spacing--md);
+    max-width: 64ch;
+    margin-top: var(--spacing--sm);
     text-wrap: balance;
   }
 
