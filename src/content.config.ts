@@ -22,7 +22,7 @@ const projects = defineCollection({
     }).array().optional(),
     images: z.object({
       thumbnail: ImageSchema(image),
-      hero: ImageSchema(image).optional(),
+      featured: ImageSchema(image),
     }),
     details: z.string().array().optional(),
   }),
