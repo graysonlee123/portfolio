@@ -1,5 +1,6 @@
 ---
 import Container from '@components/Container.astro';
+import Image from '@components/Image.astro';
 import ProjectIntro from '@components/ProjectIntro.astro';
 import GenericLayout from '@layouts/GenericLayout.astro';
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
@@ -33,6 +34,10 @@ const {Content} = await render(project)
     details={details}
   />
   <Container>
+    <Image
+      src={project.data.images.featured.src}
+      alt={project.data.images.featured.alt}
+    />
     <Content/>
   </Container>
 </GenericLayout>
