@@ -5,6 +5,7 @@ intro: An online application tailored for players of the popular ghost hunting g
 techStack: ['NextJS', 'TypeScript', 'Zustand']
 links: [{ text: 'Visit project', url: 'https://phasmo.monster' }, { text: 'View code', url: 'https://github.com/graysonlee123/phasmophobia-helper' }]
 details: ['Sole developer']
+images: { thumbnail: { src: './preview.jpg', alt: 'Hello world' } }
 ---
 
 ## The idea

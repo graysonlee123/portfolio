@@ -5,6 +5,7 @@ intro:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum ni
 techStack: ['WordPress', 'WooCommerce', 'SCSS', 'Gulp']
 links: [{ text: 'Visit project', url: 'https://bagmart.com' }]
 details: ['Sole developer']
+images: { thumbnail: { src: './preview.jpg', alt: 'Hello world' } }
 ---
 
 ## The idea

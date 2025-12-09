@@ -3,6 +3,7 @@ import ArrowLInk from "@components/ArrowLink.astro";
 import Heading from "@components/Heading.astro";
 import Link from "@components/Link.astro";
 import type { Project } from "src/content.config";
+import Image from "./Image.astro";
 
 type Props = {
   project: Project
@@ -12,6 +13,12 @@ const { project } = Astro.props
 ---
 
 <article>
+  <div class="image">
+    <Image
+      src={project.data.images.thumbnail.src}
+      alt={project.data.images.thumbnail.alt}
+    />
+  </div>
   <Heading element="h3">
     <Link href={`/projects/${project.id}/`}>
       {project.data.title}
@@ -26,6 +33,10 @@ const { project } = Astro.props
 </article>
 
 <style>
+  .image {
+    margin-bottom: 1.5rem;
+  }
+
   .description {
     margin-top: var(--spacing--sm);
     text-wrap: balance;

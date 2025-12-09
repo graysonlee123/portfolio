@@ -4,6 +4,7 @@ description: Built for an Axe Throwing company, a full-stack application compose
 techStack: ['NextJS', 'Web sockets', 'TypeScript', 'Zustand', 'NodeJS']
 links: [{ text: 'Client code', url: 'https://github.com/graysonlee123/axeos-client' }, { text: 'Server code', url: 'https://github.com/graysonlee123/axeos-server' }]
 details: ['Sole developer']
+images: { thumbnail: { src: './preview.jpg', alt: 'Hello world' } }
 ---
 
 ## The idea
