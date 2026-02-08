@@ -9,7 +9,7 @@ const ImageSchema = (image: ImageFunction) => z.object({
 const projects = defineCollection({
   loader: glob({
     base: './src/projects',
-    pattern: '*.md',
+    pattern: '**/*.mdx',
   }),
   schema: ({image}) => z.object({
     title: z.string(),

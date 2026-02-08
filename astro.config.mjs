@@ -1,4 +1,6 @@
-import { defineConfig } from 'astro/config'
+import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -6,4 +8,5 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  integrations: [mdx(), react()],
 })

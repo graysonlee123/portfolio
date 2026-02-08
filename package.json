@@ -7,8 +7,14 @@
     "spelling": "cspell --gitignore **/*.{astro,js,ts,md}"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.4.2",
     "@formspree/react": "^3.0.0",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
     "astro": "^5.16.11",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
