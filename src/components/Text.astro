@@ -1,0 +1,17 @@
+<div class="text-block">
+  <slot/>
+</div>
+
+<style>
+  .text-block {
+    max-width: 82ch;
+  }
+
+  .text-block :global(:is(p, ul, ol) + :is(p, ul, ol)) {
+    margin-top: 2em;
+  }
+
+  .text-block :global(:is(h1, h2, h3) + :is(p, ul, ol)) {
+    margin-top: 2em;
+  }
+</style>

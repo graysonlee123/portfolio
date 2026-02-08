@@ -1,0 +1,29 @@
+<main class="project-content">
+  <slot/>
+</main>
+
+<style>
+  .project-content {
+    display: grid;
+    row-gap: 14rem;
+    margin-block: 14rem;
+  }
+
+  .project-content :global(
+    .text-block:has(+ .primary-image),
+    .text-block:last-child
+  ) {
+    grid-column: 1 / -1;
+  })
+
+  .project-content :global(.primary-image) {
+    grid-column: 1 / 2;
+  }
+
+  @media (width >= 48rem) {
+    .project-content {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10%;
+    }
+  }
+</style>
