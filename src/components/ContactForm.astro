@@ -1,0 +1,56 @@
+---
+import Heading from "./Heading.astro";
+---
+
+<div>
+    <Heading element="h2">
+        Contact
+    </Heading>
+    <p class="subheading">
+        Get in touch with me if you're looking for a developer, have a question, or just want to connect.
+    </p>
+    <form
+        action="https://formspree.io/p/2477105883054603283/f/contact"
+        method="POST"
+    >
+        <label
+            for="name"
+        >
+            Name
+        </label>
+        <input
+            id="name"
+            type="text"
+            name="name"
+        >
+        <label
+            for="email"
+        >
+            Email
+        </label>
+        <input
+            id="email"
+            type="text"
+            name="email"
+        >
+        <label
+            for="message"
+        >
+            Message
+        </label>
+        <input
+            id="message"
+            type="text"
+            name="message"
+        >
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+</div>
+
+<style>
+    .subheading {
+        margin-top: var(--spacing--sm);
+    }
+</style>
