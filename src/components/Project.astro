@@ -14,10 +14,12 @@ const { project } = Astro.props
 
 <article>
   <div class="image">
-    <Image
-      src={project.data.images.thumbnail.src}
-      alt={project.data.images.thumbnail.alt}
-    />
+    <a href={`/projects/${project.id}/`}>
+      <Image
+        src={project.data.images.thumbnail.src}
+        alt={project.data.images.thumbnail.alt}
+      />
+    </a>
   </div>
   <Heading element="h3">
     <Link href={`/projects/${project.id}/`}>
