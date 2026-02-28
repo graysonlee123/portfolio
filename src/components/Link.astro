@@ -1,15 +1,15 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<'a'> {
-  prism?: boolean
+interface Props extends HTMLAttributes<"a"> {
+  prism?: boolean;
 }
 
-const { prism = false, class: className, ...rest } = Astro.props
+const { prism = false, class: className, ...rest } = Astro.props;
 ---
 
-<a class:list={[{prism}, className]} {...rest} >
-  <slot/>
+<a class:list={[{ prism }, className]} {...rest}>
+  <slot />
 </a>
 
 <style>

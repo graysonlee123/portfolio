@@ -1,16 +1,16 @@
 ---
 // Doing it this way until https://github.com/withastro/compiler/issues/927 is fixed
-type HTMLHeadingTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HTMLHeadingTags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type Props = {
-  element: HTMLHeadingTags
-  appearance?: HTMLHeadingTags
-}
+  element: HTMLHeadingTags;
+  appearance?: HTMLHeadingTags;
+};
 
 const { element: Element, appearance, ...props } = Astro.props;
 ---
 
 <Element {...props} data-appearance={appearance ?? Element}>
-  <slot/>
+  <slot />
 </Element>
 
 <style>

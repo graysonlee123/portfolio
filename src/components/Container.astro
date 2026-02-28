@@ -1,16 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'div'> & {
-  size?: 'xs' | 'sm' | 'md' | 'lg'
-}
+type Props = HTMLAttributes<"div"> & {
+  size?: "xs" | "sm" | "md" | "lg";
+};
 
-const { size = 'md', class: className, ...rest } = Astro.props as Props
-const sizeClass = 'container--' + size
+const { size = "md", class: className, ...rest } = Astro.props as Props;
+const sizeClass = "container--" + size;
 ---
 
-<div class:list={['container', sizeClass, className]} {...rest}>
-  <slot/>
+<div class:list={["container", sizeClass, className]} {...rest}>
+  <slot />
 </div>
 
 <style>

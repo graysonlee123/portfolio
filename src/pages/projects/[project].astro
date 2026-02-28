@@ -1,14 +1,14 @@
 ---
-import Container from '@components/Container.astro';
-import Image from '@components/Image.astro';
-import ProjectContent from '@components/ProjectContent.astro';
-import ProjectIntro from '@components/ProjectIntro.astro';
-import GenericLayout from '@layouts/GenericLayout.astro';
-import type { InferGetStaticPropsType, GetStaticPaths } from 'astro'
-import { getCollection, render } from 'astro:content';
+import Container from "@components/Container.astro";
+import Image from "@components/Image.astro";
+import ProjectContent from "@components/ProjectContent.astro";
+import ProjectIntro from "@components/ProjectIntro.astro";
+import GenericLayout from "@layouts/GenericLayout.astro";
+import type { InferGetStaticPropsType, GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
-  const projects = await getCollection('projects');
+  const projects = await getCollection("projects");
 
   return projects.map((project) => ({
     params: { project: project.id },
@@ -18,15 +18,17 @@ export const getStaticPaths = (async () => {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const {project} = Astro.props
-const {title, description, intro, techStack, links, details} = project.data
-const {Content} = await render(project)
+const { project } = Astro.props;
+const { title, description, intro, techStack, links, details } = project.data;
+const { Content } = await render(project);
 ---
 
-<GenericLayout seoProps={{
-  title: project.data.title + ' | Grayson Gantek',
-  description: project.data.description,
-}}>
+<GenericLayout
+  seoProps={{
+    title: project.data.title + " | Grayson Gantek",
+    description: project.data.description,
+  }}
+>
   <ProjectIntro
     title={title}
     intro={intro ?? description}
@@ -40,7 +42,7 @@ const {Content} = await render(project)
       alt={project.data.images.featured.alt}
     />
     <ProjectContent>
-      <Content/>
+      <Content />
     </ProjectContent>
   </Container>
 </GenericLayout>

@@ -4,15 +4,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "spelling": "cspell --gitignore **/*.{astro,js,ts,md}"
+    "spelling": "cspell --gitignore **/*.{astro,js,ts,md}",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
     "@formspree/react": "^3.0.0",
-    "astro": "^5.16.11",
+    "astro": "^5.18.0",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "cspell": "^9.6.0"
+    "cspell": "^9.7.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

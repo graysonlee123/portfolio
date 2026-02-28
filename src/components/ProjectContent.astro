@@ -1,5 +1,5 @@
 <main class="project-content">
-  <slot/>
+  <slot />
 </main>
 
 <style>
@@ -15,13 +15,15 @@
     align-self: start;
   }
 
-  .project-content :global(
-    .text-block:has(+ .primary-image),
-    .text-block:first-child,
-    .text-block:last-child
-  ) {
+  .project-content
+    :global(
+      .text-block:has(+ .primary-image),
+      .text-block:first-child,
+      .text-block:last-child
+    ) {
     grid-column: 1 / -1;
-  })
+  }
+  )
 
   .project-content :global(.primary-image) {
     grid-column: 1 / 2;

@@ -5,18 +5,19 @@ import type { Project } from "src/content.config";
 import Link from "./Link.astro";
 
 type Props = {
-  title: string
-  intro?: string
-  techStack: Project['data']['techStack']
-  links: Project['data']['links']
-  details: Project['data']['details']
-}
+  title: string;
+  intro?: string;
+  techStack: Project["data"]["techStack"];
+  links: Project["data"]["links"];
+  details: Project["data"]["details"];
+};
 
-const {title, intro, techStack, links, details} = Astro.props
-const shouldShowTechStack = Array.isArray(techStack) && techStack.length > 0
-const shouldShowLinks = Array.isArray(links) && links.length > 0
-const shouldShowDetails = Array.isArray(details) && details.length > 0
-const shouldShowMore = shouldShowTechStack || shouldShowLinks || shouldShowDetails
+const { title, intro, techStack, links, details } = Astro.props;
+const shouldShowTechStack = Array.isArray(techStack) && techStack.length > 0;
+const shouldShowLinks = Array.isArray(links) && links.length > 0;
+const shouldShowDetails = Array.isArray(details) && details.length > 0;
+const shouldShowMore =
+  shouldShowTechStack || shouldShowLinks || shouldShowDetails;
 ---
 
 <div class="layout">
@@ -25,49 +26,51 @@ const shouldShowMore = shouldShowTechStack || shouldShowLinks || shouldShowDetai
       {title}
     </Heading>
     {intro && <p class="intro">{intro}</p>}
-    {shouldShowMore && (
-      <dl class="list">
-        {shouldShowTechStack && (
-          <div>
-            <dt class="term">Tech Stack</dt>
-            <dd>
-              {techStack.map((tech) => (
-                <span class="item">{tech}</span>
-              ))}
-            </dd>
-          </div>
-        )}
-        {shouldShowLinks && (
-          <div>
-            <dt class="term">Links</dt>
-            <dd>
-              {links.map(({url, text}) => (
-                <span class="item">
-                  <Link
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    prism
-                  >
-                    {text}
-                  </Link>
-                </span>
-              ))}
-            </dd>
-          </div>
-        )}
-        {shouldShowDetails && (
-          <div>
-            <dt class="term">Details</dt>
-            <dd>
-              {details.map((detail) => (
-                <span class="item">{detail}</span>
-              ))}
-            </dd>
-          </div>
-        )}
-      </dl>
-    )}
+    {
+      shouldShowMore && (
+        <dl class="list">
+          {shouldShowTechStack && (
+            <div>
+              <dt class="term">Tech Stack</dt>
+              <dd>
+                {techStack.map((tech) => (
+                  <span class="item">{tech}</span>
+                ))}
+              </dd>
+            </div>
+          )}
+          {shouldShowLinks && (
+            <div>
+              <dt class="term">Links</dt>
+              <dd>
+                {links.map(({ url, text }) => (
+                  <span class="item">
+                    <Link
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      prism
+                    >
+                      {text}
+                    </Link>
+                  </span>
+                ))}
+              </dd>
+            </div>
+          )}
+          {shouldShowDetails && (
+            <div>
+              <dt class="term">Details</dt>
+              <dd>
+                {details.map((detail) => (
+                  <span class="item">{detail}</span>
+                ))}
+              </dd>
+            </div>
+          )}
+        </dl>
+      )
+    }
   </Container>
 </div>
 

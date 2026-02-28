@@ -1,23 +1,31 @@
 ---
 title: CheckView
-description:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisi tellus.
-intro:    A comprehensive WordPress form and WooCommerce checkout testing platform that automates end-to-end testing using Playwright browser automation. Built as a scalable Turborepo monorepo with 13 microservices and 7 shared packages, deployed to Google Cloud Run for distributed test execution.
-techStack: [ 'TypeScript', 'NextJS', 'Playwright', 'PostgreSQL', 'Pulumi' ]
-links: [{ text: 'Visit project', url: 'https://checkview.io' }]
-images: {
-  thumbnail: { src: './preview.jpg', alt: 'Hello world' },
-  featured: { src: './preview.jpg', alt: 'Hello world' },
-}
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisi tellus.
+intro: A comprehensive WordPress form and WooCommerce checkout testing platform that automates end-to-end testing using Playwright browser automation. Built as a scalable Turborepo monorepo with 13 microservices and 7 shared packages, deployed to Google Cloud Run for distributed test execution.
+techStack: ["TypeScript", "NextJS", "Playwright", "PostgreSQL", "Pulumi"]
+links: [{ text: "Visit project", url: "https://checkview.io" }]
+images:
+  {
+    thumbnail: { src: "./preview.jpg", alt: "Hello world" },
+    featured: { src: "./preview.jpg", alt: "Hello world" },
+  }
 ---
-import Text from '@components/Text.astro'
-import Image from '@components/Image.astro'
-import PrimaryImage from '@images/laptop.jpg'
+
+import Text from "@components/Text.astro";
+import Image from "@components/Image.astro";
+import PrimaryImage from "@images/laptop.jpg";
 
 <Text>
-  ## The idea
-  The project is a SaaS platform designed for WordPress site owners and agencies who need reliable automated testing for forms and checkout flows. Its purpose
-  is to detect broken forms, failed payments, and email delivery issues before customers encounter them, thus preventing lost leads and revenue. It provides
-  scheduled testing with detailed failure reports and email verification, functionality not available in traditional monitoring tools.
+
+## The idea
+
+The project is a SaaS platform designed for WordPress site owners
+and agencies who need reliable automated testing for forms and checkout flows.
+Its purpose is to detect broken forms, failed payments, and email delivery
+issues before customers encounter them, thus preventing lost leads and
+revenue. It provides scheduled testing with detailed failure reports and email
+verification, functionality not available in traditional monitoring tools.
+
 </Text>
 
 ```ts
@@ -25,36 +33,53 @@ import PrimaryImage from '@images/laptop.jpg'
 const appDataBucket = new gcp.storage.Bucket(`checkview`, {
   location: gcp.config.region,
   forceDestroy: true,
-  publicAccessPrevention: 'enforced',
+  publicAccessPrevention: "enforced",
   lifecycleRules: [
     {
-      action: { type: 'Delete' },
+      action: { type: "Delete" },
       condition: {
         age: 90,
-        withState: 'ARCHIVED',
+        withState: "ARCHIVED",
       },
     },
   ],
-})
+});
 ```
 
 <Text>
-  ## Tech Stack Details
-  The platform is built using a microservices architecture on Google Cloud Run. The frontend uses Next.js 14 with Stripe integration for billing, while the
-  backend consists of specialized services: `test-runner` orchestrates execution via Pub/Sub, `test` runs Playwright in isolated containers as Cloud Run jobs, and
-  `generator` programmatically analyzes WordPress forms to automatically generate test steps. Notable technical features include ephemeral
-  job-based execution for cost efficiency, a custom [WordPress helper plugin](https://wordpress.org/plugins/checkview/) for API access, 40+ step types for form
-  automation, and GCS storage for test artifacts. Pulumi manages all infrastructure as code, enabling version-controlled deployments and consistent environments
-  across production and test stacks.
+
+## Tech Stack
+
+Details The platform is built using a microservices architecture
+on Google Cloud Run. The frontend uses Next.js 14 with Stripe integration for
+billing, while the backend consists of specialized services: `test-runner`
+orchestrates execution via Pub/Sub, `test` runs Playwright in isolated
+containers as Cloud Run jobs, and `generator` programmatically analyzes
+WordPress forms to automatically generate test steps. Notable technical
+features include ephemeral job-based execution for cost efficiency, a custom
+[WordPress helper plugin](https://wordpress.org/plugins/checkview/) for API
+access, 40+ step types for form automation, and GCS storage for test
+artifacts. Pulumi manages all infrastructure as code, enabling
+version-controlled deployments and consistent environments across production
+and test stacks.
+
 </Text>
 
 <Text>
-  ## Obstacles
-  The main technical hurdle was building a reliable programmatic test step generator that could analyze arbitrary WordPress forms and automatically create
-  executable test flows. The challenge involved parsing form HTML to identify field types, understanding validation rules, handling dynamic fields that appear
-  conditionally, and mapping WordPress plugin-specific markup to generic test steps. The solution required building a progressive scanner that walks through
-  form submissions, detects validation errors, and adjusts field values iteratively until a successful submission path is found, then converts that path into
-  reusable test steps stored in the database.
+
+## Obstacles
+
+The main technical hurdle was building a reliable programmatic
+test step generator that could analyze arbitrary WordPress forms and
+automatically create executable test flows. The challenge involved parsing
+form HTML to identify field types, understanding validation rules, handling
+dynamic fields that appear conditionally, and mapping WordPress
+plugin-specific markup to generic test steps. The solution required building a
+progressive scanner that walks through form submissions, detects validation
+errors, and adjusts field values iteratively until a successful submission
+path is found, then converts that path into reusable test steps stored in the
+database.
+
 </Text>
 
 ```ts
@@ -75,11 +100,19 @@ async function progressiveScanner(context: FormGeneratorContext) {
 ```
 
 <Text>
-  ## Lessons Learned
-  The project provided valuable insights into two key areas. Firstly, architecting with ephemeral Cloud Run jobs instead of always-on services proved critical
-  for both isolation and scalability. Each test execution gets a fresh container with no state contamination, while the platform can handle burst traffic
-  without pre-provisioning resources. This is critical for large quantities of tests scheduled at the same hour. Secondly, the importance of designing for
-  failure recovery became evident. By implementing retry logic at multiple layers (individual steps, full test runs, and scheduled execution), the system
-  handles transient WordPress API failures and network issues gracefully. This layered approach to resilience proved more reliable than attempting to prevent
-  all failures upfront.
+
+## Lessons Learned
+
+The project provided valuable insights into two key areas.
+Firstly, architecting with ephemeral Cloud Run jobs instead of always-on
+services proved critical for both isolation and scalability. Each test
+execution gets a fresh container with no state contamination, while the
+platform can handle burst traffic without pre-provisioning resources. This is
+critical for large quantities of tests scheduled at the same hour. Secondly,
+the importance of designing for failure recovery became evident. By
+implementing retry logic at multiple layers (individual steps, full test runs,
+and scheduled execution), the system handles transient WordPress API failures
+and network issues gracefully. This layered approach to resilience proved more
+reliable than attempting to prevent all failures upfront.
+
 </Text>

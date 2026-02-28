@@ -3,38 +3,35 @@ import Container from "./Container.astro";
 import Image from "./Image.astro";
 import ContactForm from "./ContactForm.astro";
 
-import GraysonImage from '../images/laptop.jpg'
+import GraysonImage from "../images/laptop.jpg";
 ---
 
 <section class="section">
-    <Container>
-        <div class="layout">
-            <div>
-                <ContactForm/>
-            </div>
-            <div>
-                <Image
-                    src={GraysonImage}
-                    alt="Me working on my laptop"
-                />
-            </div>
-        </div>
-    </Container>
+  <Container>
+    <div class="layout">
+      <div>
+        <ContactForm />
+      </div>
+      <div>
+        <Image src={GraysonImage} alt="Me working on my laptop" />
+      </div>
+    </div>
+  </Container>
 </section>
 
 <style>
-    .section {
-        margin-block: var(--spacing--2xl)
-    }
+  .section {
+    margin-block: var(--spacing--2xl);
+  }
 
+  .layout {
+    display: grid;
+    gap: var(--spacing--lg) 10%;
+  }
+
+  @media (width >= 48rem) {
     .layout {
-        display: grid;
-        gap: var(--spacing--lg) 10%;
+      grid-template-columns: 4fr 7fr;
     }
-
-    @media (width >= 48rem) {
-        .layout {
-            grid-template-columns: 4fr 7fr;
-        }
-    }
+  }
 </style>

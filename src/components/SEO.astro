@@ -1,8 +1,8 @@
 ---
-type Props = SEOProps
+type Props = SEOProps;
 
-const { title, description, noIndex } = Astro.props as Props
-const canonical = new URL(Astro.url.pathname, Astro.site)
+const { title, description, noIndex } = Astro.props as Props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <meta charset="UTF-8" />
@@ -10,9 +10,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site)
 
 <title>{title}</title>
 
-{noIndex && (
-  <meta name="robots" content="noindex" />
-)}
+{noIndex && <meta name="robots" content="noindex" />}
 
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />

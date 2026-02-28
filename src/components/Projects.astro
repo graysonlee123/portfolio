@@ -4,20 +4,25 @@ import Heading from "@components/Heading.astro";
 import { getCollection } from "astro:content";
 import Project from "@components/Project.astro";
 
-const projects = await getCollection('projects')
+const projects = await getCollection("projects");
 ---
+
 <section class="section">
   <Container>
     <Heading element="h2">Projects</Heading>
     <p class="description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nulla rem ut voluptatum, sed perspiciatis ullam natus delectus eum ipsum? Similique expedita aperiam totam. Ut.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nulla rem
+      ut voluptatum, sed perspiciatis ullam natus delectus eum ipsum? Similique
+      expedita aperiam totam. Ut.
     </p>
     <ul class="list">
-      {projects.map((project) => (
-        <li>
-          <Project project={project}/>
-        </li>
-      ))}
+      {
+        projects.map((project) => (
+          <li>
+            <Project project={project} />
+          </li>
+        ))
+      }
     </ul>
   </Container>
 </section>
