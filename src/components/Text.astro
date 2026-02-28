@@ -14,4 +14,19 @@
   .text-block :global(:is(h1, h2, h3) + :is(p, ul, ol)) {
     margin-top: 2em;
   }
+
+  .text-block :global(code) {
+    padding: 0.25em 0.5em;
+    color: hsl(var(--clr--prism--dark));
+    font-weight: bold;
+    background-color: hsl(var(--clr--prism--light));
+    border-radius: 0.5em;
+    transition-property: background-color;
+    transition-duration: var(--duration--prism);
+    transition-timing-function: var(--ease--prism);
+  }
+
+  .text-block :global(a) {
+    color: inherit;
+  }
 </style>
