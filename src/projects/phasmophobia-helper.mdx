@@ -1,0 +1,112 @@
+---
+title: Phasmophobia Helper
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisi tellus.
+intro: An online tool for players of the ghost hunting game Phasmophobia that provides more comprehensive ghost identification than what's available in-game. Built with Next.js and Zustand for lightweight state management, it supports limited evidence mode for harder difficulty settings and includes custom analytics tracking.
+techStack: ["TypeScript", "NextJS", "Zustand"]
+links: [{ text: "Visit project", url: "https://phasmophobia-helper.com" }, { text: "View code", url: "https://github.com/graysonlee123/phasmophobia-helper" }]
+images:
+  {
+    thumbnail: { src: "./preview.jpg", alt: "Phasmophobia Helper" },
+    featured: { src: "./preview.jpg", alt: "Phasmophobia Helper" },
+  }
+---
+
+import Text from "@components/Text.astro";
+import Image from "@components/Image.astro";
+
+<Text>
+
+## The idea
+
+The project started as a personal tool to improve ghost identification
+during Phasmophobia sessions. The in-game journal provides basic evidence
+filtering, but lacks the ability to cross-reference multiple evidence types
+simultaneously. The goal was a fast, opinionated companion app that players
+could reference mid-game without friction.
+
+</Text>
+
+<Text>
+
+## Tech Stack
+
+The application is built on Next.js with TypeScript. State management uses
+Zustand rather than Redux, as its compositional slice pattern keeps the store
+small and the API simple. The store holds only two pieces of state: checked
+evidence and disabled evidence. User preferences are persisted to local
+storage, and a limited evidence mode reduces the available evidence set to
+match harder in-game difficulty settings. Custom Google Analytics events track
+which features players use most.
+
+</Text>
+
+```ts
+export default function usePossibleGhosts() {
+  const ghosts = ghostData as Ghost[]
+  const checkedEvidences = useCheckedEvidences()
+  const disabledEvidences = useDisabledEvidences()
+
+  return useMemo(() => {
+    return ghosts.filter((ghost) => {
+      let passed = true
+      const ghostEvidences = [...ghost.evidences, ...(ghost.falseEvidences ?? [])]
+
+      checkedEvidences.forEach((evidence) => {
+        if (!arrayContains(evidence, ghostEvidences)) passed = false
+      })
+
+      disabledEvidences.forEach((evidence) => {
+        if (arrayContains(evidence, ghostEvidences)) passed = false
+      })
+
+      return passed
+    })
+  }, [ghosts, checkedEvidences, disabledEvidences])
+}
+```
+
+```ts
+import { create } from 'zustand'
+import { createEvidencesSlice, EvidencesSlice } from './evidences'
+import { createGhostsSlice, GhostsSlice } from './ghosts'
+
+export const useStore = create<GhostsSlice & EvidencesSlice>()((...a) => ({
+  ...createGhostsSlice(...a),
+  ...createEvidencesSlice(...a),
+}))
+
+export const useEliminatedGhosts = () => useStore((state) => state.eliminatedGhosts)
+export const useSetEliminatedGhosts = () => useStore((state) => state.setEliminatedGhosts)
+export const useCheckedEvidences = () => useStore((state) => state.checkedEvidences)
+export const useSetCheckedEvidences = () => useStore((state) => state.setCheckedEvidences)
+export const useDisabledEvidences = () => useStore((state) => state.disabledEvidences)
+export const useSetDisabledEvidences = () => useStore((state) => state.setDisabledEvidences)
+```
+
+<Text>
+
+## Obstacles
+
+The main challenge was keeping the store minimal without sacrificing
+responsiveness. An early version tracked too much derived state, causing
+unnecessary re-renders when evidence was toggled. The fix was to store only
+the raw selections and compute filtered ghost lists on the fly using
+memoization, letting React handle the derived state rather than Zustand.
+Limited evidence mode added further complexity since the valid evidence set
+changes mid-session, requiring the store to invalidate selections that no
+longer apply.
+
+</Text>
+
+<Text>
+
+## Lessons Learned
+
+Two things stood out from this project. First, Zustand's slice pattern scales
+better than expected for small apps, keeping slices focused on a single
+concern made the store easy to reason about and test. Second, shipping
+TypeScript in production from the start paid off quickly. The ghost and
+evidence types caught several logic errors during development that would have
+been silent runtime bugs in plain JavaScript.
+
+</Text>
