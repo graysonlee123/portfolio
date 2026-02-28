@@ -1,5 +1,7 @@
 ---
 import Heading from "./Heading.astro";
+import Input from "./Input.astro";
+import SubmitButton from "./SubmitButton.astro";
 ---
 
 <div>
@@ -12,18 +14,42 @@ import Heading from "./Heading.astro";
     action="https://formspree.io/p/2477105883054603283/f/contact"
     method="POST"
   >
-    <label for="name"> Name </label>
-    <input id="name" type="text" name="name" />
-    <label for="email"> Email </label>
-    <input id="email" type="text" name="email" />
-    <label for="message"> Message </label>
-    <input id="message" type="text" name="message" />
-    <button type="submit"> Submit </button>
+    <div class="rows">
+      <Input
+        id="name"
+        inputProps={{
+          autocomplete: "given-name",
+        }}
+      >
+        Name
+      </Input>
+      <Input
+        id="email"
+        required
+        inputProps={{
+          autocomplete: "email",
+        }}
+      >
+        Email
+      </Input>
+      <Input id="message" required inputProps={{ autocomplete: "off" }}>
+        Message
+      </Input>
+      <div>
+        <SubmitButton />
+      </div>
+    </div>
   </form>
 </div>
 
 <style>
   .subheading {
     margin-top: var(--spacing--sm);
+  }
+
+  .rows {
+    margin-top: var(--spacing--md);
+    display: grid;
+    row-gap: 1.5rem;
   }
 </style>

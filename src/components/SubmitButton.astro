@@ -1,0 +1,26 @@
+<button type="submit"> Submit </button>
+
+<style>
+  button {
+    padding: 0.5em 1em;
+    font: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: hsl(var(--clr--prism--dark));
+    background-color: hsl(var(--clr--prism--light));
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsl(var(--clr--prism));
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition-property: background-color, transform;
+    transition-duration: var(--duration--prism), var(--duration--prism);
+    transition-timing-function: var(--ease--prism), var(--ease--prism);
+  }
+
+  button:hover,
+  button:focus {
+    transform: scale(1.05);
+  }
+</style>
