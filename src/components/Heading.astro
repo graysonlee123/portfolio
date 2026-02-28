@@ -4,12 +4,13 @@ type HTMLHeadingTags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type Props = {
   element: HTMLHeadingTags;
   appearance?: HTMLHeadingTags;
+  prism?: boolean;
 };
 
-const { element: Element, appearance, ...props } = Astro.props;
+const { element: Element, appearance, prism, ...props } = Astro.props;
 ---
 
-<Element {...props} data-appearance={appearance ?? Element}>
+<Element {...props} data-appearance={appearance ?? Element} data-prism={prism}>
   <slot />
 </Element>
 
@@ -30,5 +31,9 @@ const { element: Element, appearance, ...props } = Astro.props;
   [data-appearance="h5"],
   [data-appearance="h6"] {
     font-size: var(--fs--xl);
+  }
+
+  [data-prism] {
+    color: hsl(var(--clr--prism--dark));
   }
 </style>
