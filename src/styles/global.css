@@ -124,7 +124,7 @@ h6 {
 
 :focus {
   outline: var(--focus-outline-width, 2px) solid
-    hsla(var(--focus-outline-color, 0 50% 50%));
+    hsla(var(--focus-outline-color, 0 0% 25%));
   outline-offset: var(--focus-outline-offset, 0.25em);
 }
 
@@ -134,7 +134,7 @@ h6 {
 
 :focus-visible {
   outline: var(--focus-outline-width, 2px) solid
-    hsla(var(--focus-outline-color, 0 50% 50%));
+    hsla(var(--focus-outline-color, 0 0% 25%));
   outline-offset: var(--focus-outline-offset, 0.25em);
 }
 

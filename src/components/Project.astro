@@ -14,7 +14,7 @@ const { project } = Astro.props;
 
 <article>
   <div class="image">
-    <a href={`/projects/${project.id}/`}>
+    <a class="image-link" href={`/projects/${project.id}/`}>
       <Image
         src={project.data.images.thumbnail.src}
         alt={project.data.images.thumbnail.alt}
@@ -37,6 +37,10 @@ const { project } = Astro.props;
 <style>
   .image {
     margin-bottom: 1.5rem;
+  }
+
+  .image-link {
+    display: block;
   }
 
   .description {
