@@ -1,5 +1,5 @@
 ---
-import ArrowLInk from "@components/ArrowLink.astro";
+import ArrowLink from "@components/ArrowLink.astro";
 import Heading from "@components/Heading.astro";
 import Link from "@components/Link.astro";
 import type { Project } from "src/content.config";
@@ -28,9 +28,9 @@ const { project } = Astro.props;
   </Heading>
   <p class="description">{project.data.description}</p>
   <div class="actions">
-    <ArrowLInk href={`/projects/${project.id}/`}>
+    <ArrowLink href={`/projects/${project.id}/`}>
       View <span class="sr-only">{project.data.title}</span> Project
-    </ArrowLInk>
+    </ArrowLink>
   </div>
 </article>
 
