@@ -28,6 +28,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  prefetch: true,
   env: {
     schema: {
       PUBLIC_FORMSPREE_FORM_ID: envField.string({
