@@ -6,7 +6,7 @@ type Props = {
   required?: boolean;
   containerProps?: HTMLAttributes<"div">;
   labelProps?: Omit<HTMLAttributes<"label">, "for">;
-  inputProps?: Omit<HTMLAttributes<"input">, "id">;
+  inputProps?: Omit<HTMLAttributes<"input">, "id" | "required">;
 };
 
 const { id, required, containerProps, labelProps, inputProps } = Astro.props;
@@ -17,7 +17,7 @@ const { id, required, containerProps, labelProps, inputProps } = Astro.props;
     <slot />
     {required && <span>*</span>}
   </label>
-  <input id={id} {...inputProps} />
+  <input id={id} required={required} {...inputProps} />
 </div>
 
 <style>
