@@ -5,10 +5,10 @@ import { defineConfig, envField } from "astro/config";
 const site = (() => {
   switch (process.env.VERCEL_ENV) {
     case 'production': {
-      return 'https://www.graysn.com/'
+      return 'https://www.graysn.com'
     }
     case 'preview': {
-      return 'https://www.preview.graysn.com/'
+      return 'https://www.preview.graysn.com'
     }
     default: {
       return 'http://localhost:4321'
