@@ -6,10 +6,10 @@
  *
  * @returns A function that will call the cb function only once every `wait` milliseconds.
  */
-const throttle = (
-  cb: (...args: any) => void,
+const throttle = <T extends unknown[]>(
+  cb: (...args: T) => void,
   wait: number = 100,
-): (() => void) => {
+): ((...args: T) => void) => {
   let time = Date.now();
 
   return function (...args) {
