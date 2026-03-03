@@ -41,6 +41,12 @@ Spelling can be checked using [cspell](https://github.com/streetsidesoftware/csp
 pnpm spelling
 ```
 
+## Architecture Notes
+
+### robots.txt
+
+`src/pages/robots.txt.ts` is a static Astro endpoint that generates `robots.txt` at build time. It checks `VERCEL_ENV` to disallow all crawling on preview deployments and allow it on production.
+
 ## Dependencies
 
 - **astro**: Front-end framework of choice.
