@@ -11,9 +11,9 @@ Personal portfolio of Grayson Gantek, built with [Astro](https://astro.build/).
 
 Environment Variables
 
-| Name | Required | Description |
-| --- | --- | --- |
-| PUBLIC_FORMSPREE_FORM_ID | Yes | Formspree form ID to submit to |
+| Name                     | Required | Description                    |
+| ------------------------ | -------- | ------------------------------ |
+| PUBLIC_FORMSPREE_FORM_ID | Yes      | Formspree form ID to submit to |
 
 ## Development
 
