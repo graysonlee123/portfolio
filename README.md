@@ -46,6 +46,7 @@ pnpm spelling
 - **astro**: Front-end framework of choice.
 - **sharp**: Node.js image processing, requirement of Astro ([documentation](https://docs.astro.build/en/guides/images/#default-image-service)).
 - **@astrojs/mdx**: Enables MDX pages and components.
+- **@astrojs/sitemap**: Generates a sitemap based on your Astro pages.
 - **@formspree/react**: Contact form helper.
 
 ### Dev Dependencies
