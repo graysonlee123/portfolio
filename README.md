@@ -7,6 +7,14 @@ Personal portfolio of Grayson Gantek, built with [Astro](https://astro.build/).
 - Node.js v22 or higher
 - pnpm v10.25.0 or higher
 
+## Configuration
+
+Environment Variables
+
+| Name | Required | Description |
+| --- | --- | --- |
+| PUBLIC_FORMSPREE_FORM_ID | Yes | Formspree form ID to submit to |
+
 ## Development
 
 ### Local Development
