@@ -1,8 +1,13 @@
 ---
-type Props = SEOProps;
+type Props = {
+  title: string;
+  description: string;
+  noIndex?: boolean;
+};
 
-const { title, description, noIndex } = Astro.props as Props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const { title, description, noIndex } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site);
+const canonical = url.pathname === '/' ? url.toString().slice(0, -1) : url.toString();
 ---
 
 <meta charset="UTF-8" />
