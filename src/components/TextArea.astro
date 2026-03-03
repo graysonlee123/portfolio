@@ -1,0 +1,51 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = {
+  id: string;
+  required?: boolean;
+  containerProps?: HTMLAttributes<"div">;
+  labelProps?: Omit<HTMLAttributes<"label">, "for">;
+  inputProps?: Omit<HTMLAttributes<"textarea">, "id" | "required">;
+};
+
+const { id, required, containerProps, labelProps, inputProps } = Astro.props;
+---
+
+<div {...containerProps}>
+  <label for={id} {...labelProps}>
+    <slot />
+    {required && <span>*</span>}
+  </label>
+  <textarea id={id} required={required} {...inputProps} />
+</div>
+
+<style>
+  div {
+    display: grid;
+    row-gap: 0.125rem;
+  }
+
+  label {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+  }
+
+  textarea {
+    --focus-outline-offset: 0px;
+    --focus-outline-color: var(--hue, 126) 60% 40%;
+
+    width: 100%;
+    margin: 0;
+    padding: 0.5em 1em;
+    font: inherit;
+    color: hsl(var(--clr--body));
+    background: none;
+    background-color: hsl(var(--clr--white));
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsl(var(--clr--body) / 20%);
+    border-radius: 0.25rem;
+  }
+</style>

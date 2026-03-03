@@ -3,6 +3,7 @@ import { PUBLIC_FORMSPREE_FORM_ID } from "astro:env/client";
 import Heading from "./Heading.astro";
 import Input from "./Input.astro";
 import SubmitButton from "./SubmitButton.astro";
+import TextArea from "./TextArea.astro";
 ---
 
 <div>
@@ -34,9 +35,9 @@ import SubmitButton from "./SubmitButton.astro";
       >
         Email
       </Input>
-      <Input id="message" required inputProps={{ autocomplete: "off" }}>
+      <TextArea id="message" required inputProps={{ autocomplete: "off" }}>
         Message
-      </Input>
+      </TextArea>
       <div>
         <SubmitButton />
       </div>
