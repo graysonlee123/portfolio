@@ -17,7 +17,7 @@ const { id, required, containerProps, labelProps, inputProps } = Astro.props;
     <slot />
     {required && <span>*</span>}
   </label>
-  <textarea id={id} required={required} {...inputProps} />
+  <textarea id={id} required={required} {...inputProps}></textarea>
 </div>
 
 <style>
