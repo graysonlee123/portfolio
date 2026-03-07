@@ -1,0 +1,60 @@
+---
+title: Vacations with Character
+description: A performance-first website for a Disney-focused travel planning agency, built with Astro.
+intro: Designed and developed end-to-end for a Disney vacation planning agency. Built with Astro for near-zero JavaScript and deployed to Vercel. Heavy focus on Core Web Vitals through responsive image optimization, link prefetching, and font-display strategies, paired with comprehensive SEO including structured meta tags, Open Graph, auto-generated XML sitemaps, and 301 redirects migrated from a legacy site.
+techStack: ["Astro", "Vercel"]
+links: [{ text: "Visit project", url: "https://vacationswithcharacter.com" }]
+images:
+  {
+    thumbnail: { src: "../images/mockupVWC.png", alt: "Hello world" },
+    featured: { src: "../images/mockupVWC.png", alt: "Hello world" },
+  }
+---
+
+import Text from "@components/Text.astro";
+import Image from "@components/Image.astro";
+
+import LighthouseImage from "@images/lighthouseVWC.png"
+import GenericImage from "@images/genericVWC.png"
+
+<Text>
+
+## The idea
+
+Vacations with Character had an existing WordPress site built by a non-developer. It was functional, but slow, visually inconsistent, and difficult to maintain. The goal was a full redesign that prioritized performance and SEO from the ground up, giving the business a professional foundation to grow on.
+
+</Text>
+
+<Text>
+
+## Tech Stack
+
+Astro was chosen over Next.js for its performance-first philosophy and near-zero JavaScript output, making it the right fit for a content site that doesn't need a heavy client-side runtime. Its static generation and built-in image optimization pipeline made it straightforward to hit aggressive performance targets. Vercel handles deployment with preview environments for staging. The architecture also leaves the door open for a headless CMS integration down the line.
+
+</Text>
+
+<Image
+    src={LighthouseImage}
+    alt="Perfect scores testing Vacations with Character on Google Lighthouse"
+/>
+
+<Image
+    src={GenericImage}
+    alt="A screenshot of vacationswithcharacter.com"
+/>
+
+<Text>
+
+## Obstacles
+
+The target was a perfect Lighthouse score across all four categories: 100 for Performance, Accessibility, Best Practices, and SEO. Hitting that standard means scrutinizing every asset, font, and markup decision. It required subsetting fonts to serve only the glyphs used on each page, serving images in modern formats, calculating correct `sizes` attributes for every viewport, and carefully managing render-blocking resources. Getting to 100 across all four simultaneously meant a fix in one category could introduce a regression in another.
+
+</Text>
+
+<Text>
+
+## Lessons Learned
+
+Chasing perfect Lighthouse scores reframes how you think about every frontend decision. Font subsetting, responsive image pipelines, and modern format selection aren't premature optimizations. None of them are optional if you want a fast site. The payoff is measurable: daily active users tracked via Google Analytics have climbed steadily since launch, suggesting the performance and SEO investment is translating into real organic growth.
+
+</Text>
