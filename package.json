@@ -15,7 +15,7 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "cspell": "^9.8.0",
+    "cspell": "^10.0.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1"
   }
