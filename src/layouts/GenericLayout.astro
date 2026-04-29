@@ -5,6 +5,7 @@ import SEO from "@components/SEO.astro";
 import type { ComponentProps } from "astro/types";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import { Font } from "astro:assets"
 
 type Props = {
   seoProps: ComponentProps<typeof SEO>;
@@ -18,6 +19,7 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
+    <Font cssVariable="--font-serif" preload={[{weight: 400}, {weight: 800}]}/>
     <SEO title={title} description={description} noIndex={noIndex} />
   </head>
   <body>

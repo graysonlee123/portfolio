@@ -1,6 +1,6 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 
 const site = (() => {
   switch (process.env.VERCEL_ENV) {
@@ -38,4 +38,13 @@ export default defineConfig({
       }),
     },
   },
+  fonts: [
+    {
+      name: "Hanken Grotesk",
+      cssVariable: "--font-serif",
+      provider: fontProviders.fontsource(),
+      weights: [400, 700, 800],
+      styles: ["normal"],
+    },
+  ],
 });
