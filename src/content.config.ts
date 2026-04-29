@@ -1,10 +1,10 @@
 import {
   defineCollection,
-  z,
   type CollectionEntry,
   type ImageFunction,
 } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const ImageSchema = (image: ImageFunction) =>
   z.object({
@@ -26,7 +26,7 @@ const projects = defineCollection({
       links: z
         .object({
           text: z.string(),
-          url: z.string().url(),
+          url: z.url(),
         })
         .array()
         .optional(),
