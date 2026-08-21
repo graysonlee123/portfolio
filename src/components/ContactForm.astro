@@ -20,6 +20,7 @@ import TextArea from "./TextArea.astro";
         id="name"
         inputProps={{
           autocomplete: "given-name",
+          maxlength: 50,
         }}
       >
         Name
@@ -34,7 +35,11 @@ import TextArea from "./TextArea.astro";
       >
         Email
       </Input>
-      <TextArea id="message" required inputProps={{ autocomplete: "off" }}>
+      <TextArea
+        id="message"
+        required
+        inputProps={{ autocomplete: "off", maxlength: 500 }}
+      >
         Message
       </TextArea>
       <div>
