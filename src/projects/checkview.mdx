@@ -49,7 +49,7 @@ const appDataBucket = new gcp.storage.Bucket(`checkview`, {
 
 ## Tech Stack
 
-Details The platform is built using a microservices architecture
+The platform is built using a microservices architecture
 on Google Cloud Run. The frontend uses Next.js 14 with Stripe integration for
 billing, while the backend consists of specialized services: `test-runner`
 orchestrates execution via Pub/Sub, `test` runs Playwright in isolated

@@ -4,7 +4,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "spelling": "cspell --gitignore **/*.{astro,js,ts,md}",
+    "spelling": "cspell --gitignore **/*.{astro,js,ts,md,mdx}",
     "format": "prettier --write ."
   },
   "dependencies": {
