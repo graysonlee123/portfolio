@@ -53,11 +53,12 @@ pnpm spelling
 - **sharp**: Node.js image processing, requirement of Astro ([documentation](https://docs.astro.build/en/guides/images/#default-image-service)).
 - **@astrojs/mdx**: Enables MDX pages and components.
 - **@astrojs/sitemap**: Generates a sitemap based on your Astro pages.
-- **@formspree/react**: Contact form helper.
 
 ### Dev Dependencies
 
 - **cspell**: Check spelling throughout the project.
+- **@astrojs/check**: Type-checks Astro files (`pnpm typecheck`).
+- **typescript**: Required by `@astrojs/check`; pinned to 5.x (astro check does not yet support the TypeScript 7 native compiler).
 
 ## License
 

@@ -4,19 +4,21 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "typecheck": "astro check",
     "spelling": "cspell --gitignore **/*.{astro,js,ts,md,mdx}",
     "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
-    "@formspree/react": "^3.0.0",
     "astro": "^6.1.10",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "cspell": "^10.0.0",
     "prettier": "^3.8.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
   }
 }
