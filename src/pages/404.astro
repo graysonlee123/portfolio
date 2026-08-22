@@ -1,0 +1,50 @@
+---
+import ArrowLink from "@components/ArrowLink.astro";
+import Container from "@components/Container.astro";
+import Heading from "@components/Heading.astro";
+import Layout from "@layouts/GenericLayout.astro";
+---
+
+<Layout
+  seoProps={{
+    title: "Page not found | Grayson Gantek",
+    description: "The page you're looking for doesn't exist.",
+    noIndex: true,
+  }}
+>
+  <section class="section">
+    <Container>
+      <p class="code">404</p>
+      <Heading element="h1" prism>Page not found.</Heading>
+      <p class="text">
+        The page you're looking for doesn't exist or has moved. Let's get you
+        back on track.
+      </p>
+      <div class="action">
+        <ArrowLink href="/">Return home</ArrowLink>
+      </div>
+    </Container>
+  </section>
+</Layout>
+
+<style>
+  .section {
+    margin-block: var(--spacing--2xl);
+  }
+
+  .code {
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: hsl(var(--clr--prism--dark));
+  }
+
+  .text {
+    max-width: 45ch;
+    margin-top: var(--spacing--sm);
+    text-wrap: pretty;
+  }
+
+  .action {
+    margin-top: var(--spacing--md);
+  }
+</style>
