@@ -51,5 +51,28 @@ const {
     root.style.setProperty("--saturation", `${saturation}%`);
   };
 
-  document.addEventListener("mousemove", throttle(handleMouseMove));
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const throttledMouseMove = throttle(handleMouseMove);
+
+  /**
+   * Attaches or detaches the prism handler based on the current motion
+   * preference. Re-runs when the preference changes so toggling it live
+   * doesn't leave the handler running against zeroed-out CSS transitions.
+   */
+  const syncMotionPreference = () => {
+    if (reducedMotion.matches) {
+      document.removeEventListener("mousemove", throttledMouseMove);
+      // Drop any inline hue set by prior mouse movement so the prism falls
+      // back to the static theme color defined in CSS.
+      root.style.removeProperty("--hue");
+      root.style.removeProperty("--hue-offset-2");
+      root.style.removeProperty("--hue-offset-3");
+      root.style.removeProperty("--saturation");
+    } else {
+      document.addEventListener("mousemove", throttledMouseMove);
+    }
+  };
+
+  syncMotionPreference();
+  reducedMotion.addEventListener("change", syncMotionPreference);
 </script>
