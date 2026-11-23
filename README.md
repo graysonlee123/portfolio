@@ -17,6 +17,13 @@ Environment Variables
 
 ## Development
 
+### Nix Development
+
+```shell
+# Enter shell: node, pnpm
+nix develop
+```
+
 ### Local Development
 
 ```shell
